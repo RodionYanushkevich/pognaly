@@ -1,0 +1,35 @@
+mixin directions()
+  -
+    const countries = [
+      {
+        name: "Тайланд",
+        description: "Джунгли зовут!",
+        followersCount : "18321"
+      },
+      {
+        name: "Франция",
+        description: "Трэ бьен, манифик!",
+        followersCount : "12518"
+      },
+      {
+        name: "Чехия",
+        description: "Закоулки старой Европы",
+        followersCount : "5326"
+      },
+    ]
+
+  section.directions
+    .container
+      h2.directions__title Направления
+      p.directions__description
+        | Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем.
+        | Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+      a.directions__link.btn(href="#") Показать все
+
+      .directions__container
+        .directions__swiper(data-swiper="directions")
+          ul.directions__list
+            each country in countries
+              li
+            //- +country()
+
