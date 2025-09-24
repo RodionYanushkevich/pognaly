@@ -25,13 +25,14 @@
 // 2) ремы в плюс от эталона и в минус, на планшете обычная верстка
 
 // functions.scss
-// @function size($size-in-px) {
-//   @return calc($size-in-px / $fz-default * 1rem;
-// }
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
 
-// @function size-desktop($size-in-px) {
-//   @return calc($size-in-px / $vp-1920 * 100vw;
-// }
+@function size-desktop($size-in-px) {
+  @return calc($size-in-px / $vp-1440 * 100vw);
+}
+
 
 // reboot.scss
 // html {

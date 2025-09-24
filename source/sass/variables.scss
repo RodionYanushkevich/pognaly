@@ -23,13 +23,14 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
-$fz-default:                        16px;
+$fz-default:                        24px;
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-default:                    "Roboto", "Arial", sans-serif;
+$ff-second:                    "Roboto-Condensed", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
