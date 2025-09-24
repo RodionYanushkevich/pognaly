@@ -2,19 +2,32 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "about.html",
+        text: "о сервисе"
+      },
+      {
+        href: "directions.html",
+        text: "направления"
+      },
+      {
+        href: "companions.html",
+        text: "попутчики"
       },
     ]
 
   header.header(class=headerMods)
     .container
+
       if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        span.header__logo
+          +img("svg", "logo", "svg", 200, 50, "Логотип Погнали")
+          span.header__logo-description погнали?
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +img("svg", "logo", "svg", 200, 50, "Логотип Погнали")
+          span.header__logo-description погнали?
+
+      nav.main-nav.header__nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
         .main-nav__wrapper
@@ -26,3 +39,18 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
+
+      .header__contacts-buttons-wrapper
+        ul.header__contacts-list
+          li.header__contacts-list-item
+            a.header__contacts-tel(
+              href="tel:+78005558628",
+              aria-label="Позвонить 8 800 555-86-28",
+              title="Позвонить нам")
+                +icon("header-phone", 18, 18)
+          li.header__contacts-list-item
+            a.header__contacts-mailto(
+              href="mailto:example@mail.com",
+              aria-label="Написать на example@mail.com",
+              title="Написать на example@mail.com")
+                +icon("header-mail", 18, 18)

@@ -1,3 +1,16 @@
 mixin footer(footerMods)
   footer.footer(class=footerMods)
     .container
+      a.footer__logo(href="index.html", aria-label="Переход на главную")
+        +img("svg", "logo", "svg", 200, 50, "Логотип Погнали")
+        span.footer__logo-description погнали?
+      ul.footer__social-list
+        li.footer__social-list-item
+          a.footer__social-link(href="#", aria-label="наш Telegram", title="наш Telegram")
+            +icon("Telegram", 32, 32)
+        li.footer__social-list-item
+          a.footer__social-link(href="#", aria-label="мы вконтакте", title="мы вконтакте")
+            +icon("vk", 32, 32)
+        li.footer__social-list-item
+          a.footer__social-link(href="#", aria-label="youtube", title="youtube")
+            +icon("youtube", 32, 32)

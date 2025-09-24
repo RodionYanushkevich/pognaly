@@ -1,0 +1,22 @@
+mixin profile()
+  section.profile
+    .container
+      h2.profile__title.main-title Добавьте свой профиль
+      .profile__list-wrapper
+        ol.profile__list
+          li.profile__list-item
+            p.profile__list-item-description Базовое размещение
+          li.profile__list-item
+            p.profile__list-item-description Вывод на первых позициях
+          li.profile__list-item
+            p.profile__list-item-description Кастомный цвет карточки
+      .profile__price-wrapper
+        h3.profile__price-title Бесплатно
+        ul.profile__price-list
+          li.profile__price-item 99 руб./мес
+          li.profile__price-item 59 руб./мес
+
+      a(href="#").profile__link
+        span.profile__link-icon
+          +icon("profile-user", 28, 28)
+        p.profile__link-description Показать тарифы для бизнеса

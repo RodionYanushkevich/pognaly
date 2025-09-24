@@ -1,0 +1,13 @@
+mixin hero()
+  section.hero
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .container
+      h1.hero__title В&nbsp;путешествие с&nbsp;крутыми попутчиками!
+      +img("content/hero", "traveler", "webp", 431, 640, "изображение путешественника")
+      +img("content/hero", "hero-background-desktop", "webp", 1440, 750, "")
+      ol.hero__list
+        li.hero__list-item Выберите направление
+        li.hero__list-item Изучите идеи путешественников
+        li.hero__list-item Находите тех, кто похож на&nbsp;вас
+        li.hero__list-item Путешествуйте вместе!

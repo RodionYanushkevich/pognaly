@@ -1,0 +1,47 @@
+mixin directions()
+  -
+    const countries = [
+      {
+        name: "Тайланд",
+        description: "Джунгли зовут!",
+        followersCount: "18321",
+        flag: "🇹🇭ai-flag",
+        image: "thailand-img"
+      },
+      {
+        name: "Франция",
+        description: "Трэ бьен, манифик!",
+        followersCount: "12518",
+        flag: "france-flag",
+        image: "france-img"
+      },
+      {
+        name: "Чехия",
+        description: "Закоулки старой Европы",
+        followersCount: "5326",
+        flag: "🇨🇿ech-flag",
+        image: "czech-img"
+      },
+    ]
+
+
+  section.directions
+    .container
+      .directions__description-wrapper
+        h2.directions__title Направления
+        p.directions__description
+          | Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем.
+          | Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+        a.directions__link.btn(href="#") Показать все
+
+      .directions__swiper-wrapper
+        .directions__swiper(data-swiper="directions")
+          ul.directions__list
+            each country in countries
+              li.directions__card-item
+                .directions-card
+                  h3.directions-card__title!=country.name
+                  p.directions-card__description!=country.description
+                  +img("content/directions",country.flag,"webp",70, 47,`флаг ${country.name}` )
+                  +img("content/directions",country.image,"webp",200, 140,`изображение ${country.name}` )
+                  +icon("user-icon",20,20)
