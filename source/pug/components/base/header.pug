@@ -39,17 +39,18 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
+
       .header__contacts-buttons-wrapper
         ul.header__contacts-list
           li.header__contacts-list-item
             a.header__contacts-tel(
-              href="tel:89999999999",
-              aria-label="Позвонить 89999999999",
-              title="Позвонить 89999999999")
-                +img("sprite", "phone", "svg", 18, 18, "иконка телефона")
+              href="tel:88005558628",
+              aria-label="Позвонить 8 800 555-86-28",
+              title="Позвонить нам")
+                +icon("header-phone", 18, 18)
           li.header__contacts-list-item
             a.header__contacts-mailto(
               href="mailto:example@mail.com",
               aria-label="Написать на example@mail.com",
               title="Написать на example@mail.com")
-                +img("sprite", "email", "svg", 18, 18, "иконка почты")
+                +icon("header-mail", 18, 18)

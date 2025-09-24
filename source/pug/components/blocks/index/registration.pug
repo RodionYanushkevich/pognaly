@@ -1,0 +1,31 @@
+mixin registration()
+  section.registration
+    .container
+      h2.registration__title Заинтересовались?
+      p.registration__description
+        | Зарегистрируйтесь, это быстро и&nbsp;бесплатно!
+        | Уже зарегистрированы? Тогда скорее&nbsp;
+        a.registration__link(href="#") авторизуйтесь
+      .registration__input-wrapper
+        +custom-input({
+          inputPlaceholder: "E-mail",
+          inputType: "email",
+          inputName:"registration-input"
+        })
+        +btn({
+          tag:"button",
+          text:"Регистрация"})
+      p.registration__subdescription Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
+      .registration__buttons-wrapper
+        a.registration-tel(
+          href="tel:88005558628",
+          aria-label="Позвонить 8 800 555-86-28",
+          title="Позвонить нам")
+          +icon("registration-phone", 36, 34)
+          span 8 800 555-86-28
+        a.registration-mail(
+          href="mailto:mail@htmlacademy.ru",
+          aria-label="написать mail@htmlacademy.ru",
+          title="написать нам")
+          +icon("registration-mail", 47, 50)
+          span mail@htmlacademy.ru
