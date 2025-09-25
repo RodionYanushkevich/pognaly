@@ -5,7 +5,10 @@ mixin registration()
       p.registration__description
         | Зарегистрируйтесь, это быстро и&nbsp;бесплатно!
         | Уже зарегистрированы? Тогда скорее&nbsp;
-        a.registration__link(href="#") авторизуйтесь
+        a.registration__link(href="#")
+          br
+          | авторизуйтесь
+        |.
       .registration__input-wrapper
         +custom-input({
           inputPlaceholder: "E-mail",
