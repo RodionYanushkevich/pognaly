@@ -2,7 +2,7 @@ mixin profile()
   section.profile
     .container
       h2.profile__title.main-title Добавьте свой профиль
-      .profile__list-wrapper
+      .profile__wrapper
         ol.profile__list
           li.profile__list-item
             p.profile__list-item-description Базовое размещение
@@ -10,13 +10,27 @@ mixin profile()
             p.profile__list-item-description Вывод на первых позициях
           li.profile__list-item
             p.profile__list-item-description Кастомный цвет карточки
-      .profile__price-wrapper
-        h3.profile__price-title Бесплатно
-        ul.profile__price-list
-          li.profile__price-item 99 руб./мес
-          li.profile__price-item 59 руб./мес
+        .profile__price-wrapper
+          .profile__price-container
+            h3.profile__price-title Бесплатно
+            ul.profile__price-list
+              li.profile__price-item 99 руб./мес
+              li.profile__price-item 59 руб./мес
+          +adaptivePicture({
+            path:"content/profile",
+            imageBaseName: "profile-rates",
+            width: 200,
+            height: 202,
+            hasTablet:true,
+            tabletWidth:100,
+            tabletHeight:100,
+            hasMobile:true,
+            mobileWidth: 81,
+            mobileHeight: 81,
+            alt:""
+            })
 
       a(href="#").profile__link
         span.profile__link-icon
-          +icon("profile-user", 28, 28)
+          +icon("businessman", 28, 28)
         p.profile__link-description Показать тарифы для бизнеса

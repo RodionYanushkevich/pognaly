@@ -1,0 +1,139 @@
+.profile {
+  position: relative;
+  z-index: 16;
+  margin-top: -60px;
+
+  .container {
+    padding-top: 181px;
+    padding-bottom: 65.19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 17px;
+  }
+}
+
+.profile__wrapper {
+  margin-top: 78px;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__list {
+  margin: 0;
+  margin-top: 61px;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+  width: 100%;
+
+  &-item-description {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 76px;
+
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    color: $color-accent-main;
+
+    border-top: 1px solid $color-solitude;
+  }
+}
+
+.profile__list-item {
+  counter-increment: item;
+  display: flex;
+  align-items: center;
+  column-gap: 24.64px;
+
+  &:nth-child(3n + 1)::before {
+    background-color: $color-picton-blue;
+  }
+
+  &:nth-child(3n + 2)::before {
+    background-color: $color-jordy-blue;
+  }
+
+  &:nth-child(3n + 3)::before {
+    background-color: $color-pale-cornflower-blue;
+  }
+
+  &:last-child {
+    .profile__list-item-description {
+      border-bottom: 1px solid $color-solitude;
+    }
+  }
+}
+
+.profile__list-item::before {
+  content: counter(item);
+  width: 72.86px;
+  height: 70.81px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+
+
+  background: $color-lavender;
+  border-radius: 100%;
+  color: $color-default-white;
+}
+
+.profile__price-wrapper {
+  min-width: 585.38px;
+  min-height: 333px;
+  padding: 62px 49px 67px 48.65px;
+  display: flex;
+  justify-content: space-between;
+
+  color: $color-default-white;
+  border-radius: 20px;
+  background-color: $color-blue-zodiac;
+}
+
+.profile__price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__link {
+  display: flex;
+  align-items: center;
+  column-gap: 20.36px;
+  align-self: flex-start;
+
+  .profile__link-icon {
+    width: 72.86px;
+    height: 70.81px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $color-lavender;
+    border-radius: 100%;
+  }
+
+  .profile__link-description {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,33 @@
+.directions-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.directions-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.directions-card__title {
+  margin: 0;
+  padding: 0;
+}
+
+.directions-card__description {
+  margin: 0;
+  padding: 0;
+}
+
+.directions-card__icon-wrapper {
+  display: flex;
+}
+
+.directions-card__folowes {
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: $color-midnight-express-darker;
+
+  opacity: 0.3;
+}

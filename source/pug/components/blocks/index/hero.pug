@@ -6,6 +6,7 @@ mixin hero()
       h1.hero__title В&nbsp;путешествие с&nbsp;крутыми попутчиками!
 
       .hero__image-wrapper
+        //- поменяй на растр
         picture(data-image-adaptive)
           source(srcset="img/svg/traveller-tablet.svg", media="(max-width: 1023px)" width=437 height=580)
           img(src="img/svg/traveller-desktop.svg", width=431, height=640, alt="путешественник")
