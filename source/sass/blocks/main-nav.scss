@@ -5,11 +5,17 @@
     padding: 0;
     gap: 16px;
     list-style: none;
+    flex-wrap: wrap;
+    // max-width: ;
   }
 
 
   &__link {
     color: $color-default-white;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
 
     &.is-active {
       opacity: 0.6;

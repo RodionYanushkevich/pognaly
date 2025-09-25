@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: transparent;
-
+  z-index: 21;
 
   @include vp-1023 {
     min-width: 320px;
@@ -58,7 +58,7 @@
   height: min-content;
   order: -1;
 
-  & img {
+  img {
     width: 200px;
     height: 50px;
   }
@@ -71,7 +71,7 @@
     color: $color-default-white;
     width: 128.63px;
     height: 19.65px;
-
+    // разберись
     & svg {
       width: 128.63px;
       height: 19.65px;

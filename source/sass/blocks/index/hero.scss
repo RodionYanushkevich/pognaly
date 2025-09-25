@@ -1,9 +1,13 @@
 .hero {
+  position: relative;
+  z-index: 20;
+
   .container {
     position: relative;
     padding: 102px 72px 0;
-    min-height: 748px;
+    min-height: 742px;
     // column-gap: 146px;
+    border-radius: 0 0 56px  56px;
   }
 }
 
@@ -24,7 +28,7 @@
 
 .hero__image-wrapper {
   position: absolute;
-  top: 102px;
+  bottom: -1px;
   right: 272px;
   width: 431px;
   z-index: -1;

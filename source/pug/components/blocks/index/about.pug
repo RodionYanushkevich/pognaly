@@ -1,13 +1,41 @@
 mixin about()
   section.about
     .container
-      h2.about__title О&nbsp;сервисе
-      p.about__description
-        | Любое путешествие веселее с&nbsp;попутчиками, которые
-        | на&nbsp;одной волне с&nbsp;тобой! Делитесь своими идеями
-        | путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
-      p.about__note
-        | А&nbsp;если найдете кого-то близкого по&nbsp;духу&nbsp;&mdash;
-        | скорее зовите в&nbsp;совместный трип!
-      a.about__link.btn(href="#") подробнее
-      +img("content/about", "about-desktop-image", "webp", 654, 665, "")
+      .about__title-container
+        h2.about__title О&nbsp;сервисе
+        p.about__description
+          | Любое путешествие веселее с&nbsp;попутчиками, которые
+          | на&nbsp;одной волне с&nbsp;тобой! Делитесь своими идеями
+          | путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+        p.about__note
+          | А&nbsp;если найдете кого-то близкого по&nbsp;духу&nbsp;&mdash;
+          | скорее зовите в&nbsp;совместный трип!
+        //- a.about__link.btn(href="#") подробнее
+        +btn({
+          href: "#",
+          text:"подробнее"}).about__link
+
+      .about__image-container
+        +adaptivePicture({
+          path:"content/about",
+          imageBaseName:"about-image",
+          width: 654,
+          height: 665,
+          hasTablet:true,
+          tabletWidth: 368,
+          tabletHeight: 564,
+          hasMobile:true,
+          mobileWidth: 292,
+          mobileHeight: 353,
+          alt:"Два скриншота 3/5 размера карточки занимает аватар, 2/5 текст: имя пользователя, описание увлечений, кнопка позвать и количество лайков."
+          })
+
+        //- img.about__image(
+        //-   src="img/content/about/about-image-desktop.webp",
+        //-   alt="Два скриншота 3/5 размера карточки занимает аватар, 2/5 текст: имя пользователя, описание увлечений, кнопка позвать и количество лайков.",
+        //-   width=654,
+        //-   height=665,
+        //-   srcset="img/content/about/about-image-mobile.webp 767w,img/content/about/about-image-mobile@2x.webp 1534w,img/content/about/about-image-tablet.webp 1023w, img/content/about/about-image-tablet@2x.webp 2046w, img/content/about/about-image-desktop.webp 1440w, img/content/about/about-image-desktop@2x.webp 2880w",
+        //-   sizes="(max-width: 767px) 767px, (max-width: 1023px) 1023px, 1440px"
+        //- )
+
