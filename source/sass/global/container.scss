@@ -3,9 +3,11 @@
   max-width: $vp-1440;
   margin: 0 auto;
   padding: 0 60px;
+  min-width: $vp-1440;
 
   @include vp-1023 {
     padding: 0 40px;
+    min-width: unset;
   }
 
   @include vp-767 {
