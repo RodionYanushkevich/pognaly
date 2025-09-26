@@ -30,9 +30,9 @@ mixin companions()
       .companions__description-wrapper
         h2.companions__title.main-title Попутчики
         p.companions__description
-          | Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;
-          | идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому
-          | маршрут для хайкинга.
+          | Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;идеальный отдых.
+          br
+          |  Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому маршрут для хайкинга.
         p.companions__sub-description Теперь можно легко найти единомышленников!
         +btn({
           href: "#",
@@ -55,9 +55,7 @@ mixin companions()
                 })
               .companions-card__flags-container
                 each flag in companion.countriesFlagCheck
-                  svg(width="35", height="24", aria-hidden="true")
-                    use(xlink:href=`img/content/flags/${flag}-flag.svg`)
-
+                  +img("content/flags", `${flag}-flag`, "webp", 35, 24, "")
               .companions-card__title-wrapper
                 if (companion.online === true)
                   span.companions-card__online.companions-card__online--true
@@ -70,6 +68,6 @@ mixin companions()
                 each icon in icons
                   - const isChecked = companion.travelIconCheck.includes(icon)
                   if isChecked
-                    +icon(icon, 25, 25).checked
+                    +icon(icon, 25, 25).companions-card__icon.companions-card__icon--checked
                   else
-                    +icon(icon, 25, 25)
+                    +icon(icon, 25, 25).companions-card__icon

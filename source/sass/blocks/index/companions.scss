@@ -1,7 +1,7 @@
 .companions {
   position: relative;
   z-index: 17;
-  margin-top: -60px;
+  margin-top: -63px;
 
   .container {
     padding: 0;
@@ -11,14 +11,14 @@
 }
 
 .companions__description-wrapper {
-  padding: 158px 0 159px 72px;
+  padding: 153px 0 159px 72px;
 
   width: 632px;
   flex-shrink: 0;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  row-gap: 44px;
+  row-gap: 40px;
 
   color: $color-midnight-express-dark;
 
@@ -29,10 +29,16 @@
   .companions__description {
     margin: 0;
     padding: 0;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 138%;
+
+    width: 516px;
   }
 
   .companions__sub-description {
-    margin-top: 39px;
+    margin: 12px 0 0;
 
     font-family: $ff-second;
     font-weight: 300;
@@ -41,24 +47,27 @@
   }
 
   .companions__link {
-    margin-top: 65px;
+    margin-top: 69px;
+    margin-left: 2px;
     width: 293.45px;
   }
 }
-
-// .companions__cards-wrapper {
-
-// }
 
 .companions__list {
   margin: 0;
   padding: 133px 74px 123px 76px;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
   justify-content: space-between;
   min-width: 750px;
   min-height: 793px;
 
   border-radius: 0 0 56px  56px;
   background-color: $color-blue-zodiac;
+}
+
+.companions__cards-item:nth-child(even) {
+  align-self: end;
 }

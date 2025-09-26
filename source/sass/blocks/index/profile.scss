@@ -4,8 +4,9 @@
   margin-top: -60px;
 
   .container {
-    padding-top: 181px;
+    padding-top: 176px;
     padding-bottom: 65.19px;
+    padding-left: 74px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,8 +14,12 @@
   }
 }
 
+.profile__title {
+  padding-right: 53px;
+}
+
 .profile__wrapper {
-  margin-top: 78px;
+  margin-top: 83px;
 
   width: 100%;
   display: flex;
@@ -23,15 +28,19 @@
 
 .profile__list {
   margin: 0;
-  margin-top: 61px;
+  margin-top: 59px;
   padding: 0;
   list-style: none;
   counter-reset: item;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
 
   &-item-description {
     margin: 0;
     padding: 0;
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -113,6 +122,8 @@
 }
 
 .profile__price-container {
+  padding: 22px;
+  padding-left: 33px;
   display: flex;
   flex-direction: column;
   row-gap: 24.39px;
@@ -125,6 +136,7 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 11.45px;
 }
 
@@ -135,6 +147,7 @@
 }
 
 .profile__link {
+  margin-top: -26px;
   display: flex;
   align-items: center;
   column-gap: 20.36px;
@@ -154,5 +167,10 @@
   .profile__link-description {
     margin: 0;
     padding: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+
+    color: $color-blue-zodiac;
   }
 }

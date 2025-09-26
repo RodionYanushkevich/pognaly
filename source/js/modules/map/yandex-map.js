@@ -23,11 +23,10 @@ async function initMap() {
     markerElement.className = 'map__marker';
 
 
-    const marker = new YMapMarker(
-        {
-            coordinates: [30.323037, 59.938631], //
+    const marker = new YMapMarker({
+            coordinates: [30.323037, 59.938631],
             draggable: false,
-            mapFollowsOnDrag: false
+            mapFollowsOnDrag: false,
         },
         markerElement
     );
