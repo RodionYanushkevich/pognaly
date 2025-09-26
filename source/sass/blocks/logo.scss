@@ -1,0 +1,26 @@
+.logo {
+  position: relative;
+  top: -2px;
+  height: min-content;
+  order: -1;
+  display: flex;
+  width: 200px;
+
+  img {
+    width: 200px;
+    height: 50px;
+  }
+
+  &-description {
+    position: absolute;
+    right: -2px;
+    top: 30px;
+    transform: translateY(-50%);
+    color: inherit;
+
+    & svg {
+      width: 134px;
+      height: 25px;
+    }
+  }
+}

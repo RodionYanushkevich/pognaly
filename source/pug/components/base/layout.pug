@@ -50,8 +50,9 @@ html(lang="ru")
 
     block modals
 
+    if (hasMap)
+      //- script(src="https://api-maps.yandex.ru/2.1/?apikey=28801c69-91fe-4d4a-93cd-17f8fd793324&lang=ru_RU")
+      script(src="https://api-maps.yandex.ru/v3/?apikey=28801c69-91fe-4d4a-93cd-17f8fd793324&lang=ru_RU")
     script(src="js/vendor.min.js")
     script(src="js/main.min.js")
-    if (hasMap)
-      script( src="https://api-maps.yandex.ru/2.1/?lang=ru_RU", type="text/javascript")
 

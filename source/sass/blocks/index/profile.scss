@@ -95,9 +95,10 @@
   padding: 62px 49px 67px 48.65px;
   display: flex;
   justify-content: space-between;
-
   color: $color-default-white;
   border-radius: 20px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: $color-blue-zodiac;
 }
 

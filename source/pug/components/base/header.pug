@@ -19,14 +19,14 @@ mixin header(headerMods, currentUrl)
     .container
 
       if(currentUrl === "index.html")
-        span.header__logo
+        span.header__logo.logo
           img(src="../../../img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали")
-          span.header__logo-description
+          span.logo-description
             +icon("logo-text", 129, 20 )
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную")
+        a.header__logo.logo(href="index.html", aria-label="Переход на главную")
           img(src="../../../img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали")
-          span.header__logo-description
+          span.logo-description
             +icon("logo-text", 129, 20 )
 
       nav.main-nav.header__nav

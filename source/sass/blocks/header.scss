@@ -1,3 +1,5 @@
+// попробуй вместо абсолюта потом перепиши на маргин отрицательный
+
 .header {
   position: relative;
   display: flex;
@@ -13,7 +15,7 @@
 
 .header .container {
   position: absolute;
-  top: 46px;
+  top: 49px;
   left: 50%;
   display: flex;
   flex-wrap: wrap;
@@ -26,6 +28,8 @@
   align-items: center;
 
   &::after {
+    position: relative;
+    top: 1px;
     content: "";
     width: 60px;
     height: 2px;
@@ -54,34 +58,7 @@
 }
 
 .header__logo {
-  position: relative;
-  height: min-content;
-  order: -1;
-
-  img {
-    width: 200px;
-    height: 50px;
-  }
-
-  &-description {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: $color-default-white;
-    width: 128.63px;
-    height: 19.65px;
-    // разберись
-    & svg {
-      width: 128.63px;
-      height: 19.65px;
-
-      &use {
-        width: 128.63px;
-        height: 19.65px;
-      }
-    }
-  }
+  color: $color-default-white;
 }
 
 .header__nav {
@@ -109,3 +86,4 @@
   border-radius: 50%;
   background-color: $color-jordy-blue;
 }
+
