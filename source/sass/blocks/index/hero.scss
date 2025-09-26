@@ -40,9 +40,15 @@
 
 .hero__background-wrapper {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
+  height: 100%;
   z-index: -2;
+  background-color: $color-chambray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0 0 56px  56px;
 
   img {
     width: 1440px;

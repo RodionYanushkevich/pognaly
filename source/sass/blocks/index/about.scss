@@ -4,12 +4,12 @@
   margin-top: -60px;
 
   .container {
-    padding-top: 140px;
+    padding: 140px 72px 0 72px;
     display: flex;
     justify-content: space-between;
     color: $color-default-white;
     background-color: $color-midnight-express;
-
+    min-height: 818px;
     border-radius: 0 0 56px  56px;
   }
 }
@@ -45,10 +45,8 @@
 }
 
 .about__note {
-  padding: 0;
-  margin: 0;
-  margin-top: 49px;
-
+  margin: 40px 0 0;
+  width: 503px;
   font-weight: 200;
   font-size: 22px;
   line-height: 109%;
@@ -57,7 +55,8 @@
 }
 
 .about__image-container {
-  margin-right: 11px;
+  height: 665px;
+  align-self: flex-end;
 
   img {
     width: 654.19px;
@@ -66,5 +65,5 @@
 }
 
 .about__link {
-  margin-top: 137px;
+  margin-top: 117px;
 }
