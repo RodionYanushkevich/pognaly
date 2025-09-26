@@ -1,0 +1,38 @@
+mixin adaptivePicture(options = {})
+  - const imageBaseName = options.imageBaseName || '';
+  - const path = options.path || '';
+  - const width = options.width ;
+  - const height = options.height ;
+  - const alt = options.alt || '';
+  - const hasTablet = options.hasTablet || false;
+  - const tabletWidth = options.tabletWidth || false;
+  - const tabletHeight = options.tabletHeight || false;
+  - const hasMobile = options.hasMobile || false;
+  - const mobileWidth = options.mobileWidth || false;
+  - const mobileHeight = options.mobileHeight || false;
+
+  picture
+    if hasMobile
+      source(
+        srcset=`img/${path}/${imageBaseName}-mobile.webp 1x, img/${path}/${imageBaseName}-mobile@2x.webp 2x`,
+        media="(max-width: 767px)",
+        type="image/webp",
+        width=mobileWidth || undefined,
+        height=mobileHeight || undefined
+      )
+    if hasTablet
+      source(
+        srcset=`img/${path}/${imageBaseName}-tablet.webp 1x, img/${path}/${imageBaseName}-tablet@2x.webp 2x`,
+        media="(min-width: 768px) and (max-width: 1023px)",
+        type="image/webp",
+        width=tabletWidth || undefined,
+        height=tabletHeight || undefined
+      )
+    img(
+      src=`img/${path}/${imageBaseName}-desktop.webp`,
+      srcset=`img/${path}/${imageBaseName}-desktop.webp 1x, img/${path}/${imageBaseName}-desktop@2x.webp 2x`,
+      alt=alt,
+      loading="lazy"
+      width=width
+      height=height
+    )

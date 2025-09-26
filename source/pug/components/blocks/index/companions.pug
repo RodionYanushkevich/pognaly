@@ -4,11 +4,11 @@ mixin companions()
       {
         name: "Таня Фирсова",
         hashTags: "#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи",
-        countriesFlagCheck:["sri-Lanka","thailand","seychelles"],
+        countriesFlagCheck:["sri-lanka","thai","seychelles"],
         travelIconCheck: ["plane"],
         online: false,
         level:"99",
-        photo: "firsova",
+        photo: "firsova-photo",
       },
       {
         name: "Петя Демин",
@@ -17,7 +17,7 @@ mixin companions()
         travelIconCheck: ["plane","bus","run"],
         online: true,
         level:"80",
-        photo: "demin",
+        photo: "demin-photo",
       },
     ]
 
@@ -27,34 +27,49 @@ mixin companions()
 
   section.companions
     .container
-      h2.companions__title.main-title Попутчики
-      p.companions__description
-      | Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;
-      | идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому
-      | маршрут для хайкинга.
-      p.companions__sub-description Теперь можно легко найти единомышленников!
-      a.companions__link.btn(href="#") Показать всех
+      .companions__description-wrapper
+        h2.companions__title.main-title Попутчики
+        p.companions__description
+          | Все мы&nbsp;индивидуальны и&nbsp;у&nbsp;каждого свой взгляд на&nbsp;
+          | идеальный отдых. Одному нужен пляж и&nbsp;коктейль, а&nbsp;другому
+          | маршрут для хайкинга.
+        p.companions__sub-description Теперь можно легко найти единомышленников!
+        +btn({
+          href: "#",
+          text:"Показать всех"}).companions__link
 
-      .companions__cards-wrapper
-        ul.companions__list
-          each companion in companionsCards
-            li.companions__cards-item
-              a(href="#").companions-card
-                +img(companion.photo, 285, 285)
+      ul.companions__list
+        each companion in companionsCards
+          li.companions__cards-item
+            a(href="#").companions-card
+              +adaptivePicture({
+                path:"content/companions",
+                imageBaseName: companion.photo,
+                width: 285,
+                height: 285,
+                hasTablet:false,
+                hasMobile:true,
+                mobileWidth: 270,
+                mobileHeight: 270,
+                alt:`${companion.name} - фотография`
+                })
+              .companions-card__flags-container
                 each flag in companion.countriesFlagCheck
-                  +img("content/companions/flags", flag,"webp",35, 24,"`флаг`" )
-                .companions-card__title-wrapper
-                  if (companion.online === true)
-                    span.companions-card__online.companions-card__online--true
-                  else
-                    span.companions-card__online
-                  h3.companions-card__title!=companion.name
-                p.companions-card__description!=companion.hashTags
+                  svg(width="35", height="24", aria-hidden="true")
+                    use(xlink:href=`img/content/flags/${flag}-flag.svg`)
 
-                .companions-card__icons-wrapper
-                  each icon in icons
-                    - const isChecked = companion.travelIconCheck.includes(icon)
-                    if isChecked
-                      +icon(icon, 25, 25).checked
-                    else
-                      +icon(icon, 25, 25)
+              .companions-card__title-wrapper
+                if (companion.online === true)
+                  span.companions-card__online.companions-card__online--true
+                else
+                  span.companions-card__online
+                h3.companions-card__title!=companion.name
+              p.companions-card__description!=companion.hashTags
+
+              .companions-card__icons-wrapper
+                each icon in icons
+                  - const isChecked = companion.travelIconCheck.includes(icon)
+                  if isChecked
+                    +icon(icon, 25, 25).checked
+                  else
+                    +icon(icon, 25, 25)

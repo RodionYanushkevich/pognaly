@@ -21,13 +21,27 @@
 
 @import "blocks/header";
 @import "blocks/main-nav";
+@import "blocks/main-title";
 @import "blocks/footer";
+@import "blocks/logo";
 @import "blocks/modal";
 @import "blocks/btn";
 @import "blocks/custom-input";
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
 @import "blocks/input-upload";
+
+// index
+@import "blocks/index/hero";
+@import "blocks/index/about";
+@import "blocks/index/directions";
+@import "blocks/index/directions-card";
+@import "blocks/index/companions";
+@import "blocks/index/companions-card";
+@import "blocks/index/profile";
+@import "blocks/index/registration";
+@import "blocks/index/map";
+
 
 // ---------------------------------
 

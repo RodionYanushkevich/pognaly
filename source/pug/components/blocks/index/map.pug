@@ -2,12 +2,12 @@ mixin map()
   section.map
     .container
       .map__description-container
-        button.map__address-button.seccond-btn(type="button")
-          span.map__address-icon-wrapper
+        button.map__address-button(type="button")
+          span.map__address-icon-container
             +icon("location",42,42)
           span.map__address ул. Большая Конюшенная, 19/8
 
         +btn({
           tag:"button",
-          text:"Проложить маршрут"})
-      .map(data-map)
+          text:"Проложить маршрут"}).map__button
+      .map-wrapper(data-map id="map")

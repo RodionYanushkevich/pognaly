@@ -1,20 +1,23 @@
 .main-nav {
   &__list {
+    position: relative;
+    top: 1px;
     display: flex;
     margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
     padding: 0;
-
+    gap: 18px;
     list-style: none;
+    flex-wrap: wrap;
+    max-width: 705px;
   }
 
-  &__item {
-    margin-right: 20px;
-  }
 
   &__link {
     color: $color-default-white;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
 
     &.is-active {
       opacity: 0.6;

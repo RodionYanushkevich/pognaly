@@ -4,8 +4,26 @@ mixin hero()
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .container
       h1.hero__title В&nbsp;путешествие с&nbsp;крутыми попутчиками!
-      +img("content/hero", "traveler", "webp", 431, 640, "изображение путешественника")
-      +img("content/hero", "hero-background-desktop", "webp", 1440, 750, "")
+
+      .hero__image-wrapper
+        //- поменяй на растр
+        picture(data-image-adaptive)
+          source(srcset="img/svg/traveller-tablet.svg", media="(max-width: 1023px)" width=437 height=580)
+          img(src="img/svg/traveller-desktop.svg", width=431, height=640, alt="путешественник")
+
+      .hero__background-wrapper
+        +adaptivePicture({
+          path:"content/hero",
+          imageBaseName:"hero-background",
+          width: 1440,
+          height:742,
+          hasTablet:true,
+          tabletWidth: 1440,
+          tabletHeight: 906,
+          hasMobile:true,
+          mobileWidth: 767,
+          mobileHeight: 628
+          })
       ol.hero__list
         li.hero__list-item Выберите направление
         li.hero__list-item Изучите идеи путешественников
