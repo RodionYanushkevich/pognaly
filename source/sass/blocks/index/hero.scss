@@ -12,9 +12,8 @@
 }
 
 .hero__title {
-  margin: 0;
+  margin: 87px 0 0;
   padding: 0;
-  margin-top: 90px;
   width: 512px;
 
   font-weight: 700;
@@ -28,15 +27,14 @@
 
 .hero__image-wrapper {
   position: absolute;
-  bottom: -1px;
-  right: 272px;
+  bottom: 0;
+  right: 275px;
   width: 431px;
   z-index: -1;
 
   img {
     width: 431px;
     height: 640px;
-    // max-width: unset;
   }
 }
 
@@ -47,48 +45,85 @@
   z-index: -2;
 
   img {
-    // min-width: 1440px;
     width: 1440px;
     height: 742px;
   }
 }
 
 .hero__list {
+  position: absolute;
+  top: 520px;
+  left: 60px;
+  min-height: 107px;
+  height: min-content;
   padding: 0;
   margin: 0;
-
   list-style-type: none;
+
   display: flex;
   flex-wrap: wrap;
+  max-width: 1330px;
   counter-reset: item;
 }
 
 .hero__list-item {
   counter-increment: item;
+  padding: 29.5px;
+  padding-left: 34px;
+  min-width: 352.4px;
+
   display: flex;
   align-items: center;
-  min-height: 107px;
+
   border-radius: 20px;
+
+  filter: drop-shadow(-4px 0 10px rgba(0, 0, 0, 0.25));
+
+  & p {
+    margin: 0;
+    width: 183px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 109%;
+
+    color: $color-midnight-express-darker;
+  }
+
+  &:not(:nth-child(4n + 1)) {
+    margin-left: -30px;
+  }
+
+  &:nth-child(n + 5) {
+    margin-top: -20px;
+  }
 
   &:nth-child(4n + 1) {
     background-color: $color-picton-blue;
   }
 
   &:nth-child(4n + 2) {
+    padding-left: 22px;
+
     background-color: $color-jordy-blue;
   }
 
   &:nth-child(4n + 3) {
+    padding-left: 46px;
     background-color: $color-pale-cornflower-blue;
   }
 
   &:nth-child(4n + 4) {
+    padding-left: 68px;
     background-color: $color-pattens-blue;
   }
 }
 
 .hero__list-item::before {
+  position: absolute;
+  top: 25px;
+  right: 71px;
   content: counter(item);
   font-weight: 700;
   color: $color-default-white;
+  order: 1;
 }
