@@ -5,7 +5,7 @@ mixin registration()
       p.registration__description
         | Зарегистрируйтесь, это быстро и&nbsp;бесплатно!
         | Уже зарегистрированы? Тогда скорее&nbsp;
-        a.registration__link(href="#")
+        a.registration__description-link(href="#")
           br
           | авторизуйтесь
         |.
@@ -17,18 +17,20 @@ mixin registration()
         })
         +btn({
           tag:"button",
-          text:"Регистрация"})
+          text:"Регистрация"}).registration__submit-button
       p.registration__subdescription Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
       .registration__buttons-wrapper
-        a.registration-tel(
+        a.registration__link(
           href="tel:+78005558628",
           aria-label="Позвонить 8 800 555-86-28",
           title="Позвонить нам")
-          +icon("registration-phone", 36, 34)
+          span.registration__link-icon-container
+            +icon("phone", 36, 34)
           span 8 800 555-86-28
-        a.registration-mail(
+        a.registration__link(
           href="mailto:mail@htmlacademy.ru",
           aria-label="написать mail@htmlacademy.ru",
           title="написать нам")
-          +icon("registration-mail", 47, 50)
+          span.registration__link-icon-container
+            +icon("mail", 47, 50)
           span mail@htmlacademy.ru
