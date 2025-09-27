@@ -5,12 +5,12 @@
 
   .container {
     margin-top: 60px;
-    padding-top: 235px;
-    padding-bottom: 104px;
+    padding-top: 175px;
+    padding-bottom: 102px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 43px;
+    row-gap: 42px;
     color: $color-default-white;
     background-color: $color-blue-zodiac;
     border-radius: 0 0 56px  56px;
@@ -27,6 +27,7 @@
 
 .registration__description {
   margin: 0;
+  margin-top: 4px;
   padding: 0 34px;
   width: 655px;
 
@@ -45,16 +46,23 @@
 
 .registration__input-wrapper {
   display: flex;
+  margin-top: 5px;
 }
 
 .registration__submit-button {
   border-radius: 0 20px 20px 0;
   width: 330px;
+
+  &.btn {
+
+    padding: 0 35.97px 0 40.89px;
+  }
 }
 
 .registration__subdescription {
   padding: 0;
   margin: 0;
+  margin-top: 30px;
   font-weight: 300;
   font-size: 28px;
   line-height: 107%;
@@ -64,12 +72,13 @@
 .registration__buttons-wrapper {
   display: flex;
   column-gap: 105px;
+  margin-left: 36px;
 }
 
 .registration__link {
   display: flex;
   align-items: center;
-  column-gap: 35px;
+  column-gap: 30px;
   color: $color-pattens-blue;
 
   font-weight: 700;

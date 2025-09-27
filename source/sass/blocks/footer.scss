@@ -5,6 +5,7 @@
 
   .container {
     border-radius: 56px  56px 0 0;
+    padding-top: 5px;
     background-color: $color-default-white;
     min-height: 152px;
     display: flex;
@@ -18,7 +19,7 @@
 .footer__logo.logo {
   position: absolute;
   left: 58px;
-  top: unset;
+  top: calc(50% - 23px);
   color: $color-midnight-express-dark;
 }
 

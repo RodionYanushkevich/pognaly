@@ -11,15 +11,15 @@
 .map__description-container {
   position: relative;
   z-index: 13;
-  padding: 116px 135px 56px 283px;
+  padding: 114px 0 56px 277px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   color: $color-solitude;
   background-color: $color-jordy-blue;
   border-radius: 0 0 56px  56px;
   min-height: 262px;
-  column-gap: 108px;
+  column-gap: 103px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -54,14 +54,15 @@
 
 .map__button {
   border: 3px solid $color-midnight-express-dark;
-
+  width: 324px;
+  padding: 0 16px 0 34px;
   background-color: $color-transparent;
 }
 
 
 .map-wrapper {
   position: relative;
-  height: 584px;
+  height: 515px;
   // background-color: $color-accent-main;
   margin-top: -60px;
   min-width: 1440px;
