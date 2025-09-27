@@ -9,6 +9,11 @@
   img {
     width: 200px;
     height: 50px;
+
+    @include vp-1023 {
+      width: 166px;
+      height: 42px;
+    }
   }
 
   &-description {
@@ -18,9 +23,16 @@
     transform: translateY(-50%);
     color: inherit;
 
-    // svg {
-    // width: 128.63px;
-    // height: 19.65px;
-    // }
+    @include vp-1023 {
+      right: 32px;
+      top: 27px;
+    }
+  }
+
+  & svg {
+    @include vp-1023 {
+      width: 111px;
+      height: 24px;
+    }
   }
 }

@@ -8,6 +8,12 @@
     min-height: 742px;
     // column-gap: 146px;
     border-radius: 0 0 56px  56px;
+
+    @include vp-1023 {
+      padding: 102px 54px 0;
+
+      min-height: 906px;
+    }
   }
 }
 
@@ -23,6 +29,12 @@
   font-variant: all-small-caps;
 
   color: $color-default-white;
+
+  @include vp-1023 {
+    margin: 56px 0 0;
+    font-size: 60px;
+    line-height: 70px;
+  }
 }
 
 .hero__image-wrapper {
@@ -32,9 +44,19 @@
   width: 431px;
   z-index: -1;
 
+  @include vp-1023 {
+    right: calc(50% - 336px);
+    bottom: 79px;
+  }
+
   img {
     width: 431px;
     height: 640px;
+
+    @include vp-1023 {
+      width: 437px;
+      height: 530px;
+    }
   }
 }
 
@@ -70,6 +92,14 @@
   flex-wrap: wrap;
   max-width: 1330px;
   counter-reset: item;
+
+  @include vp-1023 {
+    top: unset;
+    left: 0;
+    bottom: -220px;
+    min-height: 280px;
+    padding: 0 40px;
+  }
 }
 
 .hero__list-item {
@@ -85,6 +115,11 @@
 
   filter: drop-shadow(-4px 0 10px rgba(0, 0, 0, 0.25));
 
+  @include vp-1023 {
+    padding: 10px 33px 61px;
+    min-width: 344px;
+  }
+
   & p {
     margin: 0;
     width: 183px;
@@ -93,10 +128,21 @@
     line-height: 109%;
 
     color: $color-midnight-express-darker;
+
+    @include vp-1023 {
+      width: 240px;
+
+      font-size: 24px;
+      line-height: 100%;
+    }
   }
 
   &:not(:nth-child(4n + 1)) {
     margin-left: -30px;
+
+    @include vp-1023 {
+      margin-left: unset;
+    }
   }
 
   &:nth-child(n + 5) {
@@ -121,6 +167,60 @@
   &:nth-child(4n + 4) {
     padding-left: 68px;
     background-color: $color-pattens-blue;
+
+    @include vp-1023 {
+      padding-left: 33px;
+    }
+  }
+
+  @include vp-1023 {
+    &:nth-child(odd) {
+      min-width: calc(50% + 43px);
+    }
+
+    &:nth-child(even) {
+      margin-top: -20px;
+      margin-left: -43px;
+      // width: calc(50% + 21px - 10px);
+      width: 50%;
+    }
+
+    &:nth-child(n+3):nth-last-child(n+3) {
+      margin-top: -20px;
+      border-radius: 0;
+    }
+
+    &:nth-last-child(-n+2) {
+      border-radius: 0 0 20px 20px;
+      margin-top: 0;
+    }
+
+    &:nth-child(1) {
+      border-radius: 20px 20px 0 0;
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 20px 20px 0 0;
+      margin-top: 0;
+    }
+
+
+    &:last-child:not(:nth-child(even)) {
+      min-width: unset;
+      width: 100%;
+      margin-left: 0;
+      margin-top: -20px;
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: -20px;
+    }
+
+
+    &:not(:last-child) {
+      margin-top: -20px;
+    }
   }
 }
 
@@ -132,4 +232,18 @@
   font-weight: 700;
   color: $color-default-white;
   order: 1;
+
+  @include vp-1023 {
+    top: unset;
+    right: unset;
+    left: 34px;
+    bottom: 24px;
+    font-size: 28px;
+    line-height: 100%;
+  }
+}
+
+section:not(.hero),
+footer {
+  display: none;
 }
