@@ -6,6 +6,11 @@
   @media screen and (max-width: 767px) {
     padding: 4px 0 48px 0;
     width: 100%;
+    flex-grow: 1;
+  }
+
+  @include vp-1023 {
+    flex-grow: 1;
   }
 
   label {
@@ -34,9 +39,11 @@
       border-radius: 20px 0 0 20px;
       outline: none;
 
-      @media screen and (max-width: 767px) {
+      @include vp-1023 {
         max-width: unset;
         width: 100%;
+        padding-left: 36px;
+        min-height: 80px;
       }
 
       &::placeholder {

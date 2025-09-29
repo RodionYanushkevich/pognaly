@@ -9,6 +9,11 @@
   border-radius: 20px;
 
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+
+  @include vp-1023 {
+    width: 100%;
+    min-height: 140px;
+  }
 }
 
 .directions-card__wrapper {
@@ -18,6 +23,11 @@
   min-height: 89px;
   row-gap: 3px;
   justify-content: start;
+
+  @include vp-1023 {
+    padding: 30px 31.5px 0 30.42px;
+    row-gap: 5px;
+  }
 }
 
 .directions-card__title {
@@ -49,6 +59,10 @@
   column-gap: 12.24px;
   height: min-content;
   margin-top: 24px;
+
+  @include vp-1023 {
+    margin-top: 15px;
+  }
 }
 
 .directions-card__folowes {
@@ -66,4 +80,20 @@
   position: absolute;
   top: 23px;
   right: 165px;
+
+  img {
+
+    width: 70px;
+    height: 47px;
+  }
+
+  @include vp-1023 {
+    top: 16px;
+    right: 150px;
+
+    img {
+      width: 70px;
+      height: 47px;
+    }
+  }
 }

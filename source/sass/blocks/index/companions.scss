@@ -7,6 +7,14 @@
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+    @include vp-1023 {
+      flex-direction: column;
+      background-color: $color-blue-zodiac;
+      min-height: 1240px;
+      justify-content: flex-start;
+      border-radius: 0 0 56px 56px;
+    }
   }
 }
 
@@ -22,8 +30,20 @@
 
   color: $color-midnight-express-dark;
 
+  @include vp-1023 {
+    padding: 134px 0 93px 38px;
+    row-gap: 50px;
+    color: $color-default-white;
+    width: unset;
+    flex-grow: 0;
+  }
+
   .companions__title {
     line-height: 55px;
+
+    @include vp-1023 {
+      color: $color-default-white;
+    }
   }
 
   .companions__description {
@@ -35,6 +55,16 @@
     line-height: 138%;
 
     width: 516px;
+
+    @include vp-1023 {
+      width: 618px;
+      margin-left: 2px;
+      line-height: 142%;
+
+      br {
+        display: none;
+      }
+    }
   }
 
   .companions__sub-description {
@@ -44,12 +74,26 @@
     font-weight: 300;
     font-size: 22px;
     line-height: 109%;
+
+    @include vp-1023 {
+      margin: 24px 0 0 0;
+    }
   }
 
   .companions__link {
     margin-top: 69px;
     margin-left: 2px;
     width: 293.45px;
+
+    @include vp-1023 {
+      position: absolute;
+      margin: 0;
+      left: calc(50% - 310px);
+      bottom: 69px;
+      width: 616px;
+      // min-height: 82px;
+      padding: 0 20px 0 33px;
+    }
   }
 }
 
@@ -66,6 +110,12 @@
 
   border-radius: 0 0 56px  56px;
   background-color: $color-blue-zodiac;
+
+  @include vp-1023 {
+    padding: 0 42px 0 40px;
+    min-width: unset;
+    min-height: unset;
+  }
 }
 
 .companions__cards-item:nth-child(even) {

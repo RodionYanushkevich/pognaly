@@ -10,10 +10,27 @@
     border-radius: 0 0 56px  56px;
 
     @include vp-1023 {
-      padding: 102px 54px 0;
-
-      min-height: 906px;
+      // padding: 102px 54px 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0 0;
+      // min-height: 1185px;
+      z-index: 0;
+      // justify-content: end;
+      // background-color: $color-midnight-express;
     }
+  }
+}
+
+
+.hero__wrapper {
+  @include vp-1023 {
+    padding-top: 102px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 905px;
   }
 }
 
@@ -31,7 +48,7 @@
   color: $color-default-white;
 
   @include vp-1023 {
-    margin: 56px 0 0;
+    margin: 56px 54px 0;
     font-size: 60px;
     line-height: 70px;
   }
@@ -76,7 +93,33 @@
     width: 1440px;
     height: 742px;
   }
+
+  @include vp-1023 {
+    bottom: unset;
+    top: 0;
+    height: 906px;
+    width: 1440px;
+
+    left: calc(50% - 561px);
+
+    img {
+      width: 1440px;
+      height: 906px;
+    }
+  }
 }
+
+
+.hero__list-wrapper {
+  @include vp-1023 {
+    position: relative;
+    // top: -79px;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-midnight-express;
+  }
+}
+
 
 .hero__list {
   position: absolute;
@@ -94,17 +137,20 @@
   counter-reset: item;
 
   @include vp-1023 {
+    position: static;
+    width: 100%;
+    margin-top: -79px;
+    align-self: end;
     top: unset;
-    left: 0;
-    bottom: -200px;
-    // min-height: 280px;
     min-height: unset;
     padding: 0 40px;
+    background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
   }
 }
 
 .hero__list-item {
   position: relative;
+  overflow: visible;
   counter-increment: item;
   padding: 29.5px;
   padding-left: 34px;
@@ -195,7 +241,6 @@
     &:nth-child(even) {
       margin-top: -20px;
       margin-left: -43px;
-      // width: calc(50% + 21px - 10px);
       width: 50%;
     }
 
@@ -257,9 +302,4 @@
     font-size: 28px;
     line-height: 100%;
   }
-}
-
-section:not(.hero):not(.about),
-footer {
-  display: none;
 }

@@ -12,6 +12,12 @@
     justify-content: center;
     align-items: center;
     filter: drop-shadow(0 -5px 20px rgba(0, 0, 0, 0.25));
+
+    @include vp-1023 {
+
+      padding-top: 15px;
+      min-height: 140px;
+    }
   }
 }
 
@@ -21,6 +27,11 @@
   left: 58px;
   top: calc(50% - 23px);
   color: $color-midnight-express-dark;
+
+  @include vp-1023 {
+    left: 38px;
+    top: calc(50% - 15px);
+  }
 }
 
 .footer__social-list {

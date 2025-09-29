@@ -5,8 +5,7 @@
 
   .container {
     margin-top: 60px;
-    padding-top: 175px;
-    padding-bottom: 102px;
+    padding: 175px 0 102px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,6 +13,12 @@
     color: $color-default-white;
     background-color: $color-blue-zodiac;
     border-radius: 0 0 56px  56px;
+
+    @include vp-1023 {
+      padding: 147px 0 60px;
+      margin-top: 0;
+      row-gap: 38px;
+    }
   }
 }
 
@@ -23,6 +28,12 @@
   font-weight: 700;
   font-size: 95px;
   line-height: 47%;
+
+  @include vp-1023 {
+    font-size: 75px;
+    line-height: 60%;
+    font-variant: all-small-caps;
+  }
 }
 
 .registration__description {
@@ -36,17 +47,46 @@
   line-height: 111%;
 
   text-align: center;
+
+  br {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+
+
+  @include vp-1023 {
+    font-size: 24px;
+    line-height: 133%;
+    width: 705px;
+    padding-left: 14px;
+  }
 }
 
 .registration__description-link {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: $color-pale-cornflower-blue;
+
+  @include vp-1023 {
+    br {
+      display: none;
+    }
+  }
 }
 
 .registration__input-wrapper {
   display: flex;
   margin-top: 5px;
+
+  @include vp-1023 {
+    margin-top: 33px;
+    padding: 0 76px;
+    width: 100%;
+    display: flex;
+  }
 }
 
 .registration__submit-button {
@@ -54,8 +94,16 @@
   width: 330px;
 
   &.btn {
-
     padding: 0 35.97px 0 40.89px;
+
+    @include vp-1023 {
+      padding: 0 35.97px 0 33.89px;
+      width: min-content;
+
+      span {
+        display: none;
+      }
+    }
   }
 }
 
@@ -67,12 +115,26 @@
   font-size: 28px;
   line-height: 107%;
   letter-spacing: 0.01em;
+
+  @include vp-1023 {
+    margin-top: 39px;
+
+    font-size: 24px;
+    line-height: 125%;
+  }
 }
 
 .registration__buttons-wrapper {
   display: flex;
   column-gap: 105px;
   margin-left: 36px;
+
+  @include vp-1023 {
+    flex-direction: column;
+    margin-left: 75px;
+    margin-top: -15px;
+    align-self: start;
+  }
 }
 
 .registration__link {
@@ -85,6 +147,22 @@
   font-size: 28px;
   line-height: 100%;
   text-transform: uppercase;
+
+  @include vp-1023 {
+    column-gap: 23px;
+
+    span:last-child {
+      position: relative;
+      top: 4px;
+    }
+
+    &:last-child {
+      svg {
+        width: 35px;
+        height: 50px;
+      }
+    }
+  }
 }
 
 .registration__link-icon-container {
@@ -96,4 +174,15 @@
   flex-shrink: 0;
   border-radius: 50%;
   background-color: $color-midnight-express-darkerer;
+
+  @include vp-1023 {
+
+
+    width: 68px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

@@ -13,8 +13,7 @@
     border-radius: 0 0 56px  56px;
 
     @include vp-1023 {
-
-      padding: 365px 40px  72px;
+      padding: 165px 40px  88px;
     }
   }
 }
@@ -86,6 +85,18 @@
   img {
     width: 654.19px;
     height: 665px;
+  }
+
+  @include vp-1023 {
+    position: absolute;
+    width: 368px;
+    height: 546px;
+    right: 8px;
+
+    img {
+      width: 368px;
+      height: 546px;
+    }
   }
 }
 
