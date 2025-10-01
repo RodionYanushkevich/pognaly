@@ -42,15 +42,15 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
-            ul.header__contacts-list
-              li.header__contacts-list-item
-                a.header__contacts-link(
+            ul.main-nav__contacts-list
+              li.main-nav__contacts-list-item
+                a.main-nav__contacts-link(
                   href="tel:+78005558628",
                   aria-label="Позвонить 8 800 555-86-28",
                   title="Позвонить нам")
                     +icon("header-phone", 18, 18)
-              li.header__contacts-list-item
-                a.header__contacts-link(
+              li.main-nav__contacts-list-item
+                a.main-nav__contacts-link(
                   href="mailto:example@mail.com",
                   aria-label="Написать на example@mail.com",
                   title="Написать на example@mail.com")

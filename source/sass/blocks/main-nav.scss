@@ -1,6 +1,5 @@
 .main-nav {
   &__list {
-    top: 2px;
     display: flex;
     margin: 0;
     padding: 0;
@@ -8,6 +7,10 @@
     list-style: none;
     flex-wrap: wrap;
     max-width: 705px;
+
+    @include vp-1023 {
+      flex-direction: column;
+    }
   }
 
 
@@ -15,7 +18,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 40px 0;
     // min-height: 100px;
     z-index: 2;
     width: 100%;
@@ -23,31 +25,54 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px;
 
     transition-property: background-color;
+    transition-delay: 0;
     transition-duration: 0.3s;
     transition-timing-function: $tf-default;
     background-color: transparent;
 
 
     &__container {
-      border: none;
-      transition-delay: 0.3s;
+      transition: transform $trans-default,
+        background-color $trans-default;
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 0;
+      padding: 105px 40px;
       width: 100%;
-      height: 587px;
+      min-height: 587px;
       max-width: unset;
-      background-color: transparent;
+      color: $color-midnight-express-dark;
+      background-color: $color-default-white;
       transform: translateY(-100%);
+      border-radius: 0 0 20px 20px;
+
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 19px;
+        background-color: $color-midnight-express-darkerer;
+        border-radius: 0 0 20px 20px;
+      }
     }
 
     &--is-open {
-      background-color: $color-default-white;
+      // background-color: $color-default-white;
+      background-color: green;
 
       .main-nav__container {
-        // transform: translateY(-40px);
+        transition-delay: 0.3s;
+
+        transform: translateY(0);
+
         background-color: $color-default-white;
 
         // &__list {
@@ -60,11 +85,18 @@
 
 
   &__link {
-    color: $color-default-white;
+    color: inherit;
 
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
+
+    @include vp-1023 {
+
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 143%;
+    }
 
     &.is-active {
       opacity: 0.6;
@@ -76,30 +108,41 @@
 
     @include vp-1023 {
       box-sizing: content-box;
+      display: flex;
       position: relative;
-      background-color: $color-transparent;
+      align-items: center;
+      justify-content: center;
+
 
       width: 25px;
       height: 25px;
       padding: 10px;
 
-      z-index: 1;
+      background-color: $color-transparent;
+      border: none;
       cursor: pointer;
-      border: 1px solid black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      z-index: 1;
+
 
       svg {
+        transition: transform $trans-default,
+          opacity $trans-default;
         position: absolute;
         left: 10px;
         top: 16px;
         width: 25px;
         height: 17px;
         opacity: 0;
+        transform: rotate(0) scale(0);
 
         &:last-child {
+          width: 30px;
+          height: 30px;
+          left: 7px;
+          top: 9px;
+          color: #cccccc;
           opacity: 1;
+          transform: rotate(0) scale(1);
         }
       }
     }
@@ -108,13 +151,41 @@
     &--is-closed {
       svg {
         &:first-child {
+          transform: rotate(360deg) scale(1);
+
           opacity: 1;
         }
 
         &:last-child {
+          transform: rotate(360deg) scale(0);
           opacity: 0;
         }
       }
     }
+  }
+
+  .main-nav__contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    gap: 7px;
+    order: 1;
+
+    @include vp-1023 {
+    }
+  }
+
+  .main-nav__contacts-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $color-jordy-blue;
   }
 }
