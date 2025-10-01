@@ -3,6 +3,8 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import {initDirectionSwiper} from './modules/swiper/direction-swiper';
+import {initMenuToggle} from './modules/menu-toggle/menu-toggle';
 import {initMap} from './modules/map/yandex-map';
 
 // ---------------------------------
@@ -29,6 +31,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    initMenuToggle()
+    initDirectionSwiper();
 
     await initMap();
   });

@@ -124,14 +124,26 @@
   @include vp-1023 {
     bottom: unset;
     top: 0;
-    height: 906px;
     width: 1440px;
+    height: 906px;
 
     left: calc(50% - 561px);
 
     img {
       width: 1440px;
       height: 906px;
+    }
+  }
+
+  @include vp-767 {
+    bottom: 0;
+    left: calc(50% - 383px);
+    width: 767px;
+    height: 628px;
+
+    img {
+      width: 767px;
+      height: 628px;
     }
   }
 }

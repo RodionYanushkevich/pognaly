@@ -16,6 +16,7 @@
   }
 
   @include vp-767 {
+    width: 270px;
     min-height: 197.47px;
     flex-direction: column;
     background-color: $color-transparent;
@@ -59,7 +60,6 @@
 
   @include vp-767 {
     font-size: 21px;
-
   }
 }
 
