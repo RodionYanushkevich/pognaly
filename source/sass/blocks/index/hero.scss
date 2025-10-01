@@ -8,13 +8,45 @@
     min-height: 742px;
     // column-gap: 146px;
     border-radius: 0 0 56px  56px;
+
+    @include vp-1023 {
+      // padding: 102px 54px 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0 0;
+      // min-height: 1185px;
+      z-index: 0;
+      // justify-content: end;
+      // background-color: $color-midnight-express;
+    }
+
+    // @include vp-767 {
+
+
+    // }
+  }
+}
+
+
+.hero__wrapper {
+  @include vp-1023 {
+    padding-top: 102px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 905px;
+  }
+
+  @include vp-767 {
+
+    min-height: 626px;
   }
 }
 
 .hero__title {
-  margin: 0;
+  margin: 87px 0 0;
   padding: 0;
-  margin-top: 90px;
   width: 512px;
 
   font-weight: 700;
@@ -24,71 +56,309 @@
   font-variant: all-small-caps;
 
   color: $color-default-white;
+
+  @include vp-1023 {
+    margin: 56px 54px 0;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @include vp-767 {
+    margin: 0 25px 0 25px;
+    width: unset;
+    font-size: 36px;
+    line-height: 111%;
+  }
 }
 
 .hero__image-wrapper {
   position: absolute;
-  bottom: -1px;
-  right: 272px;
+  bottom: 0;
+  right: 275px;
   width: 431px;
   z-index: -1;
+
+  @include vp-1023 {
+    right: calc(50% - 336px);
+    bottom: 79px;
+  }
+
+  @include vp-767 {
+    right: calc(50% - 356px);
+    bottom: 111px;
+  }
 
   img {
     width: 431px;
     height: 640px;
-    // max-width: unset;
+
+    @include vp-1023 {
+      width: 437px;
+      height: 530px;
+    }
+
+    @include vp-767 {
+      width: 192px;
+      height: 255px;
+    }
   }
 }
 
 .hero__background-wrapper {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
+  height: 100%;
   z-index: -2;
+  background-color: $color-chambray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0 0 56px  56px;
 
   img {
-    // min-width: 1440px;
     width: 1440px;
     height: 742px;
   }
+
+  @include vp-1023 {
+    bottom: unset;
+    top: 0;
+    height: 906px;
+    width: 1440px;
+
+    left: calc(50% - 561px);
+
+    img {
+      width: 1440px;
+      height: 906px;
+    }
+  }
 }
 
+
+.hero__list-wrapper {
+  @include vp-1023 {
+    position: relative;
+    // top: -79px;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-midnight-express;
+  }
+}
+
+
 .hero__list {
+  position: absolute;
+  top: 520px;
+  left: 60px;
+  min-height: 107px;
+  height: min-content;
   padding: 0;
   margin: 0;
-
   list-style-type: none;
+
   display: flex;
   flex-wrap: wrap;
+  max-width: 1330px;
   counter-reset: item;
+
+  @include vp-1023 {
+    position: static;
+    width: 100%;
+    margin-top: -79px;
+    align-self: end;
+    top: unset;
+    min-height: unset;
+    padding: 0 40px;
+    background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
+  }
+
+  @include vp-767 {
+    padding: 0 26px;
+    margin-top: -116px;
+    background: linear-gradient(to bottom, $color-transparent 116px, $color-midnight-express 116px);
+  }
 }
 
 .hero__list-item {
+  position: relative;
+  overflow: visible;
   counter-increment: item;
+  padding: 29.5px;
+  padding-left: 34px;
+  min-width: 352.4px;
+
   display: flex;
   align-items: center;
-  min-height: 107px;
+
   border-radius: 20px;
+
+  filter: drop-shadow(-4px 0 10px rgba(0, 0, 0, 0.25));
+
+  @include vp-1023 {
+    padding: 10px 33px 61px;
+    min-width: 344px;
+  }
+
+  & p {
+    margin: 0;
+    width: 183px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 109%;
+
+    color: $color-midnight-express-darker;
+
+    @include vp-1023 {
+      width: 195px;
+
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+      width: 150px;
+    }
+  }
+
+  &:not(:nth-child(4n + 1)) {
+    margin-left: -30px;
+
+    @include vp-1023 {
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(n + 5) {
+    margin-top: -20px;
+  }
 
   &:nth-child(4n + 1) {
     background-color: $color-picton-blue;
   }
 
   &:nth-child(4n + 2) {
+    padding-left: 22px;
     background-color: $color-jordy-blue;
   }
 
   &:nth-child(4n + 3) {
+    padding-left: 46px;
     background-color: $color-pale-cornflower-blue;
   }
 
   &:nth-child(4n + 4) {
+    padding-left: 68px;
     background-color: $color-pattens-blue;
+  }
+
+  @include vp-1023 {
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3),
+    &:nth-child(4n + 4) {
+      padding-left: 33px;
+    }
+  }
+
+  @include vp-1023 {
+    filter: none;
+    min-height: 140px;
+    padding-bottom: 40px;
+
+    &:nth-child(odd) {
+      min-width: calc(50% + 43px);
+    }
+
+    &:nth-child(even) {
+      margin-top: -20px;
+      margin-left: -43px;
+      width: 50%;
+    }
+
+    &:nth-child(n+3):nth-last-child(n+3) {
+      margin-top: 0;
+      border-radius: 0;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-radius: 20px 20px 0 0;
+      margin-top: 0;
+    }
+
+    &:nth-last-child(-n+2) {
+      border-radius: 0 0 20px 20px;
+      margin-top: 0;
+    }
+
+    &:last-child:not(:nth-child(even)) {
+      min-width: unset;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  @include vp-767 {
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+    min-height: 80px;
+    padding-bottom: 0;
+    filter: none;
+    border-radius: 10px;
+    align-items: flex-start;
+
+    &:not(:nth-child(4n + 1)),
+    &:nth-child(even),
+    &:last-child:not(:nth-child(even)) {
+      border-radius: 10px;
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    &:nth-child(n + 5),
+    &:nth-child(n + 3) {
+      margin: 0;
+      padding-left: 24px;
+      padding-top: 24px;
+    }
+
+    &:not(:last-child) {
+      border-radius: 10px;
+      margin-bottom: -21px;
+      min-height: 100px;
+      padding-left: 24px;
+      padding-top: 24px;
+    }
   }
 }
 
 .hero__list-item::before {
+  position: absolute;
+  top: 25px;
+  right: 71px;
   content: counter(item);
   font-weight: 700;
   color: $color-default-white;
+  order: 1;
+
+  @include vp-1023 {
+    top: unset;
+    right: unset;
+    left: 34px;
+    bottom: 22px;
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  @include vp-767 {
+    left: unset;
+    bottom: unset;
+    top: 22px;
+    right: 19px;
+
+    font-size: 18px;
+  }
 }

@@ -7,18 +7,52 @@
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+    @include vp-1023 {
+      position: relative;
+      background-color: $color-solitude;
+      min-height: 1105px;
+      flex-direction: column;
+      border-radius: 0 0 56px 56px;
+    }
+
+    @include vp-767 {
+      flex-direction: column;
+      border-radius: 0 0 30px 30px;
+      row-gap: 40px;
+      min-height: 1050px;
+      justify-content: flex-start;
+    }
   }
 }
 
 .directions__swiper-wrapper {
-  padding-top: 60px;
-
+  padding: 155px 68.71px 157px 72.08px;
   min-width: 749px;
+  min-height: 765px;
   // flex-shrink: 0;
   order: -1;
   border-radius: 0 0 56px  56px;
   background-color: $color-solitude;
-  min-height: 793px;
+
+  @include vp-1023 {
+    padding: 71px 75.88px 274px 74px;
+
+    order: 1;
+  }
+
+  @include vp-767 {
+    padding: 0 26px 0 24px;
+    row-gap: 26px;
+    min-width: unset;
+    min-height: unset;
+  }
+}
+
+.directions__card-item {
+  @include vp-767 {
+    position: relative;
+  }
 }
 
 .directions__description-wrapper {
@@ -30,9 +64,45 @@
   flex-direction: column;
   row-gap: 33px;
 
+  @include vp-1023 {
+    width: 100%;
+    padding: 121px 73px 1px;
+    row-gap: 56.5px;
+  }
+
+  @include vp-767 {
+    padding: 114px 20px 1px 25px;
+    row-gap: 26px;
+    flex-grow: 0;
+  }
+
   .directions__link {
     margin-top: 122px;
+    margin-left: 7px;
     width: 298.75px;
+
+    @include vp-1023 {
+      position: absolute;
+      margin: 0;
+      margin-left: 3px;
+
+      bottom: 99px;
+      width: calc(100% - 150px);
+      min-height: 82px;
+      padding: 0 20px 0 33px;
+    }
+
+    @include vp-767 {
+      width: 270px;
+      bottom: 52px;
+      margin-left: 0;
+
+      min-height: 65.12px;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 100%;
+      padding: 0 20px 0 23px;
+    }
   }
 }
 
@@ -45,6 +115,17 @@
 
   font-variant: all-small-caps;
   color: $color-midnight-express-dark;
+
+  @include vp-1023 {
+    font-weight: 700;
+    font-size: 95px;
+    line-height: 47%;
+  }
+
+  @include vp-767 {
+    font-size: 44px;
+    line-height: 55%;
+  }
 }
 
 .directions__description {
@@ -53,10 +134,34 @@
   font-weight: 500;
   font-size: 23px;
   line-height: 143%;
+  width: 489px;
+
+
+  @include vp-1023 {
+    font-size: 24px;
+    line-height: 138%;
+    width: 617px;
+    margin-left: 2px;
+  }
+
+  @include vp-767 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    width: unset;
+    margin: 0 5px 0 0;
+
+    br {
+      display: none;
+    }
+  }
 }
 
 .directions__list {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }

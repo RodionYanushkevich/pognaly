@@ -6,6 +6,17 @@
   @media screen and (max-width: 767px) {
     padding: 4px 0 48px 0;
     width: 100%;
+    flex-grow: 1;
+  }
+
+  @include vp-1023 {
+    flex-grow: 1;
+    margin-right: -10px;
+  }
+
+
+  @include vp-767 {
+    padding: 0;
   }
 
   label {
@@ -34,9 +45,17 @@
       border-radius: 20px 0 0 20px;
       outline: none;
 
-      @media screen and (max-width: 767px) {
+      @include vp-1023 {
         max-width: unset;
         width: 100%;
+        padding-left: 36px;
+        min-height: 80px;
+      }
+
+      @include vp-767 {
+        padding-left: 25px;
+        min-height: 62px;
+        border-radius: 10px 0 0 10px;
       }
 
       &::placeholder {
@@ -45,6 +64,11 @@
         line-height: 100%;
         color: $color-accent-main;
         opacity: 0.3;
+
+        @include vp-767 {
+          font-size: 18px;
+          line-height: 100%;
+        }
       }
       // &:hover {
       //   border: 2px solid rgba(#000000, 0.5);

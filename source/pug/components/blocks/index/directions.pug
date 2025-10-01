@@ -5,21 +5,21 @@ mixin directions()
         name: "Тайланд",
         description: "Джунгли зовут!",
         followersCount: "18321",
-        flag: "thai-flag",
+        flag: "thai-big-flag",
         image: "thai-image"
       },
       {
         name: "Франция",
         description: "Трэ бьен, манифик!",
         followersCount: "12518",
-        flag: "france-flag",
+        flag: "france-big-flag",
         image: "france-image"
       },
       {
         name: "Чехия",
         description: "Закоулки старой Европы",
         followersCount: "5326",
-        flag: "czech-flag",
+        flag: "czech-big-flag",
         image: "czech-image"
       },
     ]
@@ -30,6 +30,7 @@ mixin directions()
         h2.directions__title Направления
         p.directions__description
           | Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем.
+          br
           | Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
         +btn({
           href: "#",
@@ -40,15 +41,13 @@ mixin directions()
             each country in countries
               li.directions__card-item
                 .directions-card
-                  .directions-card-wrapper
+                  .directions-card__wrapper
                     h3.directions-card__title!=country.name
                     p.directions-card__description!=country.description
                     .directions-card__icon-wrapper
                       +icon("user-icon",20,20)
                       p.directions-card__folowes!=country.followersCount
-                  .directions-card-image-wrapper
-                    svg(width="70", height="47", aria-hidden="true")
-                      use(xlink:href=`img/content/flags/${country.flag}.svg`)
+                  .directions-card__image-wrapper
                     +adaptivePicture({
                       path:"content/directions",
                       imageBaseName: country.image,
@@ -59,5 +58,17 @@ mixin directions()
                       mobileWidth: 270,
                       mobileHeight: 111,
                       alt:"изображение города"
+                      })
+                  .directions-card__flag-wrapper
+                    +adaptivePicture({
+                      path:"content/flags/swiper-countries",
+                      imageBaseName: country.flag,
+                      width: 70,
+                      height: 47,
+                      hasTablet:false,
+                      hasMobile:true,
+                      mobileWidth: 35,
+                      mobileHeight: 24,
+                      alt:`${country.name} флаг`
                       })
 

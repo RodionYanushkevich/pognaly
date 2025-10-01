@@ -1,28 +1,112 @@
 .directions-card {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  width: 608.37px;
+  min-height: 140px;
+
+  background-color: $color-default-white;
+  border-radius: 20px;
+
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+
+  @include vp-1023 {
+    width: 100%;
+    min-height: 140px;
+  }
+
+  @include vp-767 {
+    min-height: 197.47px;
+    flex-direction: column;
+    background-color: $color-transparent;
+  }
 }
 
-.directions-card-wrapper {
+.directions-card__wrapper {
   display: flex;
   flex-direction: column;
+  padding: 24px 31.5px 0 31.5px;
+  min-height: 89px;
+  row-gap: 3px;
+  justify-content: start;
+
+  @include vp-1023 {
+    padding: 30px 31.5px 0 30.42px;
+    row-gap: 5px;
+  }
+
+  @include vp-767 {
+    padding: 27.75px 0 21px 24px;
+
+    background-color: $color-default-white;
+    border-radius: 9px;
+    margin-top: 104px;
+    z-index: 15;
+    row-gap: 5px;
+    height: min-content;
+  }
 }
 
 .directions-card__title {
   margin: 0;
   padding: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+
+  color: $color-default-black;
+
+
+  @include vp-767 {
+    font-size: 21px;
+
+  }
 }
 
 .directions-card__description {
   margin: 0;
   padding: 0;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+
+  color: $color-accent-main;
+
+  opacity: 0.3;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 112%;
+  }
 }
 
 .directions-card__icon-wrapper {
   display: flex;
+  align-items: center;
+  column-gap: 12.24px;
+  height: min-content;
+  margin-top: 24px;
+
+  @include vp-1023 {
+    margin-top: 15px;
+  }
+
+  @include vp-767 {
+    position: absolute;
+    left: 186px;
+    bottom: 43px;
+    column-gap: 7.52px;
+
+    svg {
+      width: 16px;
+      height: 12px;
+    }
+  }
 }
 
 .directions-card__folowes {
+  margin: 0;
 
   font-weight: 500;
   font-size: 20px;
@@ -30,4 +114,58 @@
   color: $color-midnight-express-darker;
 
   opacity: 0.3;
+
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+
+.directions-card__flag-wrapper {
+  position: absolute;
+  top: 23px;
+  right: 165px;
+
+  img {
+
+    width: 70px;
+    height: 47px;
+  }
+
+  @include vp-1023 {
+    top: 16px;
+    right: 150px;
+
+    img {
+      width: 70px;
+      height: 47px;
+    }
+  }
+
+  @include vp-767 {
+    top: 90px;
+    right: unset;
+    left: 26px;
+    z-index: 15;
+
+    img {
+      width: 35px;
+      height: 24px;
+    }
+  }
+}
+
+.directions-card__image-wrapper {
+  @include vp-767 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+    img {
+      width: 270px;
+      height: 110px;
+    }
+  }
 }

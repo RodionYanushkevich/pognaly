@@ -9,18 +9,30 @@
   img {
     width: 200px;
     height: 50px;
+
+    @include vp-1023 {
+      width: 166px;
+      height: 42px;
+    }
   }
 
   &-description {
     position: absolute;
-    right: -2px;
+    right: -3px;
     top: 30px;
     transform: translateY(-50%);
     color: inherit;
 
-    & svg {
-      width: 134px;
-      height: 25px;
+    @include vp-1023 {
+      right: 32px;
+      top: 27px;
+    }
+  }
+
+  & svg {
+    @include vp-1023 {
+      width: 111px;
+      height: 24px;
     }
   }
 }

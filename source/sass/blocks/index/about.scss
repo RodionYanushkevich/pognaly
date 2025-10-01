@@ -4,13 +4,24 @@
   margin-top: -60px;
 
   .container {
-    padding-top: 140px;
+    padding: 140px 72px 0 72px;
     display: flex;
     justify-content: space-between;
     color: $color-default-white;
     background-color: $color-midnight-express;
-
+    min-height: 818px;
     border-radius: 0 0 56px  56px;
+
+    @include vp-1023 {
+      padding: 165px 40px  88px;
+    }
+
+    @include vp-767 {
+      padding: 106px 20px  24px 27px;
+      min-height: 431px;
+      border-radius: 0 0 30px  30px;
+
+    }
   }
 }
 
@@ -20,6 +31,17 @@
   flex-direction: column;
   row-gap: 19px;
   // min-height: 515px;
+  @include vp-1023 {
+
+    row-gap: 29px;
+  }
+
+  @include vp-767 {
+    width: unset;
+    position: relative;
+    z-index: 19;
+    row-gap: 25px;
+  }
 }
 
 .about__title {
@@ -32,6 +54,13 @@
   font-variant: all-small-caps;
 
   color: inherit;
+
+  @include vp-767 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 48%;
+    margin: 0;
+  }
 }
 
 .about__description {
@@ -42,29 +71,93 @@
   line-height: 142%;
 
   color: inherit;
+
+  @include vp-1023 {
+    margin-left: 7px;
+    width: 446px;
+    line-height: 138%;
+  }
+
+  @include vp-767 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    width: unset;
+    margin: 0;
+  }
 }
 
 .about__note {
-  padding: 0;
-  margin: 0;
-  margin-top: 49px;
-
+  margin: 40px 0 0;
+  width: 503px;
   font-weight: 200;
   font-size: 22px;
   line-height: 109%;
 
   color: inherit;
+
+  @include vp-1023 {
+    margin: 75px 0 0 6px;
+    width: 365px;
+    font-family: $ff-second;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 119%;
+  }
+
+  @include vp-767 {
+    margin: 14px 0 0;
+    width: unset;
+    font-size: 14px;
+    line-height: 157%;
+  }
 }
 
 .about__image-container {
-  margin-right: 11px;
+  height: 665px;
+  align-self: flex-end;
 
   img {
     width: 654.19px;
     height: 665px;
   }
+
+  @include vp-1023 {
+    position: absolute;
+    width: 368px;
+    height: 546px;
+    right: 8px;
+
+    img {
+      width: 368px;
+      height: 546px;
+    }
+  }
+
+  @include vp-767 {
+    left: 0;
+    bottom: 0;
+    width: 292px;
+    height: 353px;
+
+    img {
+      width: 292px;
+      height: 353px;
+    }
+  }
 }
 
 .about__link {
-  margin-top: 137px;
+  margin-top: 117px;
+
+  @include vp-1023 {
+    margin-left: 7px;
+    width: 276px;
+  }
+
+  @include vp-767 {
+    margin: 18px 0 0 3px;
+    width: 263px;
+    min-height: 76px;
+  }
 }
