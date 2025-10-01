@@ -19,6 +19,12 @@
       margin-top: 0;
       row-gap: 38px;
     }
+
+    @include vp-767 {
+      padding: 83px 20px 48px 22px;
+      border-radius: 0 0 30px  30px;
+      row-gap: 15px;
+    }
   }
 }
 
@@ -34,6 +40,13 @@
     line-height: 60%;
     font-variant: all-small-caps;
   }
+
+  @include vp-767 {
+    font-size: 24px;
+    line-height: 100%;
+
+    font-variant: unset;
+  }
 }
 
 .registration__description {
@@ -48,20 +61,41 @@
 
   text-align: center;
 
-  br {
-    display: none;
-
-    @include vp-1023 {
-      display: block;
-    }
-  }
-
-
   @include vp-1023 {
     font-size: 24px;
     line-height: 133%;
     width: 705px;
     padding-left: 14px;
+  }
+
+  @include vp-767 {
+    font-size: 13px;
+    line-height: 169%;
+    padding-left: 23px;
+    width: unset;
+  }
+
+  br {
+    &:last-of-type {
+      display: none;
+    }
+
+
+    @include vp-1023 {
+      &:first-of-type {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      &:first-of-type {
+        display: block;
+      }
+
+      &:last-of-type {
+        display: none;
+      }
+    }
   }
 }
 
@@ -69,12 +103,6 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: $color-pale-cornflower-blue;
-
-  @include vp-1023 {
-    br {
-      display: none;
-    }
-  }
 }
 
 .registration__input-wrapper {
@@ -84,6 +112,14 @@
   @include vp-1023 {
     margin-top: 33px;
     padding: 0 76px;
+    width: 100%;
+    display: flex;
+  }
+
+  @include vp-767 {
+    margin-top: 14px;
+    // margin: 14px 10px 0 0;
+    padding: 0 8px 0  0;
     width: 100%;
     display: flex;
   }
@@ -104,6 +140,13 @@
         display: none;
       }
     }
+
+    @include vp-767 {
+      padding: 22px 25px;
+      min-height: 62px;
+      border-radius: 10px;
+      z-index: 15;
+    }
   }
 }
 
@@ -122,6 +165,16 @@
     font-size: 24px;
     line-height: 125%;
   }
+
+  @include vp-767 {
+    width: 212px;
+
+    margin-top: 17px;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 157%;
+    text-align: center;
+  }
 }
 
 .registration__buttons-wrapper {
@@ -134,6 +187,11 @@
     margin-left: 75px;
     margin-top: -15px;
     align-self: start;
+  }
+
+  @include vp-767 {
+    margin: 0;
+    row-gap: 1px;
   }
 }
 
@@ -163,6 +221,24 @@
       }
     }
   }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 138%;
+    column-gap: 16px;
+
+    span:last-child {
+      position: relative;
+      top: 1px;
+    }
+
+    &:last-child {
+      svg {
+        width: 25px;
+        height: 24px;
+      }
+    }
+  }
 }
 
 .registration__link-icon-container {
@@ -176,13 +252,20 @@
   background-color: $color-midnight-express-darkerer;
 
   @include vp-1023 {
-
-
     width: 68px;
 
     svg {
       width: 30px;
       height: 30px;
+    }
+  }
+
+  @include vp-767 {
+    width: 45px;
+
+    svg {
+      width: 18px;
+      height: 18px;
     }
   }
 }

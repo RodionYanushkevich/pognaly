@@ -19,6 +19,11 @@
       // justify-content: end;
       // background-color: $color-midnight-express;
     }
+
+    // @include vp-767 {
+
+
+    // }
   }
 }
 
@@ -31,6 +36,11 @@
     flex-direction: column;
     overflow: hidden;
     min-height: 905px;
+  }
+
+  @include vp-767 {
+
+    min-height: 626px;
   }
 }
 
@@ -52,6 +62,13 @@
     font-size: 60px;
     line-height: 70px;
   }
+
+  @include vp-767 {
+    margin: 0 25px 0 25px;
+    width: unset;
+    font-size: 36px;
+    line-height: 111%;
+  }
 }
 
 .hero__image-wrapper {
@@ -66,6 +83,11 @@
     bottom: 79px;
   }
 
+  @include vp-767 {
+    right: calc(50% - 356px);
+    bottom: 111px;
+  }
+
   img {
     width: 431px;
     height: 640px;
@@ -73,6 +95,11 @@
     @include vp-1023 {
       width: 437px;
       height: 530px;
+    }
+
+    @include vp-767 {
+      width: 192px;
+      height: 255px;
     }
   }
 }
@@ -146,6 +173,12 @@
     padding: 0 40px;
     background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
   }
+
+  @include vp-767 {
+    padding: 0 26px;
+    margin-top: -116px;
+    background: linear-gradient(to bottom, $color-transparent 116px, $color-midnight-express 116px);
+  }
 }
 
 .hero__list-item {
@@ -183,13 +216,18 @@
       font-size: 24px;
       line-height: 100%;
     }
+
+    @include vp-767 {
+      font-size: 18px;
+      width: 150px;
+    }
   }
 
   &:not(:nth-child(4n + 1)) {
     margin-left: -30px;
 
     @include vp-1023 {
-      margin-left: unset;
+      margin-left: 0;
     }
   }
 
@@ -203,34 +241,29 @@
 
   &:nth-child(4n + 2) {
     padding-left: 22px;
-
     background-color: $color-jordy-blue;
-
-    @include vp-1023 {
-      padding-left: 33px;
-    }
   }
 
   &:nth-child(4n + 3) {
     padding-left: 46px;
     background-color: $color-pale-cornflower-blue;
-
-    @include vp-1023 {
-      padding-left: 33px;
-    }
   }
 
   &:nth-child(4n + 4) {
     padding-left: 68px;
     background-color: $color-pattens-blue;
+  }
 
-    @include vp-1023 {
+  @include vp-1023 {
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3),
+    &:nth-child(4n + 4) {
       padding-left: 33px;
     }
   }
 
   @include vp-1023 {
-    filter: unset;
+    filter: none;
     min-height: 140px;
     padding-bottom: 40px;
 
@@ -247,40 +280,57 @@
     &:nth-child(n+3):nth-last-child(n+3) {
       margin-top: 0;
       border-radius: 0;
-      min-height: 140px;
     }
 
-
-    &:not(:last-child) {
-      margin-top: -20px;
-    }
-
-    &:nth-child(1) {
-      border-radius: 20px 20px 0 0;
-      margin-top: 0;
-    }
-
+    &:nth-child(1),
     &:nth-child(2) {
       border-radius: 20px 20px 0 0;
       margin-top: 0;
     }
 
+    &:nth-last-child(-n+2) {
+      border-radius: 0 0 20px 20px;
+      margin-top: 0;
+    }
 
     &:last-child:not(:nth-child(even)) {
       min-width: unset;
       width: 100%;
       margin-left: 0;
-      margin-top: -20px;
     }
+  }
 
-    &:nth-child(n + 3) {
-      margin-top: -20px;
-    }
+  @include vp-767 {
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+    min-height: 80px;
+    padding-bottom: 0;
+    filter: none;
+    border-radius: 10px;
+    align-items: flex-start;
 
-    &:nth-last-child(-n+2) {
-      border-radius: 0 0 20px 20px;
+    &:not(:nth-child(4n + 1)),
+    &:nth-child(even),
+    &:last-child:not(:nth-child(even)) {
+      border-radius: 10px;
+      margin-left: 0;
       margin-top: 0;
-      padding-bottom: 40px;
+    }
+
+    &:nth-child(n + 5),
+    &:nth-child(n + 3) {
+      margin: 0;
+      padding-left: 24px;
+      padding-top: 24px;
+    }
+
+    &:not(:last-child) {
+      border-radius: 10px;
+      margin-bottom: -21px;
+      min-height: 100px;
+      padding-left: 24px;
+      padding-top: 24px;
     }
   }
 }
@@ -301,5 +351,14 @@
     bottom: 22px;
     font-size: 28px;
     line-height: 100%;
+  }
+
+  @include vp-767 {
+    left: unset;
+    bottom: unset;
+    top: 22px;
+    right: 19px;
+
+    font-size: 18px;
   }
 }

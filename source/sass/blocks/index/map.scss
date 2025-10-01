@@ -28,6 +28,13 @@
     row-gap: 44px;
     flex-direction: column;
   }
+
+  @include vp-767 {
+    padding: 95px 24px 31px 26px;
+    min-height: 238px;
+    row-gap: 33px;
+    border-radius: 0 20px 20px;
+  }
 }
 
 .map__address-icon-container {
@@ -48,6 +55,15 @@
       height: 31.8px;
     }
   }
+
+  @include vp-767 {
+    width: 45px;
+
+    svg {
+      width: 21px;
+      height: 21px;
+    }
+  }
 }
 
 .map__address-button {
@@ -64,6 +80,11 @@
     column-gap: 26px;
     width: 618px;
   }
+
+  @include vp-767 {
+    column-gap: 16px;
+    width: unset;
+  }
 }
 
 .map__address {
@@ -77,6 +98,12 @@
     position: relative;
     top: 2px;
   }
+
+  @include vp-767 {
+    text-align: start;
+    font-size: 16px;
+    line-height: 138%;
+  }
 }
 
 .map__button {
@@ -87,6 +114,18 @@
 
   @include vp-1023 {
     width: 100%;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    min-height: 62px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+    line-height: 100%;
   }
 }
 
@@ -101,6 +140,10 @@
   @include vp-1023 {
     min-width: unset;
     height: 584px;
+  }
+
+  @include vp-767 {
+    height: 472px;
   }
 }
 

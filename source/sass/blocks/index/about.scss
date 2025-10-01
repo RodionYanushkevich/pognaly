@@ -15,6 +15,13 @@
     @include vp-1023 {
       padding: 165px 40px  88px;
     }
+
+    @include vp-767 {
+      padding: 106px 20px  24px 27px;
+      min-height: 431px;
+      border-radius: 0 0 30px  30px;
+
+    }
   }
 }
 
@@ -28,6 +35,13 @@
 
     row-gap: 29px;
   }
+
+  @include vp-767 {
+    width: unset;
+    position: relative;
+    z-index: 19;
+    row-gap: 25px;
+  }
 }
 
 .about__title {
@@ -40,6 +54,13 @@
   font-variant: all-small-caps;
 
   color: inherit;
+
+  @include vp-767 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 48%;
+    margin: 0;
+  }
 }
 
 .about__description {
@@ -55,6 +76,14 @@
     margin-left: 7px;
     width: 446px;
     line-height: 138%;
+  }
+
+  @include vp-767 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    width: unset;
+    margin: 0;
   }
 }
 
@@ -75,10 +104,16 @@
     font-size: 21px;
     line-height: 119%;
   }
+
+  @include vp-767 {
+    margin: 14px 0 0;
+    width: unset;
+    font-size: 14px;
+    line-height: 157%;
+  }
 }
 
 .about__image-container {
-
   height: 665px;
   align-self: flex-end;
 
@@ -98,6 +133,18 @@
       height: 546px;
     }
   }
+
+  @include vp-767 {
+    left: 0;
+    bottom: 0;
+    width: 292px;
+    height: 353px;
+
+    img {
+      width: 292px;
+      height: 353px;
+    }
+  }
 }
 
 .about__link {
@@ -106,5 +153,11 @@
   @include vp-1023 {
     margin-left: 7px;
     width: 276px;
+  }
+
+  @include vp-767 {
+    margin: 18px 0 0 3px;
+    width: 263px;
+    min-height: 76px;
   }
 }

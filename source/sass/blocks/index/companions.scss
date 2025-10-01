@@ -15,6 +15,11 @@
       justify-content: flex-start;
       border-radius: 0 0 56px 56px;
     }
+
+    @include vp-767 {
+      min-height: 1382px;
+      border-radius: 0 0 30px 30px;
+    }
   }
 }
 
@@ -38,11 +43,22 @@
     flex-grow: 0;
   }
 
+  @include vp-767 {
+    row-gap: 20px;
+
+    padding: 100px 10px 37px 28px;
+  }
+
   .companions__title {
     line-height: 55px;
 
     @include vp-1023 {
       color: $color-default-white;
+    }
+
+    @include vp-767 {
+      font-size: 50px;
+      line-height: 48%;
     }
   }
 
@@ -65,7 +81,17 @@
         display: none;
       }
     }
+
+    @include vp-767 {
+      margin-left: 0;
+
+      width: 272px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 157%;
+    }
   }
+
 
   .companions__sub-description {
     margin: 12px 0 0;
@@ -77,6 +103,12 @@
 
     @include vp-1023 {
       margin: 24px 0 0 0;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 157%;
+      margin: 11px 0 0  -2px;
     }
   }
 
@@ -93,6 +125,19 @@
       width: 616px;
       // min-height: 82px;
       padding: 0 20px 0 33px;
+    }
+
+    @include vp-767 {
+      width: 270px;
+      bottom: 40px;
+      margin-left: 0;
+      left: calc(50% - 135px);
+
+      min-height: 61px;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 100%;
+      padding: 0 23px 0 23px;
     }
   }
 }
@@ -115,6 +160,12 @@
     padding: 0 42px 0 40px;
     min-width: unset;
     min-height: unset;
+  }
+
+  @include vp-767 {
+    justify-content: center;
+    padding: 0;
+    row-gap: 44px;
   }
 }
 
