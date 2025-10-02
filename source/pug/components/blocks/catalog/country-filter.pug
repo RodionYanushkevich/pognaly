@@ -16,7 +16,7 @@ mixin country-filter(countriesdata)
         ul.country-filter__letters-list
           each letter in sortedKeys
             li.country-filter__letters-list-item
-              button(type=button)!=letter
+              button.country-filter__letters-list-button(type="button")!=letter
               ul.country-filter__countries-list
                 each country in groups[letter]
                   li!=country.name
