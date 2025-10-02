@@ -30,9 +30,10 @@ mixin header(headerMods, currentUrl)
             +icon("logo-text", 133, 25 )
 
       nav.main-nav.header__nav(data-navigation ="navigation")
-        button.main-nav__toggle.main-nav__toggle--is-closed(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-button="navigation-button")
-          +icon("icon-burger", 20, 20)
-          +icon("icon-close", 20, 20)
+        .main-nav__button-wrapper
+          button.main-nav__toggle.main-nav__toggle--is-closed(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-button="navigation-button")
+            +icon("icon-burger", 20, 20)
+            +icon("icon-close", 20, 20)
         .main-nav__container
           ul.main-nav__list
             each link in headerLinks
@@ -42,16 +43,22 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
-            ul.main-nav__contacts-list
-              li.main-nav__contacts-list-item
-                a.main-nav__contacts-link(
-                  href="tel:+78005558628",
-                  aria-label="Позвонить 8 800 555-86-28",
-                  title="Позвонить нам")
-                    +icon("header-phone", 18, 18)
-              li.main-nav__contacts-list-item
-                a.main-nav__contacts-link(
-                  href="mailto:example@mail.com",
-                  aria-label="Написать на example@mail.com",
-                  title="Написать на example@mail.com")
-                    +icon("header-mail", 18, 18)
+          ul.main-nav__contacts-list
+            li.main-nav__contacts-list-item
+              a.main-nav__contacts-link(
+                href="tel:+78005558628",
+                aria-label="Позвонить 8 800 555-86-28",
+                title="Позвонить нам")
+                span.main-nav__link-icon-container
+                  +icon("header-phone", 18, 18)
+                  +icon("phone", 18, 18)
+                span 8 800 555-86-28
+            li.main-nav__contacts-list-item
+              a.main-nav__contacts-link(
+                href="mailto:mail@htmlacademy.ru",
+                aria-label="написать mail@htmlacademy.ru",
+                title="Написать нам")
+                span.main-nav__link-icon-container
+                  +icon("header-mail", 18, 18)
+                span mail@htmlacademy.ru
+          +social-list(class="main-nav__social-list")

@@ -6,8 +6,6 @@ const initMenuToggle = () => {
   const navigation = document.querySelector('[data-navigation="navigation"]');
   const navigationButton = document.querySelector('[data-button="navigation-button"]');
   const headerLogo = document.querySelector('[data-logo="header-logo"]');
-  navigation.classList.toggle('main-nav--is-open');
-  navigationButton.classList.toggle('main-nav__toggle--is-closed');
 
   navigationButton.addEventListener('click', ()=>{
     navigationButton.classList.toggle('main-nav__toggle--is-closed');
