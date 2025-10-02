@@ -1,10 +1,10 @@
 .logo {
   position: relative;
-  top: -2px;
+  top: -size(2px);
   height: min-content;
   order: -1;
   display: flex;
-  width: 200px;
+  width: size(200px);
 
 
   @include vp-767 {
@@ -13,8 +13,8 @@
 
   &-description {
     position: absolute;
-    right: -3px;
-    top: 30px;
+    right: size(-3px);
+    top: size(28px);
     transform: translateY(-50%);
     color: inherit;
 
@@ -28,18 +28,24 @@
       right: 32px;
       top: 27px;
     }
-  }
 
-  & svg {
-    @include vp-1023 {
-      width: 111px;
-      height: 24px;
+    & svg {
+
+      width: size(133px);
+      height: size(25px);
+
+
+      @include vp-1023 {
+        width: 111px;
+        height: 24px;
+      }
     }
   }
 
+
   img {
-    width: 200px;
-    height: 50px;
+    width: size(200px);
+    height: size(50px);
 
     @include vp-1023 {
       width: 166px;

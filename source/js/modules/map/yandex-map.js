@@ -1,6 +1,10 @@
 const mapContainer = document.querySelector('[data-map]')
 
 async function initMap() {
+if (!mapContainer) {
+  return
+}
+
     await ymaps3.ready;
 
     const {YMap, YMapDefaultSchemeLayer, YMapMarker,YMapDefaultFeaturesLayer} = ymaps3;

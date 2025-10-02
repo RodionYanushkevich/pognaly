@@ -5,10 +5,10 @@
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 18px;
+    gap: size(18px);
     list-style: none;
     flex-wrap: wrap;
-    max-width: 705px;
+    max-width: size(705px);
     align-items: center;
     color: $color-default-white;
 
@@ -123,8 +123,8 @@
   &__link {
     color: inherit;
 
-    font-size: 20px;
-    line-height: 20px;
+    font-size: size(20px);
+    line-height: size(20px);
     text-transform: uppercase;
 
     @include vp-1023 {
@@ -207,7 +207,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
-    gap: 7px;
+    gap: size(7px);
     order: 1;
 
 
@@ -226,7 +226,7 @@
     justify-content: center;
 
     font-weight: 700;
-    font-size: 28px;
+    font-size: size(28px);
     line-height: 100%;
     text-transform: uppercase;
 
@@ -274,7 +274,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: size(50px);
     aspect-ratio: 1;
     flex-shrink: 0;
     border-radius: 50%;
@@ -283,8 +283,8 @@
 
     svg {
       display: block;
-      width: 17px;
-      height: 17px;
+      width: size(17px);
+      height: size(17px);
 
 
       &:not(:first-child) {

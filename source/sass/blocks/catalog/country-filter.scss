@@ -1,0 +1,49 @@
+.country-filter {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &__title-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 350px;
+    padding: 87px 128px;
+    background-color: $color-midnight-express-dark;
+    border-radius: 0 0 56px 56px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 33%;
+
+    font-variant: all-small-caps;
+
+    color: $color-default-white;
+
+    @include vp-1023 {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 33%;
+    }
+
+    // @include vp-737 {
+    //   font-weight: 700;
+    //   font-size: 60px;
+    //   line-height: 33%;
+    // }
+  }
+
+
+  &__list-container {
+    min-height: 2762px;
+    padding: 58px 61px 10px 59px;
+  }
+}
