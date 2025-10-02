@@ -1,7 +1,7 @@
 .main-nav {
+  flex-grow: 1;
+
   &__list {
-    position: relative;
-    top: 2px;
     display: flex;
     margin: 0;
     padding: 0;
@@ -9,15 +9,130 @@
     list-style: none;
     flex-wrap: wrap;
     max-width: 705px;
+    align-items: center;
+    color: $color-default-white;
+
+    @include vp-1023 {
+      flex-direction: column;
+      align-items: center;
+      max-width: unset;
+      color: $color-midnight-express-dark;
+    }
+
+    @include vp-767 {
+      align-items: flex-start;
+    }
   }
 
 
+  &__button-wrapper {
+    display: flex;
+
+    @include vp-1023 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0 20px;
+      transition: background-color 0.3s $tf-default 0s,
+        border-radius 0.3s $tf-default 0s;
+
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    @include vp-767 {
+      padding: 20px 16px 20px 20px;
+      align-items: flex-end;
+    }
+  }
+
+
+  &__container {
+    display: flex;
+
+    @include vp-1023 {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+
+      flex-direction: column;
+
+      max-width: unset;
+      padding: 110px 40px 48px;
+      width: 100%;
+      min-height: 587px;
+      row-gap: 35px;
+
+      color: $color-midnight-express-dark;
+      background-color: $color-default-white;
+
+      border-radius: 0 0 20px 20px;
+
+      transition: transform 0.3s $tf-default 0.3s;
+      transform: translateY(-100%);
+
+      &::after {
+        transition-property: background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: $tf-default;
+
+        transition-delay: 0.4s;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 19px;
+        background-color: $color-default-white;
+        border-radius: 0 0 20px 20px;
+      }
+    }
+
+    @include vp-767 {
+      padding: 100px 20px 48px 20px;
+    }
+  }
+
+  &--is-open {
+    .main-nav__button-wrapper {
+      background-color: $color-default-white;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .main-nav__container {
+      transform: translateY(0);
+
+      background-color: $color-default-white;
+
+      &::after {
+
+        background-color: $color-midnight-express-darkerer;
+      }
+    }
+  }
+
   &__link {
-    color: $color-default-white;
+    color: inherit;
 
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
+
+    @include vp-1023 {
+
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 143%;
+    }
 
     &.is-active {
       opacity: 0.6;
@@ -26,5 +141,203 @@
 
   &__toggle {
     display: none;
+
+    @include vp-1023 {
+      box-sizing: content-box;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+
+
+      width: 25px;
+      height: 25px;
+      padding: 10px;
+
+      background-color: $color-transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+
+
+      svg {
+        transition: transform $trans-default,
+          opacity $trans-default;
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        width: 25px;
+        height: 17px;
+        opacity: 0;
+        transform: rotate(0) scale(0);
+
+        &:last-child {
+          width: 30px;
+          height: 30px;
+          left: 7px;
+          top: 9px;
+          color: #cccccc;
+          opacity: 1;
+          transform: rotate(0) scale(1);
+        }
+      }
+    }
+
+
+    &--is-closed {
+      svg {
+        &:first-child {
+          transform: rotate(360deg) scale(1);
+
+          opacity: 1;
+        }
+
+        &:last-child {
+          transform: rotate(360deg) scale(0);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    gap: 7px;
+    order: 1;
+
+
+    @include vp-1023 {
+      flex-direction: row;
+      justify-content: space-between;
+      order: 0;
+      margin: auto 0 0 0;
+    }
+  }
+
+  &__contacts-link {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    span:last-child {
+      display: none;
+    }
+
+    @include vp-1023 {
+      column-gap: 23px;
+      font-size: 18px;
+      line-height: 100%;
+
+      span:last-child {
+        display: flex;
+      }
+
+      &:first-child {
+        span: {
+          position: relative;
+          top: 4px;
+        }
+      }
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 138%;
+      column-gap: 16px;
+
+      span:last-child {
+        position: relative;
+        top: 1px;
+      }
+
+      &:last-child {
+        svg {
+          width: 25px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  &__link-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: $color-jordy-blue;
+    color: $color-midnight-express-darker;
+
+    svg {
+      display: block;
+      width: 17px;
+      height: 17px;
+
+
+      &:not(:first-child) {
+        display: none;
+      }
+
+
+      @include vp-1023 {
+        &:first-child {
+          display: none;
+        }
+
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+
+
+    @include vp-1023 {
+      width: 68px;
+      background-color: $color-midnight-express-darkerer;
+      color: $color-pale-cornflower-blue;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include vp-767 {
+      width: 45px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__social-list {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+
+
+      width: 100%;
+      justify-content: center;
+
+      .social-list__link {
+        background-color: $color-transparent;
+      }
+    }
   }
 }

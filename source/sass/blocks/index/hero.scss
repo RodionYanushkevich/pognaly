@@ -4,26 +4,16 @@
 
   .container {
     position: relative;
-    padding: 102px 72px 0;
-    min-height: 742px;
-    // column-gap: 146px;
-    border-radius: 0 0 56px  56px;
+    padding: size(102px) size(72px) 0;
+    min-height: size(742px);
+    border-radius: 0 0 size(56px)  size(56px);
 
     @include vp-1023 {
-      // padding: 102px 54px 0;
       display: flex;
       flex-direction: column;
       padding: 0 0 0 0;
-      // min-height: 1185px;
       z-index: 0;
-      // justify-content: end;
-      // background-color: $color-midnight-express;
     }
-
-    // @include vp-767 {
-
-
-    // }
   }
 }
 
@@ -45,13 +35,13 @@
 }
 
 .hero__title {
-  margin: 87px 0 0;
+  margin: size(87px) 0 0;
   padding: 0;
-  width: 512px;
+  width: size(512px);
 
   font-weight: 700;
-  font-size: 70px;
-  line-height: 70px;
+  font-size: size(70px);
+  line-height: 100%;
 
   font-variant: all-small-caps;
 
@@ -74,8 +64,8 @@
 .hero__image-wrapper {
   position: absolute;
   bottom: 0;
-  right: 275px;
-  width: 431px;
+  right: size(275px);
+  width: size(431px);
   z-index: -1;
 
   @include vp-1023 {
@@ -89,8 +79,8 @@
   }
 
   img {
-    width: 431px;
-    height: 640px;
+    width: size(431px);
+    height: size(640px);
 
     @include vp-1023 {
       width: 437px;
@@ -114,18 +104,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 0 0 56px  56px;
+  border-radius: 0 0 size(56px)  size(56px);
 
   img {
-    width: 1440px;
-    height: 742px;
+    width: size(1440px);
+    height: size(742px);
   }
 
   @include vp-1023 {
     bottom: unset;
     top: 0;
-    height: 906px;
     width: 1440px;
+    height: 906px;
 
     left: calc(50% - 561px);
 
@@ -134,13 +124,24 @@
       height: 906px;
     }
   }
+
+  @include vp-767 {
+    bottom: 0;
+    left: calc(50% - 383px);
+    width: 767px;
+    height: 628px;
+
+    img {
+      width: 767px;
+      height: 628px;
+    }
+  }
 }
 
 
 .hero__list-wrapper {
   @include vp-1023 {
     position: relative;
-    // top: -79px;
     display: flex;
     flex-direction: column;
     background-color: $color-midnight-express;
@@ -150,9 +151,9 @@
 
 .hero__list {
   position: absolute;
-  top: 520px;
-  left: 60px;
-  min-height: 107px;
+  top: size(520px);
+  left: size(60px);
+  min-height: size(107px);
   height: min-content;
   padding: 0;
   margin: 0;
@@ -160,7 +161,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  max-width: 1330px;
+  max-width: size(1330px);
   counter-reset: item;
 
   @include vp-1023 {
@@ -185,16 +186,16 @@
   position: relative;
   overflow: visible;
   counter-increment: item;
-  padding: 29.5px;
-  padding-left: 34px;
-  min-width: 352.4px;
+  padding: size(29.5px);
+  padding-left: size(34px);
+  min-width: size(352.4px);
 
   display: flex;
   align-items: center;
 
-  border-radius: 20px;
+  border-radius: size(20px);
 
-  filter: drop-shadow(-4px 0 10px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(size(-4px) 0 size(10px) rgba(0, 0, 0, 0.25));
 
   @include vp-1023 {
     padding: 10px 33px 61px;
@@ -203,9 +204,9 @@
 
   & p {
     margin: 0;
-    width: 183px;
+    width: size(183px);
     font-weight: 700;
-    font-size: 22px;
+    font-size: size(22px);
     line-height: 109%;
 
     color: $color-midnight-express-darker;
@@ -224,7 +225,7 @@
   }
 
   &:not(:nth-child(4n + 1)) {
-    margin-left: -30px;
+    margin-left: size(-30px);
 
     @include vp-1023 {
       margin-left: 0;
@@ -232,7 +233,7 @@
   }
 
   &:nth-child(n + 5) {
-    margin-top: -20px;
+    margin-top: size(-20px);
   }
 
   &:nth-child(4n + 1) {
@@ -240,17 +241,17 @@
   }
 
   &:nth-child(4n + 2) {
-    padding-left: 22px;
+    padding-left: size(22px);
     background-color: $color-jordy-blue;
   }
 
   &:nth-child(4n + 3) {
-    padding-left: 46px;
+    padding-left: size(46px);
     background-color: $color-pale-cornflower-blue;
   }
 
   &:nth-child(4n + 4) {
-    padding-left: 68px;
+    padding-left: size(68px);
     background-color: $color-pattens-blue;
   }
 
@@ -337,8 +338,8 @@
 
 .hero__list-item::before {
   position: absolute;
-  top: 25px;
-  right: 71px;
+  top: size(25px);
+  right: size(71px);
   content: counter(item);
   font-weight: 700;
   color: $color-default-white;

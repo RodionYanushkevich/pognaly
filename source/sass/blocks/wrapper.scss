@@ -1,0 +1,35 @@
+.wrapper {
+
+  width: 100%;
+  // scrollbar-gutter: stable;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 20;
+
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #0d1d33;
+    opacity: 0;
+    transition: opacity $trans-default;
+    pointer-events: none;
+  }
+
+  &--modal-is-open {
+    &::after {
+      opacity: 0.4;
+      z-index: 20;
+      pointer-events: auto;
+    }
+  }
+
+  @include vp-767 {
+
+    min-width: 320px;
+  }
+}
+

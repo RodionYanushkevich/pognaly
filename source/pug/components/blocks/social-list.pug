@@ -1,0 +1,29 @@
+mixin social-list(attributes)
+  ul.social-list&attributes(attributes)
+    li.social-list__list-item
+      a.social-list__link(
+        href="#",
+        aria-label="наш Telegram",
+        title="наш Telegram",
+        target="_blank",
+        rel="nofollow noopener noreferrer"
+      )
+        +icon("telegram", 32, 32)
+    li.social-list__list-item
+      a.social-list__link.social-list__link--vk(
+        href="#",
+        aria-label="мы вконтакте",
+        title="мы вконтакте",
+        target="_blank",
+        rel="nofollow noopener noreferrer"
+      )
+        +icon("vkontakte", 32, 32)
+    li.social-list__list-item
+      a.social-list__link(
+        href="#",
+        aria-label="youtube",
+        title="youtube",
+        target="_blank",
+        rel="nofollow noopener noreferrer"
+      )
+        +icon("youtube", 32, 32)

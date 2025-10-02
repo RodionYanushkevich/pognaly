@@ -27,6 +27,7 @@
 }
 
 .directions__swiper-wrapper {
+  position: relative;
   padding: 155px 68.71px 157px 72.08px;
   min-width: 749px;
   min-height: 765px;
@@ -34,6 +35,7 @@
   order: -1;
   border-radius: 0 0 56px  56px;
   background-color: $color-solitude;
+  overflow: hidden;
 
   @include vp-1023 {
     padding: 71px 75.88px 274px 74px;
@@ -42,10 +44,74 @@
   }
 
   @include vp-767 {
+    overflow: visible;
     padding: 0 26px 0 24px;
     row-gap: 26px;
     min-width: unset;
     min-height: unset;
+  }
+
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 242px;
+    display: block;
+
+    pointer-events: none;
+    background: linear-gradient(to bottom, $color-solitude 0%, $color-solitude calc(100% - 81px), $color-transparent 100%);
+
+    @include vp-1023 {
+      height: 143px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &::after {
+    top: unset;
+    bottom: 0;
+    height: 250px;
+
+    transform: rotate(180deg);
+
+    @include vp-1023 {
+      height: 351px;
+    }
+  }
+}
+
+
+.directions__swiper {
+  height: 438px;
+
+  @include vp-1023 {
+    height: 440px;
+  }
+
+  @include vp-767 {
+    height: unset;
+  }
+
+  .swiper-slide {
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform $trans-default;
+  }
+
+  .swiper-slide--isCentred {
+    transform: scale(1.05);
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
+    pointer-events: none;
   }
 }
 
@@ -54,6 +120,7 @@
     position: relative;
   }
 }
+
 
 .directions__description-wrapper {
   width: 631px;
@@ -80,6 +147,7 @@
     margin-top: 122px;
     margin-left: 7px;
     width: 298.75px;
+    z-index: 2;
 
     @include vp-1023 {
       position: absolute;
@@ -96,6 +164,7 @@
       width: 270px;
       bottom: 52px;
       margin-left: 0;
+      align-self: center;
 
       min-height: 65.12px;
       border-radius: 10px;
@@ -163,5 +232,9 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+
+  @include vp-767 {
+    align-items: center;
+    row-gap: 10px;
+  }
 }

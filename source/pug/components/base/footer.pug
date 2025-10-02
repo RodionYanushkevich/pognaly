@@ -5,13 +5,4 @@ mixin footer(footerMods)
         img(src="../../../img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали")
         span.logo-description
           +icon("logo-text", 133, 25 )
-      ul.footer__social-list
-        li.footer__social-list-item
-          a.footer__social-link(href="#", aria-label="наш Telegram", title="наш Telegram", target="_blank", rel="nofollow noopener noreferrer")
-            +icon("telegram", 32, 32)
-        li.footer__social-list-item
-          a.footer__social-link.footer__social-link--vk(href="#", aria-label="мы вконтакте", title="мы вконтакте", target="_blank", rel="nofollow noopener noreferrer")
-            +icon("vkontakte", 32, 32)
-        li.footer__social-list-item
-          a.footer__social-link(href="#", aria-label="youtube", title="youtube", target="_blank", rel="nofollow noopener noreferrer")
-            +icon("youtube", 32, 32)
+      +social-list('footer')
