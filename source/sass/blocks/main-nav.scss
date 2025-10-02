@@ -16,6 +16,11 @@
       flex-direction: column;
       align-items: center;
       max-width: unset;
+      color: $color-midnight-express-dark;
+    }
+
+    @include vp-767 {
+      align-items: flex-start;
     }
   }
 
@@ -27,7 +32,6 @@
       position: absolute;
       top: 0;
       left: 0;
-      // min-height: 100px;
       z-index: 2;
       width: 100%;
       display: flex;
@@ -40,6 +44,11 @@
 
       border-radius: 0;
       background-color: transparent;
+    }
+
+    @include vp-767 {
+      padding: 20px 16px 20px 20px;
+      align-items: flex-end;
     }
   }
 
@@ -86,6 +95,10 @@
         background-color: $color-default-white;
         border-radius: 0 0 20px 20px;
       }
+    }
+
+    @include vp-767 {
+      padding: 100px 20px 48px 20px;
     }
   }
 
@@ -196,8 +209,7 @@
     margin-left: auto;
     gap: 7px;
     order: 1;
-    // @include vp-1023 {
-    // }
+
 
     @include vp-1023 {
       flex-direction: row;
@@ -227,6 +239,9 @@
       font-size: 18px;
       line-height: 100%;
 
+      span:last-child {
+        display: flex;
+      }
 
       &:first-child {
         span: {

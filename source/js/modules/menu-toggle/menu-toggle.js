@@ -1,34 +1,67 @@
 
-const breakpoint = window.matchMedia('(min-width: 767px)');
-// const wrapper = document.querySelector('.wrapper');
+const breakpoint = window.matchMedia('(min-width: 1024px)');
+const wrapper = document.querySelector('.wrapper');
 
 const initMenuToggle = () => {
   const navigation = document.querySelector('[data-navigation="navigation"]');
   const navigationButton = document.querySelector('[data-button="navigation-button"]');
   const headerLogo = document.querySelector('[data-logo="header-logo"]');
 
+  let isOpen = false;
+  const openNavigationMenu = () => {
+
+    navigationButton.classList.remove('main-nav__toggle--is-closed');
+    navigation.classList.add('main-nav--is-open');
+    headerLogo.classList.add('logo--menu-is-open');
+    document.body.classList.add('scroll-lock');
+    wrapper.classList.add('wrapper--modal-is-open');
+    isOpen = true;
+
+  };
+
+  const closeNavigationMenu = () => {
+    navigationButton.classList.add('main-nav__toggle--is-closed');
+    navigation.classList.remove('main-nav--is-open');
+    headerLogo.classList.remove('logo--menu-is-open');
+    document.body.classList.remove('scroll-lock');
+    wrapper.classList.remove('wrapper--modal-is-open');
+    isOpen = false;
+  };
+
+
   navigationButton.addEventListener('click', ()=>{
-    navigationButton.classList.toggle('main-nav__toggle--is-closed');
-    navigation.classList.toggle('main-nav--is-open');
-    headerLogo.classList.toggle('logo--menu-is-open');
-    // document.body.classList.toggle('scroll-lock');
-    // wrapper.classList.toggle('wrapper--overlay');
+    if (!isOpen) {
+      openNavigationMenu();
+      return;
+    }
+    closeNavigationMenu();
   });
 
-  // const handleOutsideClick = (e) => {
-  //   if (!e.target.closest('[data-toggle="navigation"]') || e.target.classList.contains('navigation') || e.target.classList.contains('navigation__sublist')) {
-  //     closeAllSubmenus();
-  //   }
-  //   if (e.target === wrapper) {
-  //     navigationContainer.classList.remove('navigation--is-open');
-  //     navigationButton.classList.remove('navigation__button--cross');
-  //     document.body.classList.remove('scroll-lock');
-  //     wrapper.classList.remove('wrapper--overlay');
+  const handleOutsideClick = (e) => {
+    if (e.target === wrapper) {
+      closeNavigationMenu();
+    }
+  };
 
-//     closeAllSubmenus();
-//   }
+  const breakpointChecker = (e) => {
+
+    let resizeTimer;
+    navigation.children[1].classList.add('no-transition');
+
+    clearTimeout(resizeTimer);
+    closeNavigationMenu();
+
+    resizeTimer = setTimeout(() => {
+      navigation.children[1].classList.remove('no-transition');
+    }, 100);
+
+
+  };
+
+
+  document.addEventListener('click', handleOutsideClick);
+  breakpoint.addEventListener('change', breakpointChecker);
 };
-
 
 export {initMenuToggle};
 

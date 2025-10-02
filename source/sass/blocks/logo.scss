@@ -6,14 +6,9 @@
   display: flex;
   width: 200px;
 
-  img {
-    width: 200px;
-    height: 50px;
 
-    @include vp-1023 {
-      width: 166px;
-      height: 42px;
-    }
+  @include vp-767 {
+    width: min-content;
   }
 
   &-description {
@@ -27,12 +22,28 @@
       right: 32px;
       top: 27px;
     }
+
+    @include vp-767 {
+      width: 100px;
+      right: 32px;
+      top: 27px;
+    }
   }
 
   & svg {
     @include vp-1023 {
       width: 111px;
       height: 24px;
+    }
+  }
+
+  img {
+    width: 200px;
+    height: 50px;
+
+    @include vp-1023 {
+      width: 166px;
+      height: 42px;
     }
   }
 }
