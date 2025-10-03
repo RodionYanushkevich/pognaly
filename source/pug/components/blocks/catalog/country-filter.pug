@@ -2,21 +2,47 @@ mixin country-filter(countriesdata)
   -
     const groups = {};
     countriesdata.forEach(country => {
-      const firstLetter = country.name[0]
+      const firstLetter = country.name[0];
       if (!groups[firstLetter]) groups[firstLetter] = [];
       groups[firstLetter].push(country);
     });
-    const sortedKeys = Object.keys(groups).sort();
+    const sortedLetters = Object.keys(groups).sort();
+
+    const regions = {};
+    countriesdata.forEach(country => {
+      const region = country.region;
+      if (!regions[region]) regions[region] = [];
+      regions[region].push(country);
+    });
+    const sortedRegions = Object.keys(regions).sort();
 
   section.country-filter
     .container
       .country-filter__title-container
         h1.country-filter__title Попутчики
       .country-filter__list-container
+        .country-filter__sort-wrapper
+          +icon('icon-filter', 23, 15)
+          p.country-filter__sort-desctiption Фильтрация по странам:
+          ul.country-filter__sort-list
+            each region in sortedRegions
+              li
+                button.country-filter__sort-button(type="button" , aria-selected="false", data-button="filter-sort-button")!= region
+          button.country-filter__sort-hide-button(type="button")
+            span Свернуть
+            span показать все
+            +icon('icon-close', 25, 25)
+            +icon('icon-points', 18, 18)
+
         ul.country-filter__letters-list
-          each letter in sortedKeys
+          each letter in sortedLetters
             li.country-filter__letters-list-item
-              button.country-filter__letters-list-button(type="button")!=letter
+              button.country-filter__letters-list-button(type="button", data-button="filter-lerter-button")!=letter
               ul.country-filter__countries-list
                 each country in groups[letter]
-                  li!=country.name
+                  li
+                    button.country-filter__countries-list-button(type="button", data-button="filter-countries-button")!=country.name
+        button.country-filter__list-hide-button(type="button", aria-pressed="false")
+          span.sort-hide-button-description Свернуть
+          +icon('icon-close', 24, 24)
+
