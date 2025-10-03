@@ -1,12 +1,27 @@
 .catalog-form {
-  background-color: $color-pattens-blue;
   display: flex;
   flex-direction: column;
+  padding: 46px 34px 46px 48px;
+  row-gap: 19px;
+
   border-radius: 20px;
+  background-color: $color-pattens-blue;
   color: $color-catalina-blue;
+
+
   // Убррешь
-  width: 280px;
+  width: min-content;
   min-height: 814px;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    // color: $color-catalina-blue;
+    margin-bottom: 14px;
+  }
 
   &__button {
     margin: 0;
@@ -21,16 +36,18 @@
     background-color: $color-transparent;
     border: none;
     color: inherit;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &--is-active {
+      + .catalog-form__checkbox-wrapper,
+      + .catalog-form__input-container {
+        display: flex;
+      }
+    }
   }
 
-  &__title {
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 100%;
-    // color: $color-catalina-blue;
-  }
 
   &__fieldset {
     padding: 0;
@@ -41,22 +58,110 @@
     border: none;
   }
 
+  &__checkbox-wrapper {
+    display: none;
+    padding: 25px 0;
+    flex-direction: column;
+    gap: 18px;
+
+    &--transport {
+      flex-direction: row;
+    }
+  }
+
+  &__custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 4px;
+    background-color: $color-default-white;
+
+    svg {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  &__custom-checkbox--transport {
+
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: $color-default-black;
+  }
+
+  &__input {
+    border: 1px solid #cbced9;
+    border-radius: 4px 0 0 4px;
+    width: calc(192px/2);
+    margin: 0;
+
+    &:last-of-type {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &-container {
+      display: none;
+      flex-direction: column;
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+  }
 
   &__submit-button {
     margin: 0;
     padding: 0;
     border-radius: 25px;
-    // width: 192px;
-    // height: 49px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 49px;
 
     font-weight: 500;
     font-size: 20px;
     line-height: 110%;
-
+    text-transform: uppercase;
     background-color: $color-default-white;
     border: none;
     color: inherit;
+    cursor: pointer;
+  }
+}
+
+.catalog-form__checkbox {
+  &:not(:checked) {
+    & + .catalog-form__custom-checkbox {
+      svg {
+        display: none;
+      }
+
+      &--transport {
+        svg {
+          opacity: 0.2;
+          display: block;
+        }
+      }
+    }
   }
 }
 
@@ -101,7 +206,6 @@
     border: none;
     box-shadow: unset;
 
-    // color: $color-midnight-express-darker;
     background-color: $color-midnight-express-darker;
     cursor: pointer;
 
@@ -111,3 +215,4 @@
     }
   }
 }
+
