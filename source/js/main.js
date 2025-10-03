@@ -6,6 +6,7 @@ import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initDirectionSwiper} from './modules/swiper/direction-swiper';
 import {initMenuToggle} from './modules/menu-toggle/menu-toggle';
 import {initMap} from './modules/map/yandex-map';
+import {initNOUISlider} from './modules/noui-slider/noui-slider';
 
 // ---------------------------------
 
@@ -15,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   mobileVhFix();
+  initNOUISlider()
 
   // Modules
   // ---------------------------------
@@ -35,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initDirectionSwiper();
 
     await initMap();
+
   });
 });
 

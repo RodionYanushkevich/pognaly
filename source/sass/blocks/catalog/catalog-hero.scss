@@ -1,0 +1,57 @@
+.catalog-hero {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+
+  &__title-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: 10px;
+    min-height: 350px;
+    padding: 87px 128px;
+    background-color: $color-midnight-express-dark;
+    border-radius: 0 0 56px 56px;
+
+    @include vp-1023 {
+      padding: 87px 74px;
+    }
+
+    @include vp-767 {
+      padding: 11px 25px;
+      min-height: 143px;
+      border-radius: 0 0 20px 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 33%;
+
+    font-variant: all-small-caps;
+
+    color: $color-default-white;
+
+    @include vp-1023 {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 33%;
+
+      font-variant: unset;
+    }
+
+    @include vp-767 {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+}

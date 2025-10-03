@@ -2,6 +2,7 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/nouislider.min";
 // Swiper 8.4.7
 // @import "vendor/swiper";
 
@@ -46,7 +47,11 @@
 
 
 // Catalog
+@import "blocks/catalog/catalog-hero";
 @import "blocks/catalog/country-filter";
+@import "blocks/catalog/catalog-cards";
+@import "blocks/catalog/catalog-card";
+@import "blocks/catalog/catalog-form";
 
 // ---------------------------------
 

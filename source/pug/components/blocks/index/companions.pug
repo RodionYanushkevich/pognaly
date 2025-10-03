@@ -14,7 +14,7 @@ mixin companions()
         name: "Петя Демин",
         hashTags: "#бургер #бар #футбол #концерт #крафт",
         countriesFlagCheck:["belgium" ,"czech"],
-        travelIconCheck: ["plane","bus","run"],
+        travelIconCheck: ["plane","car","walk"],
         online: true,
         level:"80",
         photo: "demin-photo",
@@ -22,7 +22,7 @@ mixin companions()
     ]
 
     const icons = [
-      "plane","bus","bicycle","run"
+      "plane","car","bike","walk"
     ]
 
   section.companions
@@ -68,6 +68,6 @@ mixin companions()
                 each icon in icons
                   - const isChecked = companion.travelIconCheck.includes(icon)
                   if isChecked
-                    +icon(icon, 25, 25).companions-card__icon.companions-card__icon--checked
+                    +icon(`${icon}-icon`, 25, 25).companions-card__icon.companions-card__icon--checked
                   else
                     +icon(icon, 25, 25).companions-card__icon

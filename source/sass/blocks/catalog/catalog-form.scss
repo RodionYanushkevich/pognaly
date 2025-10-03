@@ -1,0 +1,25 @@
+.catalog-form {
+
+  border: 1px solid black;
+
+
+  &__fieldset {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    border: none;
+  }
+
+  &__legend {
+    position: static;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  &__noui-slider-container {
+    height: 100px;
+  }
+}
