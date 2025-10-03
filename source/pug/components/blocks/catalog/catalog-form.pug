@@ -27,23 +27,23 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
     .catalog-form__title Подберите идеального попутчика
     each category, categoryName in formData
       fieldset.catalog-form__fieldset
-        legend.visually-hidden= categoryName === 'hobbies' ? 'Хобби' : categoryName === 'music' ? 'Музыка' : categoryName === 'food' ? 'Еда' : 'Transport'
+        legend.visually-hidden= categoryName === 'hobbies' ? 'Хобби' : categoryName === 'music' ? 'Музыка' : categoryName === 'food' ? 'Еда' : 'Транспорт'
         button.catalog-form__button(type="button" )
           span= categoryName === 'hobbies' ? 'Хобби' : categoryName === 'music' ? 'Музыка' : categoryName === 'food' ? 'Еда' : 'Транспорт'
           +icon("arrow-icon", 16, 6)
-
-        each item in category
-          label.catalog-form__label(for=item.id)
-            input.catalog-form__checkbox(
-              type="checkbox"
-              id=item.id
-              name=item.name
-              value=item.value
-            )
-            if categoryName ===  "transport"
-              +icon(`${item.value}-icon`, 20, 20)
-            else
-              span.catalog-form__text= item.text
+        .checkbox-wrapper
+          each item in category
+            label.catalog-form__label(for=item.id)
+              input.catalog-form__checkbox(
+                type="checkbox"
+                id=item.id
+                name=item.name
+                value=item.value
+              )
+              if categoryName ===  "transport"
+                +icon(`${item.value}-icon`, 20, 20)
+              else
+                span.catalog-form__text= item.text
 
     fieldset.catalog-form__fieldset
       button.catalog-form__button(type="button" )
@@ -66,4 +66,4 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
             )
       .catalog-form__noui-slider-container
         .catalog-form__noui-slider.slider(data-slider="noui-slider")
-    button.catalog-form__button(type="submit", data-button="catalog-submint-button") показать
+    button.catalog-form__submit-button(type="submit", data-button="catalog-submint-button") показать

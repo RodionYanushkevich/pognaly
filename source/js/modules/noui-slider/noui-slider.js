@@ -2,7 +2,6 @@ import noUiSlider from '../../vendor/nouislider';
 
 
 const initNOUISlider = () => {
-
   const slider = document.querySelector('[data-slider="noui-slider"]');
 
   if (!slider) {
@@ -17,6 +16,8 @@ const initNOUISlider = () => {
       max: 100,
     },
   });
+
+
 };
 
 export {initNOUISlider};
