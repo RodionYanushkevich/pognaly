@@ -24,17 +24,17 @@ mixin country-filter(countriesdata)
         .country-filter__sort-wrapper
           +icon('icon-filter', 23, 15)
           p.country-filter__sort-desctiption Фильтрация по странам:
-          ul.country-filter__sort-list
+          ul.country-filter__sort-list(data-el="country-filter-sort-list")
             each region in sortedRegions
               li
                 button.country-filter__sort-button(type="button" , aria-pressed="false", data-button="filter-sort-button")!= region
-          button.country-filter__sort-hide-button(type="button")
+          button.country-filter__sort-hide-button(type="button", data-button="country-sort-hide-button")
             span Свернуть
             span показать все
             +icon('icon-close', 25, 25)
             +icon('icon-points', 18, 18)
 
-        ul.country-filter__letters-list
+        ul.country-filter__letters-list(data-el="country-filter-letters-list")
           each letter, i in sortedLetters
             li.country-filter__letters-list-item
               if i === 0
@@ -46,7 +46,7 @@ mixin country-filter(countriesdata)
                 each country in groups[letter]
                   li
                     button.country-filter__countries-list-button(type="button", data-button="filter-countries-button")!=country.name
-        button.country-filter__list-hide-button(type="button", aria-pressed="false")
+        button.country-filter__list-hide-button(type="button", aria-pressed="false", data-button="country-filter-button")
           span Свернуть
           +icon('icon-close', 24, 24)
 

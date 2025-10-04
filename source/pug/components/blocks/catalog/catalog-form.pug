@@ -46,9 +46,9 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
               else
                 span.catalog-form__custom-checkbox
                   +icon("check-icon", 11, 11)
-                span.catalog-form__text= item.text
+                span.catalog-form__custom-checkbox-text= item.text
 
-    fieldset.catalog-form__fieldset
+    fieldset.catalog-form__fieldset.catalog-form__fieldset--level
       button.catalog-form__button.catalog-form__button--is-active(type="button", data-button="catalog-form-button")
         span Левел
         +icon("arrow-icon", 16, 6)

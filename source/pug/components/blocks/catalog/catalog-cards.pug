@@ -7,69 +7,69 @@ mixin catalog-cards(catalogData)
       .catalog-cards__form-container
         +catalog-form()
       .catalog-cards__container
-      ul.catalog-cards__list
-        each card in catalogData
-          li.catalog-cards__list-item
-            .catalog-cards__cards.catalog-card
-              .catalog-card__image-wrapper
-                +adaptivePicture({
-                  path:"content/catalog/cards",
-                  imageBaseName: card.photo,
-                  width: 285,
-                  height: 285,
-                  hasTablet:true,
-                  mobileWidth: 190,
-                  mobileHeight: 190,
-                  hasMobile:true,
-                  mobileWidth: 70,
-                  mobileHeight: 70,
-                  alt:`${card.name} - фотография`
-                  })
-              span.catalog-card__online(class= card.online ? "catalog-card__online--true" : '')
-              h3.catalog-card__title!=card.name
-              p.catalog-card__description!=card.hashTags
-              ul.catalog-card__flags-list
-                each flag in card.countriesFlags
-                  li.catalog-card__flags-list-item
-                    +img("content/flags", `${flag.icon}-flag`, "webp", 35, 24, "")
-                    p.catalog-card__flags-description!=flag.description
-              if typeof card.likes !== 'undefined'
-                .catalog-card__buttons-container
-                  button.catalog-card__call-button(type="button") позвать
-                  .catalog-card__likes-button-wrapper
-                    button.catalog-card__likes-button(type="button")
-                      +icon("heart", 20, 19)
-                    span.catalog-card__likes-count= card.likes
-              ul.catalog-card__transport-list
-                each icon in icons
-                  - const isChecked = card.travelIconCheck.includes(icon)
-                  li
-                    if isChecked
-                      +icon(`${icon}-icon`, 25, 25).catalog-card__icon.catalog-card__icon--checked
-                    else
-                      +icon(`${icon}-icon`, 25, 25).catalog-card__icon
-              div.catalog-card__level.level
-                span.level__count!=card.level
-                span.level__description level
-        button.catalog-cards__more-button(type=button)
-          +icon("plus-icon", 26, 26)
-          span показать еще
-        .catalog-cards__padination-wrapper
-          ul.catalog-cards__padination-list
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button 1
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button 2
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button 3
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button 4
+        ul.catalog-cards__list
+          each card in catalogData
+            li.catalog-cards__list-item
+              .catalog-cards__cards.catalog-card
+                .catalog-card__image-wrapper
+                  +adaptivePicture({
+                    path:"content/catalog/cards",
+                    imageBaseName: card.photo,
+                    width: 285,
+                    height: 285,
+                    hasTablet:true,
+                    mobileWidth: 190,
+                    mobileHeight: 190,
+                    hasMobile:true,
+                    mobileWidth: 70,
+                    mobileHeight: 70,
+                    alt:`${card.name} - фотография`
+                    })
+                span.catalog-card__online(class= card.online ? "catalog-card__online--true" : '')
+                h3.catalog-card__title!=card.name
+                p.catalog-card__description!=card.hashTags
+                ul.catalog-card__flags-list
+                  each flag in card.countriesFlags
+                    li.catalog-card__flags-list-item
+                      +img("content/flags", `${flag.icon}-flag`, "webp", 35, 24, "")
+                      p.catalog-card__flags-description!=flag.description
+                if typeof card.likes !== 'undefined'
+                  .catalog-card__buttons-container
+                    button.catalog-card__call-button(type="button") позвать
+                    .catalog-card__likes-button-wrapper
+                      button.catalog-card__likes-button(type="button")
+                        +icon("heart", 20, 19)
+                      span.catalog-card__likes-count= card.likes
+                ul.catalog-card__transport-list
+                  each icon in icons
+                    - const isChecked = card.travelIconCheck.includes(icon)
+                    li
+                      if isChecked
+                        +icon(`${icon}-icon`, 25, 25).catalog-card__icon.catalog-card__icon--checked
+                      else
+                        +icon(`${icon}-icon`, 25, 25).catalog-card__icon
+                div.catalog-card__level.level
+                  span.level__count!=card.level
+                  span.level__description level
+          button.catalog-cards__more-button(type=button)
+            +icon("plus-icon", 26, 26)
+            span показать еще
+          .catalog-cards__padination-wrapper
+            ul.catalog-cards__padination-list
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button 1
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button 2
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button 3
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button 4
 
-          ul.catalog-cards__padination-list
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button
-                +icon("arrow-icon", 20, 13)
-            li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button
-                +icon("arrow-icon", 20, 13)
+            ul.catalog-cards__padination-list
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button
+                  +icon("arrow-icon", 20, 13)
+              li.catalog-cards__padination-list-item
+                button.catalog-cards__padination-button
+                  +icon("arrow-icon", 20, 13)
 

@@ -7,6 +7,7 @@ import {initDirectionSwiper} from './modules/swiper/direction-swiper';
 import {initMenuToggle} from './modules/menu-toggle/menu-toggle';
 import {initMap} from './modules/map/yandex-map';
 import {initNOUISlider} from './modules/noui-slider/noui-slider';
+import {initCountryFilter} from './modules/filter/country-filter';
 
 // ---------------------------------
 
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   mobileVhFix();
   initNOUISlider()
-
+initCountryFilter()
   // Modules
   // ---------------------------------
 
