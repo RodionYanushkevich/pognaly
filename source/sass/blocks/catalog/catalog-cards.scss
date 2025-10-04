@@ -1,8 +1,83 @@
 .catalog-cards {
   .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 1000px;
-    padding: 108px 0 0 0;
+    padding: 108px 60px 89px 59px;
+    column-gap: 85px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &__form-container {
+    flex-grow: 0;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    order: -1;
+
+    @include vp-1023 {
+
+      order: -1;
+    }
+  }
+
+  &__more-button {
+    padding: 38px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    border: none;
+    background-color: $color-transparent;
+
+    cursor: pointer;
+
+    span {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+  }
+
+  &__padination-wrapper {
+
+    min-height: 100px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: $color-default-white;
+    border-radius: 20px;
+  }
+
+  &__padination-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__padination-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background-color: $color-transparent;
+    cursor: pointer;
   }
 }

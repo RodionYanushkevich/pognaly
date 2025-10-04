@@ -49,7 +49,7 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
                 span.catalog-form__text= item.text
 
     fieldset.catalog-form__fieldset
-      button.catalog-form__button(type="button", data-button="catalog-form-button")
+      button.catalog-form__button.catalog-form__button--is-active(type="button", data-button="catalog-form-button")
         span Левел
         +icon("arrow-icon", 16, 6)
       .catalog-form__input-container
@@ -61,6 +61,7 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
             name="min-level"
             value= 30
               )
+          span.catalog-form__input-wrapper-stick
           label.catalog-form__label(for="max-level")
           input.catalog-form__input(
             type="number"

@@ -27,7 +27,7 @@ mixin country-filter(countriesdata)
           ul.country-filter__sort-list
             each region in sortedRegions
               li
-                button.country-filter__sort-button(type="button" , aria-selected="false", data-button="filter-sort-button")!= region
+                button.country-filter__sort-button(type="button" , aria-pressed="false", data-button="filter-sort-button")!= region
           button.country-filter__sort-hide-button(type="button")
             span Свернуть
             span показать все
@@ -38,9 +38,9 @@ mixin country-filter(countriesdata)
           each letter, i in sortedLetters
             li.country-filter__letters-list-item
               if i === 0
-                button.country-filter__letters-list-button.country-filter__letters-list-button--is-active(type="button", data-button="filter-lerter-button", aria-selected="true")!=letter
+                button.country-filter__letters-list-button.country-filter__letters-list-button--is-active(type="button", data-button="filter-lerter-button", aria-pressed="true")!=letter
               else
-                button.country-filter__letters-list-button(type="button", data-button="filter-lerter-button", aria-selected="false")!=letter
+                button.country-filter__letters-list-button(type="button", data-button="filter-lerter-button", aria-pressed="false")!=letter
 
               ul.country-filter__countries-list
                 each country in groups[letter]

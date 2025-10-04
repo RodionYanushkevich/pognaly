@@ -6,6 +6,7 @@ import fs from 'fs';
 
 const compilePug = () => {
   const countriesData = JSON.parse(fs.readFileSync('source/json/countries.json', 'utf-8'));
+  const catalogData = JSON.parse(fs.readFileSync('source/json/catalog-cards.json', 'utf-8'));
 
   return gulp
       .src('source/pug/pages/*.pug')
@@ -14,6 +15,7 @@ const compilePug = () => {
         pretty: true,
         locals: {
           countries: countriesData,
+          catalog: catalogData,
         },
       }))
       .pipe(cached('pug'))

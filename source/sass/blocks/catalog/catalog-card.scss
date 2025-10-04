@@ -1,0 +1,156 @@
+.catalog-card {
+  position: relative;
+  min-width: 951px;
+  display: grid;
+  background-color: $color-default-white;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+
+  grid-template-columns: min-content max-content 1fr;
+  grid-template-rows: repeat(2, min-content) 50px;
+
+  border-radius: 20px;
+
+  color: $color-catalina-blue;
+
+  @include vp-1023 {
+    min-width: unset;
+    width: 100%;
+    grid-template-columns: min-content min-content min-content;
+    grid-template-rows: repeat(2, min-content) 50px;
+  }
+
+  &__image-wrapper {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    width: 285px;
+    height: 285px;
+
+
+    img {
+      width: 285px;
+      height: 285px;
+    }
+
+    @include vp-1023 {
+      width: 190px;
+      height: 190px;
+
+      img {
+        width: 190px;
+        height: 190px;
+      }
+    }
+  }
+
+  &__title,
+  &__description {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+  }
+
+  &__description {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    color: $color-default-black;
+  }
+
+  &__buttons-container {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+  }
+
+  &__transport-list {
+    grid-column: 3/4;
+    grid-row: 3/4;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__call-button {
+    width: 150px;
+    background-color: $color-pale-cornflower-blue;
+  }
+
+  &__likes-button {
+    width: 50px;
+    background-color: $color-lavender;
+
+    &-wrapper {
+      display: flex;
+    }
+  }
+
+  &__flags-list {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 35px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__flags-description {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &__online {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__level {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.catalog-card__likes-button,
+.catalog-card__call-button {
+  display: flex;
+  min-height: 50px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 25px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  border: none;
+}

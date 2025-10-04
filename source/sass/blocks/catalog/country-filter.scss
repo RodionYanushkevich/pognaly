@@ -1,7 +1,6 @@
 .country-filter {
   position: relative;
   z-index: 20;
-  display: none;
 
   .container {
     margin-top: -60px;
@@ -17,7 +16,7 @@
 
   &__list-container {
     min-height: 2762px;
-    padding: 108px 61px 10px 53px;
+    padding: 118px 61px 10px 53px;
 
     @include vp-1023 {
       padding: 108px 61px 10px 53px;
