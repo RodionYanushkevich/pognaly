@@ -48,10 +48,14 @@ mixin catalog-cards(catalogData)
                         +icon(`${icon}-icon`, 25, 25).catalog-card__icon.catalog-card__icon--checked
                       else
                         +icon(`${icon}-icon`, 25, 25).catalog-card__icon
-                div.catalog-card__level.level
-                  span.level__count!=card.level
-                  span.level__description level
-          button.catalog-cards__more-button(type=button)
+                div.catalog-card__level.level(style=`--level: ${card.level}`)
+
+                  span.level__dote.level__dote--min
+                  span.level__wrapper
+                  .level__description-container
+                    span.level__count!=card.level
+                    span.level__description level
+          button.catalog-cards__more-button(type="button" data-test)
             +icon("plus-icon", 26, 26)
             span показать еще
           .catalog-cards__padination-wrapper

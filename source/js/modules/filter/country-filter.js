@@ -11,6 +11,7 @@ const initCountryFilter = () => {
   const filterContainer = document.querySelector('[data-el="country-filter-letters-list"]');
   const sortFilterList = document.querySelector('[data-el="country-filter-sort-list"]');
 
+
   let isHidden = false;
 
 

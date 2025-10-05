@@ -1,6 +1,121 @@
+$dote-width: 3px;
+// $wrapper-radius: 300px;
+$wrapper-radius: 61.5px;
+$dote-rotation-radius: 150px;
+
+@function perc-to-deg($percent) {
+  @return ($percent / 100) * 360deg;
+}
+
 .level {
+
+  position: relative;
+
+  width: $wrapper-radius;
+  height: $wrapper-radius;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 0;
+  border-radius: 50%;
+  background: $color-default-white;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: $dote-width;
+
+    transform: translateX(-50%) translateY(0);
+    z-index: 3;
+    display: flex;
+    width: $wrapper-radius - $dote-width*2;
+    height: $wrapper-radius - $dote-width*2;
+
+    background: $color-default-white;
+
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: $wrapper-radius;
+    height: $wrapper-radius;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    background: conic-gradient(
+        #4d99d6 0deg calc(var(--level, 0) * 3.6deg),
+        rgba(255, 255, 255, 0) calc(var(--level, 0) * 3.6deg) 360deg
+      );
+  }
+
+  &__dote {
+    position: absolute;
+    top: 0;
+    // left: calc(50% - 10px);
+    left: calc(50% - ($dote-width/2));
+    display: flex;
+    width: $dote-width;
+    height: $dote-width;
+    background: #4d99d6;
+    border-radius: 50%;
+
+    z-index: 3;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: calc(50%);
+    border-radius: 50%;
+    background-color: $color-default-white;
+
+    width: $wrapper-radius;
+    height: $wrapper-radius;
+
+    transform: translateX(-50%) translateY(-50%) rotate(calc(var(--level, 0) * 3.6deg));
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      left: calc(50% - ($dote-width/2));
+      z-index: 3;
+      display: flex;
+
+      width: $dote-width;
+      height: $dote-width;
+
+      background: #4d99d6;
+      // background: red;
+      border-radius: 50%;
+    }
+  }
+
+  &__description-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+
+    .level__description {
+      opacity: 0.4;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+
+      color: $color-default-black;
+    }
+  }
 }
+
