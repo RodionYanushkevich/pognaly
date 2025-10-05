@@ -2,6 +2,10 @@
 
 const initCountryFilter = () => {
   const lettersListHideButton = document.querySelector('[data-button="country-filter-button"]');
+
+  if (!lettersListHideButton) {
+    return;
+  }
   const sotrHideButton = document.querySelector('[data-button="country-sort-hide-button"]');
 
   const filterContainer = document.querySelector('[data-el="country-filter-letters-list"]');
@@ -16,7 +20,10 @@ const initCountryFilter = () => {
 
     lettersListHideButton.classList.add('country-filter__list-hide-button--is-hidden');
     sotrHideButton.classList.add('country-filter__sort-hide-button--menu-is-open');
-    sortFilterList.classList.add('country-filter__sort-list--is-hidden');
+    if (window.innerWidth < 768) {
+
+      sortFilterList.classList.add('country-filter__sort-list--is-hidden');
+    }
 
     sotrHideButton.removeEventListener('click', hideMenu);
     sotrHideButton.addEventListener('click', showMenu);

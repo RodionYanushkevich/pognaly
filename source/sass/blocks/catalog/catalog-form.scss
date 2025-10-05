@@ -141,7 +141,10 @@
       }
 
       @include vp-767 {
+        position: static;
         flex-direction: column;
+        padding-right: 0;
+
         // justify-content: space-between;
       }
     }
@@ -191,7 +194,8 @@
 
       @include vp-767 {
         position: static;
-        top: -4px;
+        gap: 1px;
+        margin: 7px 0 21px;
       }
     }
   }
@@ -303,6 +307,13 @@
     }
 
     @include vp-767 {
+      min-height: 35px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 93%;
+      letter-spacing: 0.06em;
+
       width: 100%;
       flex-grow: 0;
     }
@@ -322,7 +333,7 @@
 
       @include vp-767 {
         flex-direction: column;
-        gap: 26px;
+        gap: 4px;
       }
     }
 
@@ -347,6 +358,11 @@
         label {
           display: none;
         }
+      }
+
+      @include vp-767 {
+        margin-top: 3px;
+        margin-right: 4px;
       }
 
       &::before {
@@ -399,6 +415,17 @@
     @include vp-1023 {
       margin-top: 34px;
     }
+
+    @include vp-767 {
+      margin-right: 0;
+
+      margin-top: 20px;
+      min-height: 41px;
+
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 100%;
+    }
   }
 }
 
@@ -433,6 +460,12 @@
     order: -1;
   }
 
+  @include vp-767 {
+    margin-top: 14px;
+    width: 100%;
+    order: 1;
+  }
+
   .noUi-target {
     height: 3px;
     min-width: unset;
@@ -443,7 +476,11 @@
     box-shadow: unset;
 
     @include vp-1023 {
-      // min-width: 275px;
+      min-width: 275px;
+    }
+
+    @include vp-767 {
+      min-width: unset;
     }
   }
 

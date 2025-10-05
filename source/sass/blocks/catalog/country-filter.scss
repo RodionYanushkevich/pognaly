@@ -230,7 +230,8 @@
   &__letters-list {
     list-style: none;
     margin: 0;
-    padding: 70px 70px 69px 42px;
+    padding: 50px 70px 39px 42px;
+    // padding: 70px 70px 69px 42px;
 
     display: grid;
     grid-template-columns: repeat(5, min-content);
@@ -401,6 +402,7 @@
     min-height: 100px;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 
     column-gap: 23px;
 
@@ -413,7 +415,6 @@
     border: none;
 
     color: $color-midnight-express-dark;
-
     background-color: #d6daed;
 
     cursor: pointer;
@@ -433,9 +434,9 @@
 
     @include vp-767 {
       margin-left: 0;
+      padding-left: 14px;
       width: 100%;
       min-height: 39px;
-      padding-left: 14px;
       font-size: 16px;
       line-height: 125%;
       letter-spacing: 0.05em;
