@@ -33,6 +33,12 @@
       font-size: 15px;
       line-height: 107%;
       background-color: $color-default-white;
+
+      @include vp-767 {
+        margin-left: -3px;
+        padding-left: 9px;
+        grid-row: 3/4;
+      }
     }
 
     &::before {
@@ -42,18 +48,36 @@
       left: -35px;
       grid-row: 4/5;
       grid-column: 1/-1;
-      z-index: 0;
+      z-index: 1;
       width: calc(100% + 70px);
       height: 1px;
       background-color: #edeff6;
+
+      @include vp-767 {
+        content: "транспорт";
+        position: static;
+        width: min-content;
+        height: unset;
+        margin-left: -3px;
+        padding-left: 9px;
+
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 107%;
+        background-color: $color-default-white;
+
+        grid-row: 5/6;
+      }
     }
   }
 
   @include vp-767 {
     min-width: unset;
-
-    grid-template-columns: min-content  min-content;
-    grid-template-rows: repeat(6, min-content);
+    width: 100%;
+    min-height: 416px;
+    grid-template-columns: min-content 1fr  min-content;
+    grid-template-rows: repeat(7, min-content);
+    padding: 15px 18px 15px 18px;
   }
 
   &__image-wrapper {
@@ -116,6 +140,10 @@
     @include vp-767 {
       grid-column: 2/3;
       grid-row: 1/2;
+      // padding: 0 40px 0 16px;
+      padding: 0 10px 0 15px;
+      font-size: 20px;
+      line-height: 100%;
     }
   }
 
@@ -139,6 +167,11 @@
     @include vp-767 {
       grid-column: 1/-1;
       grid-row: 2/3;
+      padding: 13px 8px 14px 8px;
+
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 120%;
     }
   }
 
@@ -159,7 +192,9 @@
 
     @include vp-767 {
       grid-column: 1/-1;
-      grid-row: -1/-2;
+      grid-row: 7/8;
+      width: 100%;
+      padding: 8px 2px;
     }
   }
 
@@ -191,8 +226,32 @@
     }
 
     @include vp-767 {
-      grid-column: 1/-1;
-      grid-row: 5/6;
+      position: relative;
+      grid-column: 1/3;
+      grid-row: 6/7;
+
+      padding: 17px 3px;
+      flex-direction: row;
+      column-gap: 1px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: -18px;
+        display: flex;
+        width: calc(100% + 89px);
+        height: 1px;
+        background-color: $color-solitude;
+      }
+
+      li {
+        width: 32px;
+        height: 32px;
+
+        border-radius: 50%;
+        background: $color-solitude;
+      }
     }
 
     .catalog-card__icon {
@@ -203,6 +262,11 @@
       @include vp-1023 {
         width: 25px;
         height: 25px;
+      }
+
+      @include vp-767 {
+        width: 20px;
+        height: 20px;
       }
 
       &--checked {
@@ -218,6 +282,10 @@
 
     @include vp-1023 {
       width: 169px;
+    }
+
+    @include vp-767 {
+      width: 100%;
     }
   }
 
@@ -236,6 +304,10 @@
 
       @include vp-1023 {
         gap: 6px;
+      }
+
+      @include vp-1023 {
+        display: none;
       }
     }
   }
@@ -262,8 +334,23 @@
     }
 
     @include vp-767 {
+      position: relative;
       grid-column: 1/-1;
       grid-row: 4/5;
+      flex-direction: column;
+      padding: 17px 7px 13px;
+      gap: 11px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: -18px;
+        display: flex;
+        width: calc(100% + 36px);
+        height: 1px;
+        background-color: $color-solitude;
+      }
     }
 
     &-item {
@@ -284,6 +371,13 @@
           height: 24px;
         }
       }
+
+      @include vp-767 {
+        img {
+          width: 26px;
+          height: 17px;
+        }
+      }
     }
   }
 
@@ -294,6 +388,13 @@
     font-size: 20px;
     line-height: 100%;
     text-transform: uppercase;
+
+
+    @include vp-767 {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 107%;
+    }
   }
 
   &__online {
@@ -314,6 +415,13 @@
       right: 202px;
     }
 
+    @include vp-767 {
+      bottom: unset;
+      left: unset;
+      top: 22px;
+      right: 21px;
+    }
+
     &--true {
       background-color: $color-lawn-green;
     }
@@ -327,6 +435,15 @@
     @include vp-1023 {
       bottom: 103px;
       right: 24px;
+    }
+
+    @include vp-767 {
+      position: relative;
+      bottom: unset;
+      right: unset;
+      grid-column: 3 / 4;
+      grid-row: 6 / 7;
+      margin: 10px 4px;
     }
   }
 }
@@ -347,4 +464,8 @@
   text-transform: uppercase;
 
   border: none;
+
+  @include vp-767 {
+    min-height: 40px;
+  }
 }

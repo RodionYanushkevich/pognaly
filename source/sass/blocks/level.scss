@@ -1,18 +1,17 @@
-$dote-width: 3px;
-// $wrapper-radius: 300px;
-$wrapper-radius: 63px;
-$dote-rotation-radius: 150px;
 
-@function perc-to-deg($percent) {
-  @return ($percent / 100) * 360deg;
-}
 
 .level {
+  --dote-width: 3px;
+  --wrapper-radius: 63px;
 
+  @include vp-767 {
+    --dote-width: 3px;
+    --wrapper-radius: 45px;
+  }
   position: relative;
 
-  width: $wrapper-radius;
-  height: $wrapper-radius;
+  width: var(--wrapper-radius);
+  height: var(--wrapper-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +25,13 @@ $dote-rotation-radius: 150px;
     position: absolute;
 
     left: 50%;
-    top: $dote-width;
+    top: 50%;
 
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(-50%);
     z-index: 3;
     display: flex;
-    width: $wrapper-radius - $dote-width*2;
-    height: $wrapper-radius - $dote-width*2;
+    width: calc(var(--wrapper-radius) - var(--dote-width) * 2);
+    height: calc(var(--wrapper-radius) - var(--dote-width) * 2);
 
     background: $color-default-white;
 
@@ -43,8 +42,8 @@ $dote-rotation-radius: 150px;
     content: "";
     position: absolute;
     z-index: 2;
-    width: $wrapper-radius;
-    height: $wrapper-radius;
+    width: var(--wrapper-radius);
+    height: var(--wrapper-radius);
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -53,19 +52,31 @@ $dote-rotation-radius: 150px;
         #4d99d6 0deg calc(var(--level, 0) * 3.6deg),
         rgba(255, 255, 255, 0) calc(var(--level, 0) * 3.6deg) 360deg
       );
+
+    @include vp-1023 {
+
+      background: conic-gradient(
+        #ff8d30 0deg calc(var(--level, 0) * 3.6deg),
+        rgba(255, 255, 255, 0) calc(var(--level, 0) * 3.6deg) 360deg
+      );
+    }
   }
 
   &__dote {
     position: absolute;
     top: 0;
     // left: calc(50% - 10px);
-    left: calc(50% - ($dote-width/2));
+    left: calc(50% - ( var(--dote-width)/2));
     display: flex;
-    width: $dote-width;
-    height: $dote-width;
-    background: #4d99d6;
+    width: var(--dote-width);
+    height: var(--dote-width);
+    background-color: #4d99d6;
     border-radius: 50%;
 
+    @include vp-1023 {
+
+      background-color: #ff8d30;
+    }
     z-index: 3;
   }
 
@@ -76,8 +87,8 @@ $dote-rotation-radius: 150px;
     border-radius: 50%;
     background-color: $color-default-white;
 
-    width: $wrapper-radius;
-    height: $wrapper-radius;
+    width: var(--wrapper-radius);
+    height: var(--wrapper-radius);
 
     transform: translateX(-50%) translateY(-50%) rotate(calc(var(--level, 0) * 3.6deg));
 
@@ -86,16 +97,21 @@ $dote-rotation-radius: 150px;
       position: absolute;
 
       top: 0;
-      left: calc(50% - ($dote-width/2));
+      left: calc(50% - ( var(--dote-width)/2));
       z-index: 3;
       display: flex;
 
-      width: $dote-width;
-      height: $dote-width;
+      width: var(--dote-width);
+      height: var(--dote-width);
+
+      border-radius: 50%;
 
       background: #4d99d6;
-      // background: red;
-      border-radius: 50%;
+
+      @include vp-1023 {
+
+        background-color: #ff8d30;
+      }
     }
   }
 
@@ -137,6 +153,11 @@ $dote-rotation-radius: 150px;
       line-height: 100%;
 
       color: $color-default-black;
+
+      @include vp-1023 {
+
+        display: none;
+      }
     }
   }
 }

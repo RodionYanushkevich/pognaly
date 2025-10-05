@@ -28,7 +28,8 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
     each category, categoryName in formData
       fieldset.catalog-form__fieldset
         legend.visually-hidden= categoryName === 'hobbies' ? 'Хобби' : categoryName === 'music' ? 'Музыка' : categoryName === 'food' ? 'Еда' : 'Транспорт'
-        button.catalog-form__button(type="button", data-button="catalog-form-button")
+        button.catalog-form__button(type="button", data-button="catalog-form-button",
+          class=(categoryName !== 'hobbies' && categoryName !== 'food') ? 'catalog-form__button--is-active' : '')
           span= categoryName === 'hobbies' ? 'Хобби' : categoryName === 'music' ? 'Музыка' : categoryName === 'food' ? 'Еда' : 'Транспорт'
           +icon("arrow-icon", 16, 6)
         .catalog-form__checkbox-wrapper(class= categoryName === "transport" ? "catalog-form__checkbox-wrapper--transport" : '')
