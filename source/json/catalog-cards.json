@@ -41,7 +41,7 @@
       "car",
       "walk"
     ],
-    "online": true,
+    "online": false,
     "level": "80",
     "photo": "demin",
     "likes": "1500"
@@ -60,7 +60,7 @@
       },
       {
         "icon": "dominikana",
-        "description": "Доминикана"
+        "description": "Доминика"
       }
     ],
     "travelIconCheck": [
@@ -74,7 +74,7 @@
   },
   {
     "name": "Лариса Роговая",
-    "hashTags": "#образование #карьера #учеба #линкедин",
+    "hashTags": "#образование #карьера   #учеба #линкедин",
     "countriesFlags": [
       {
         "icon": "uk",
@@ -89,9 +89,9 @@
       "plane",
       "bike"
     ],
-    "online": false,
+    "online": true,
     "level": "50",
     "photo": "rogovaya",
-    "likes": "170"
+    "likes": "230"
   }
 ]
