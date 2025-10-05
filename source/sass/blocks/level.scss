@@ -1,6 +1,6 @@
 $dote-width: 3px;
 // $wrapper-radius: 300px;
-$wrapper-radius: 61.5px;
+$wrapper-radius: 63px;
 $dote-rotation-radius: 150px;
 
 @function perc-to-deg($percent) {
@@ -101,12 +101,34 @@ $dote-rotation-radius: 150px;
 
   &__description-container {
     position: relative;
+    top: 3px;
+    left: 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 3px;
 
     z-index: 3;
+
+    .level__count {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% + 2px);
+        left: 50%;
+        display: block;
+        height: 1px;
+        width: 34px;
+        opacity: 0.1;
+        background-color: $color-default-black;
+        transform: translateX(-50%);
+      }
+    }
 
     .level__description {
       opacity: 0.4;

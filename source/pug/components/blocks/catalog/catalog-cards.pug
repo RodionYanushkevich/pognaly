@@ -61,7 +61,7 @@ mixin catalog-cards(catalogData)
           .catalog-cards__padination-wrapper
             ul.catalog-cards__padination-list
               li.catalog-cards__padination-list-item
-                button.catalog-cards__padination-button 1
+                button.catalog-cards__padination-button.catalog-cards__padination-button--is-active 1
               li.catalog-cards__padination-list-item
                 button.catalog-cards__padination-button 2
               li.catalog-cards__padination-list-item
@@ -71,9 +71,9 @@ mixin catalog-cards(catalogData)
 
             ul.catalog-cards__padination-list
               li.catalog-cards__padination-list-item
-                button.catalog-cards__padination-button
+                button.catalog-cards__padination-button.catalog-cards__padination-button--arrow
                   +icon("arrow-icon", 20, 13)
               li.catalog-cards__padination-list-item
-                button.catalog-cards__padination-button
+                button.catalog-cards__padination-button.catalog-cards__padination-button--arrow.catalog-cards__padination-button--next
                   +icon("arrow-icon", 20, 13)
 

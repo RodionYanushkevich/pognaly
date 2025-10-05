@@ -15,8 +15,38 @@
   @include vp-1023 {
     min-width: unset;
     width: 100%;
-    grid-template-columns: min-content min-content min-content;
-    grid-template-rows: repeat(2, min-content) 50px;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: repeat(2, min-content) minmax(90px, min-content);
+
+    padding: 35px 35px 21px;
+
+    &::after {
+      content: "хочет посетить:";
+      z-index: 1;
+      width: min-content;
+      white-space: nowrap;
+      grid-row: 4/5;
+      grid-column: 1/-1;
+      margin-left: 39px;
+      padding-left: 10px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 107%;
+      background-color: $color-default-white;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -35px;
+      grid-row: 4/5;
+      grid-column: 1/-1;
+      z-index: 0;
+      width: calc(100% + 70px);
+      height: 1px;
+      background-color: #edeff6;
+    }
   }
 
   @include vp-767 {
@@ -32,17 +62,14 @@
     width: 285px;
     height: 285px;
 
-    @include vp-767 {
-      grid-column: 1/2;
-      grid-row: 1/2;
-    }
-
     img {
       width: 285px;
       height: 285px;
     }
 
     @include vp-1023 {
+      grid-column: 1/2;
+      grid-row: 1/4;
       width: 190px;
       height: 190px;
 
@@ -53,6 +80,8 @@
     }
 
     @include vp-767 {
+      grid-column: 1/2;
+      grid-row: 1/2;
       width: 70px;
       height: 70px;
 
@@ -78,6 +107,12 @@
     line-height: 100%;
     padding: 46px 20px 0 63px;
 
+    @include vp-1023 {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      padding: 0 33px;
+    }
+
     @include vp-767 {
       grid-column: 2/3;
       grid-row: 1/2;
@@ -95,6 +130,12 @@
     line-height: 115%;
     color: $color-default-black;
 
+    @include vp-1023 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      padding: 0 130px 10px 36px;
+    }
+
     @include vp-767 {
       grid-column: 1/-1;
       grid-row: 2/3;
@@ -108,6 +149,13 @@
     align-items: flex-start;
     padding-left: 56px;
     column-gap: 4px;
+
+    @include vp-1023 {
+      column-gap: 8px;
+      grid-column: 2/3;
+      grid-row: 3/4;
+      padding: 17px 30px;
+    }
 
     @include vp-767 {
       grid-column: 1/-1;
@@ -125,9 +173,41 @@
     display: flex;
     column-gap: 8px;
 
+    @include vp-1023 {
+      flex-direction: column;
+      grid-column: 3/4;
+      grid-row: 1/3;
+
+      row-gap: 6px;
+      padding: 2px 7px;
+
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
     @include vp-767 {
       grid-column: 1/-1;
       grid-row: 5/6;
+    }
+
+    .catalog-card__icon {
+      width: 25px;
+      height: 25px;
+      opacity: 0.4;
+
+      @include vp-1023 {
+        width: 25px;
+        height: 25px;
+      }
+
+      &--checked {
+        opacity: 1;
+      }
     }
   }
 
@@ -135,6 +215,10 @@
     // padding: 0;
     width: 149px;
     background-color: $color-pale-cornflower-blue;
+
+    @include vp-1023 {
+      width: 169px;
+    }
   }
 
   &__likes-button {
@@ -149,6 +233,10 @@
       font-size: 20px;
       line-height: 100%;
       text-transform: uppercase;
+
+      @include vp-1023 {
+        gap: 6px;
+      }
     }
   }
 
@@ -165,6 +253,14 @@
 
     list-style: none;
 
+    @include vp-1023 {
+      flex-direction: row;
+      grid-column: 1/-1;
+      grid-row: 5/6;
+      padding: 21px 20px 3px 2px;
+      gap: 13px;
+    }
+
     @include vp-767 {
       grid-column: 1/-1;
       grid-row: 4/5;
@@ -178,6 +274,15 @@
       img {
         width: 35px;
         height: 24px;
+      }
+
+      @include vp-1023 {
+        gap: 12px;
+
+        img {
+          width: 40px;
+          height: 24px;
+        }
       }
     }
   }
@@ -202,6 +307,13 @@
     width: 8px;
     background-color: $color-salmon;
 
+    @include vp-1023 {
+      bottom: unset;
+      left: unset;
+      top: 44px;
+      right: 202px;
+    }
+
     &--true {
       background-color: $color-lawn-green;
     }
@@ -209,8 +321,13 @@
 
   &__level {
     position: absolute;
-    bottom: 38px;
+    bottom: 40px;
     right: 43px;
+
+    @include vp-1023 {
+      bottom: 103px;
+      right: 24px;
+    }
   }
 }
 
