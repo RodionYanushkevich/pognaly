@@ -1,3 +1,5 @@
+const desktopBreakpoint = window.matchMedia('(min-width: 1023px)');
+
 
 const initCountryFilterEvents = () => {
 
@@ -45,9 +47,22 @@ const initCountryFilterEvents = () => {
       listItems[listItems.length - 1].remove();
     }
   };
+  if (window.innerWidth < 1023) {
 
-  listClone(letterButtons[0]);
+    listClone(letterButtons[0]);
+  }
 
+  const defaultDesktopLetters = () => {
+    console.log(true);
+    if (filterContainer.children.length !== 25) {
+
+      filterContainer.children[filterContainer.children.length - 1].remove();
+    }
+
+
+  };
+
+  desktopBreakpoint.addEventListener('change', defaultDesktopLetters);
 };
 
 
