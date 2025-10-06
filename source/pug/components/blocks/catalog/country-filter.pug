@@ -38,9 +38,9 @@ mixin country-filter(countriesdata)
           each letter, i in sortedLetters
             li.country-filter__letters-list-item
               if i === 0
-                button.country-filter__letters-list-button.country-filter__letters-list-button--is-active(type="button", data-button="filter-lerter-button", aria-pressed="true")!=letter
+                button.country-filter__letters-list-button.country-filter__letters-list-button--is-active(type="button", data-button="filter-letter-button", aria-pressed="true")!=letter
               else
-                button.country-filter__letters-list-button(type="button", data-button="filter-lerter-button", aria-pressed="false")!=letter
+                button.country-filter__letters-list-button(type="button", data-button="filter-letter-button", aria-pressed="false")!=letter
 
               ul.country-filter__countries-list
                 each country in groups[letter]

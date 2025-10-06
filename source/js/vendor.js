@@ -2,3 +2,4 @@
 import './vendor/swiper';
 import './vendor/nouislider';
 import './vendor/focus-visible-polyfill';
+import './vendor/gsap.min.js';
