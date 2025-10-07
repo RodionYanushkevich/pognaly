@@ -47,6 +47,9 @@
   border-radius: 50%;
   background-color: $color-midnight-express-darkerer;
 
+  transition: color $trans-default;
+  color: $color-pattens-blue;
+
   @include vp-1023 {
     width: 68px;
 
@@ -74,6 +77,21 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
+
+  transition: color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+    .map__address-icon-container {
+      color: inherit;
+    }
+
+    color: #4d99d6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @include vp-1023 {
     padding: 0;
@@ -111,6 +129,24 @@
   width: 324px;
   padding: 0 16px 0 34px;
   background-color: $color-transparent;
+
+  transition: color $trans-default,
+    background-color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+    color: $color-default-white;
+    background-color: $color-midnight-express-dark;
+  }
+
+  @include active {
+    color: rgb(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    color: rgb(255, 255, 255, 0.1);
+  }
+
 
   @include vp-1023 {
     width: 100%;

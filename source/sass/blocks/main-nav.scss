@@ -120,6 +120,17 @@
     }
   }
 
+  &__item {
+    overflow: hidden;
+    height: calc(100% - 20px);
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      height: 30px;
+    }
+  }
+
   &__link {
     color: inherit;
 
@@ -127,15 +138,56 @@
     line-height: size(20px);
     text-transform: uppercase;
 
-    @include vp-1023 {
+    display: flex;
+    flex-direction: column;
 
+    gap: 10px;
+
+    transition: transform $trans-default,
+      color  $trans-default;
+
+    @include hover-focus {
+      transform: translateY(-30px);
+      color: $color-jordy-blue;
+    }
+
+    &:active {
+      opacity: 0.7;
+      color: $color-jordy-blue;
+    }
+
+
+    @include vp-1023 {
       font-weight: 500;
       font-size: 30px;
       line-height: 143%;
+
+      @include hover-focus {
+        transform: translateY(calc(-50% - 10px));
+        color: $color-jordy-blue;
+      }
     }
 
     &.is-active {
       opacity: 0.6;
+    }
+
+    &::after {
+      content: attr(data-link);
+      position: relative;
+      bottom: -100%;
+      font-weight: 700;
+      font-size: size(20px);
+      line-height: size(20px);
+      text-transform: uppercase;
+
+      @include vp-1023 {
+        bottom: 0;
+
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 143%;
+      }
     }
   }
 
@@ -230,8 +282,23 @@
     line-height: 100%;
     text-transform: uppercase;
 
+
     span:last-child {
       display: none;
+    }
+
+    @include hover-focus {
+      .main-nav__link-icon-container {
+        background-color: #468ac1;
+      }
+    }
+
+    &:active {
+      .main-nav__link-icon-container {
+        svg {
+          opacity: 0.3;
+        }
+      }
     }
 
     @include vp-1023 {
@@ -281,11 +348,13 @@
     background-color: $color-jordy-blue;
     color: $color-midnight-express-darker;
 
+    transition: background-color $trans-default;
+
     svg {
       display: block;
       width: size(17px);
       height: size(17px);
-
+      transition: opacity $trans-default;
 
       &:not(:first-child) {
         display: none;

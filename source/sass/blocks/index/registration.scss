@@ -103,6 +103,19 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: $color-pale-cornflower-blue;
+  transition: color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+
+    color: #4d99d6;
+  }
+
+  &:active {
+
+
+    opacity: 0.3;
+  }
 }
 
 .registration__input-wrapper {
@@ -206,6 +219,18 @@
   line-height: 100%;
   text-transform: uppercase;
 
+
+  transition: color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+    color: #4d99d6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   @include vp-1023 {
     column-gap: 23px;
 
@@ -250,6 +275,7 @@
   flex-shrink: 0;
   border-radius: 50%;
   background-color: $color-midnight-express-darkerer;
+
 
   @include vp-1023 {
     width: 68px;

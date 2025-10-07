@@ -16,7 +16,28 @@
     flex-shrink: 0;
     border-radius: 50%;
 
+    transition: opacity $trans-default,
+      background-color $trans-default;
     background-color: $color-pale-cornflower-blue;
+
+    @include hover-focus {
+
+
+      background-color: #4d99d6;
+    }
+
+    svg {
+      transition: opacity $trans-default;
+      width: size(32px);
+      height: size(32px);
+    }
+
+    &:active {
+      svg {
+
+        opacity: 0.3;
+      }
+    }
 
     @include vp-767 {
       width: 45px;

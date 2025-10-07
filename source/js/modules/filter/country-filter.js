@@ -13,13 +13,14 @@ const initCountryFilter = () => {
 
 
   const menuHideAnimation = () => {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        gsap.set(filterContainer, {display: 'none'});
-      },
-    });
+    // const tl = gsap.timeline({
+    //   onComplete: () => {
+    //     gsap.set(filterContainer, {display: 'none'});
+    //   },
+    // });
 
-    tl.to(filterContainer, {
+
+    gsap.to(filterContainer, {
       opacity: 0,
       height: 0,
       duration: 0.5,
@@ -28,27 +29,25 @@ const initCountryFilter = () => {
 
   const menuShowAnimation = () => {
     const tl = gsap.timeline({
-      onComplete: () => {
+      onStart: () => {
         gsap.set(filterContainer, {display: 'grid'});
       },
     });
 
+    gsap.set(filterContainer, {
+      height: 0});
+
     tl.to(filterContainer, {
       opacity: 1,
-      height: '100%',
-      duration: 0.5,
-      ease: 'power2.out',
+      height: 'auto',
+      duration: 1,
     });
 
   };
-  let isHidden = false;
 
 
   const hideMenu = () => {
     menuHideAnimation();
-    isHidden = true;
-    // filterContainer.classList.add('country-filter__letters-list--is-hidden');
-
     lettersListHideButton.classList.add('country-filter__list-hide-button--is-hidden');
 
 
@@ -64,7 +63,6 @@ const initCountryFilter = () => {
   };
 
   const showMenu = () => {
-    isHidden = false;
     menuShowAnimation();
     filterContainer.classList.remove('country-filter__letters-list--is-hidden');
     lettersListHideButton.classList.remove('country-filter__list-hide-button--is-hidden');

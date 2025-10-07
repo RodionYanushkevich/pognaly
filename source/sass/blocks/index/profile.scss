@@ -280,6 +280,16 @@
   column-gap: 20.36px;
   align-self: flex-start;
 
+  transition: opacity $trans-default;
+
+  @include hover-focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+
   @include vp-1023 {
     margin-top: -38px;
   }

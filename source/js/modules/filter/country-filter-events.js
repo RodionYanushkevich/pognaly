@@ -4,7 +4,9 @@ const desktopBreakpoint = window.matchMedia('(min-width: 1023px)');
 const initCountryFilterEvents = () => {
 
   const filterContainer = document.querySelector('[data-el="country-filter-letters-list"]');
-
+  if (!filterContainer) {
+    return;
+  }
   const letterButtons = document.querySelectorAll('[data-button="filter-letter-button"]');
 
 
