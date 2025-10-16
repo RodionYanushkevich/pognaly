@@ -40,12 +40,8 @@ const initCountryFilterEvents = () => {
   };
 
   const cleanList = () => {
-
     const listItems = filterContainer.children;
-
-
     if (filterContainer.children.length !== 25) {
-
       listItems[listItems.length - 1].remove();
     }
   };

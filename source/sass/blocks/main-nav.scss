@@ -122,16 +122,17 @@
 
   &__item {
     overflow: hidden;
-    height: calc(100% - 20px);
+    // height: calc(100% - 20px);
 
     @include vp-1023 {
       display: flex;
       flex-direction: column;
-      height: 30px;
+      // height: 30px;
     }
   }
 
   &__link {
+    position: relative;
     color: inherit;
 
     font-size: size(20px);
@@ -142,12 +143,11 @@
     flex-direction: column;
 
     gap: 10px;
-
     transition: transform $trans-default,
       color  $trans-default;
 
     @include hover-focus {
-      transform: translateY(-30px);
+      transform: translateY(-100%);
       color: $color-jordy-blue;
     }
 
@@ -163,7 +163,7 @@
       line-height: 143%;
 
       @include hover-focus {
-        transform: translateY(calc(-50% - 10px));
+        // transform: translateY(calc(-50% - 10px));
         color: $color-jordy-blue;
       }
     }
@@ -174,15 +174,16 @@
 
     &::after {
       content: attr(data-link);
-      position: relative;
-      bottom: -100%;
+      position: absolute;
+      top: 100%;
       font-weight: 700;
       font-size: size(20px);
       line-height: size(20px);
       text-transform: uppercase;
+      width: max-content;
 
       @include vp-1023 {
-        bottom: 0;
+        // bottom: 0;
 
         font-weight: 500;
         font-size: 30px;

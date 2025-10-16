@@ -93,10 +93,28 @@
     }
 
     &-desctiption {
-
       margin-left: 17px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+      text-transform: uppercase;
+
+
+      border: none;
+      cursor: pointer;
+      pointer-events: all;
+      background-color: $color-transparent;
+
+      @include hover-focus {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
 
       @include vp-1023 {
+        pointer-events: none;
         display: none;
       }
 
@@ -144,7 +162,7 @@
 
       cursor: pointer;
 
-      &--is-checked {
+      &--is-active {
         opacity: 1;
       }
 
@@ -296,6 +314,7 @@
 
     &-button {
       padding: 0;
+      pointer-events: none;
 
       display: flex;
       align-items: center;
@@ -312,6 +331,7 @@
       cursor: pointer;
 
       @include vp-1023 {
+        pointer-events: all;
         transition: opacity $trans-default;
         width: 75px;
         height: 80px;
@@ -410,9 +430,10 @@
 
   &__list-hide-button {
     display: flex;
-
+    padding: 20px 0;
     width: 100%;
-    min-height: 100px;
+    // min-height: 100px;
+    height: 100px;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
