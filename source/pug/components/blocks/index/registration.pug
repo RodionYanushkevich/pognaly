@@ -11,7 +11,7 @@ mixin registration()
         a.registration__description-link(href="#")
           | авторизуйтесь
         |.
-      .registration__input-wrapper
+      .registration__input-wrapper(data-el="registration")
         +custom-input({
           inputPlaceholder: "E-mail",
           inputType: "email",
@@ -19,7 +19,8 @@ mixin registration()
         })
         +btn({
           tag:"button",
-          text:"Регистрация"}).registration__submit-button
+          text:"Регистрация"},
+          ).registration__submit-button
       p.registration__subdescription Остались вопросы? Мы&nbsp;с&nbsp;радостью на&nbsp;них ответим!
       .registration__buttons-wrapper
         a.registration__link(

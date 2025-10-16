@@ -9,6 +9,7 @@ import {initMap} from './modules/map/yandex-map';
 import {initNOUISlider} from './modules/noui-slider/noui-slider';
 import {initCountryFilter} from './modules/filter/country-filter';
 import {initCountryFilterEvents} from './modules/filter/country-filter-events';
+import {initValidation} from './modules/email-validation/email-validation';
 import {test} from './modules/test';
 
 // ---------------------------------
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initNOUISlider()
 initCountryFilter()
 initCountryFilterEvents()
+initValidation()
 test()
   // Modules
   // ---------------------------------
