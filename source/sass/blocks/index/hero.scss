@@ -4,19 +4,26 @@
 
   .container {
     position: relative;
-    padding: size(102px) size(72px) 0;
-    min-height: size(742px);
-    border-radius: 0 0 size(56px)  size(56px);
-
-    @include vp-1023 {
-      display: flex;
-      flex-direction: column;
-      padding: 0 0 0 0;
-      z-index: 0;
-    }
+    padding: 0;
   }
 }
 
+.hero__container {
+  padding: size(102px) size(72px) 0;
+  min-height: size(742px);
+  border-radius: 0 0 size(56px)  size(56px);
+
+  min-width: size(1320px);
+
+  @include vp-1023 {
+    min-width: unset;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+    z-index: 0;
+  }
+}
 
 .hero__wrapper {
   @include vp-1023 {

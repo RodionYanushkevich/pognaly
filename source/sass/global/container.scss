@@ -1,9 +1,9 @@
 .container {
   width: 100%;
-  max-width: $vp-1440;
+  max-width: size($vp-1440);
   margin: 0 auto;
   padding: 0 size(60px);
-  min-width: size($vp-1440);
+  // min-width: size($vp-1440);
   // box-shadow:
   //   -10px 0 10px -5px rgba(0, 0, 0, 0.25),
   //   10px 0 10px -5px rgba(0, 0, 0, 0.25);

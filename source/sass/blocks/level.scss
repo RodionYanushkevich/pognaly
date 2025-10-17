@@ -1,8 +1,6 @@
-
-
 .level {
-  --dote-width: 3px;
-  --wrapper-radius: 63px;
+  --dote-width: size(3px);
+  --wrapper-radius: size(63px);
 
   @include vp-767 {
     --dote-width: 3px;
@@ -65,7 +63,6 @@
   &__dote {
     position: absolute;
     top: 0;
-    // left: calc(50% - 10px);
     left: calc(50% - ( var(--dote-width)/2));
     display: flex;
     width: var(--dote-width);
@@ -117,8 +114,8 @@
 
   &__description-container {
     position: relative;
-    top: 3px;
-    left: 1px;
+    top: size(3px);
+    left: size(1px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,17 +126,17 @@
 
     .level__count {
       font-weight: 700;
-      font-size: 24px;
+      font-size: size(24px);
       line-height: 100%;
 
       &::after {
         content: "";
         position: absolute;
-        top: calc(50% + 2px);
+        top: calc(50% + #{size(2px)});
         left: 50%;
         display: block;
-        height: 1px;
-        width: 34px;
+        height: size(1px);
+        width: size(34px);
         opacity: 0.1;
         background-color: $color-default-black;
         transform: translateX(-50%);
@@ -149,7 +146,7 @@
     .level__description {
       opacity: 0.4;
       font-weight: 400;
-      font-size: 14px;
+      font-size: size(14px);
       line-height: 100%;
 
       color: $color-default-black;

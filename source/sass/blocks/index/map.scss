@@ -172,10 +172,10 @@
   height: size(515px);
 
   margin-top: size(-60px);
-  width: size(1440px);
+  max-width: size(1440px);
 
   @include vp-1023 {
-    width: unset;
+    max-width: unset;
     height: 584px;
   }
 

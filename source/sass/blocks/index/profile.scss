@@ -181,6 +181,11 @@
   box-shadow: 0 0 size(10px) rgba(0, 0, 0, 0.1);
   background-color: $color-blue-zodiac;
 
+  img {
+    width: size(200px);
+    height: size(202px);
+  }
+
   @include vp-1023 {
     min-width: unset;
     min-height: 285px;
@@ -188,6 +193,11 @@
     flex-direction: column;
     align-items: center;
     flex-grow: 0;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   @include vp-767 {
@@ -195,6 +205,11 @@
     margin: 0 9px 0 8px;
     flex-direction: row;
     min-height: unset;
+
+    img {
+      width: 81px;
+      height: 81px;
+    }
   }
 }
 
@@ -225,6 +240,7 @@
   display: flex;
   flex-direction: column;
   row-gap: size(24.39px);
+
 
   @include vp-1023 {
     padding: 0;

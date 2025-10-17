@@ -63,6 +63,12 @@ mixin companions()
                   span.companions-card__online
                 h3.companions-card__title!=companion.name
               p.companions-card__description!=companion.hashTags
+              .companions-card__level.level(style=`--level: ${companion.level}`)
+                span.level__dote.level__dote--min
+                span.level__wrapper
+                .level__description-container
+                  span.level__count!=companion.level
+                  span.level__description level
 
               .companions-card__icons-wrapper
                 each icon in icons

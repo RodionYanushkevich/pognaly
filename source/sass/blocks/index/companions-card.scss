@@ -1,4 +1,5 @@
 .companions-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: size(285px);
@@ -120,4 +121,10 @@
     opacity: 1;
     color: $color-midnight-ocean;
   }
+}
+
+.companions-card__level {
+  position: absolute;
+  top: size(17px);
+  left: size(22px);
 }

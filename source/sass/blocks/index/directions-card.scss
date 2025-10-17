@@ -156,6 +156,18 @@
 }
 
 .directions-card__image-wrapper {
+  img {
+    width: size(186px);
+    height: size(140px);
+  }
+
+  // @include vp-1023 {
+  //   img {
+  //     width: 270px;
+  //     height: 110px;
+  //   }
+  // }
+
   @include vp-767 {
     position: absolute;
     top: 0;
