@@ -34,10 +34,3 @@ mixin profile()
         span.profile__link-icon
           +icon("businessman", 28, 28)
         p.profile__link-description Показать тарифы для бизнеса
-      .profile__madal.modal(data-modal="profile")
-        .modal__wrapper
-          .modal__overlay(data-close-modal)
-          .modal__content
-            p.modal__title Бизнес-тарифы
-            button.modal__close-btn(type="button", data-close-modal)
-              +icon("close", 20, 20)

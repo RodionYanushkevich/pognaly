@@ -1,7 +1,7 @@
 .directions {
   position: relative;
   z-index: 18;
-  margin-top: -60px;
+  margin-top: size(-60px);
 
   .container {
     padding: 0;
@@ -28,14 +28,16 @@
 
 .directions__swiper-wrapper {
   position: relative;
-  padding: 155px 68.71px 157px 72.08px;
-  min-width: 749px;
-  min-height: 765px;
-  // flex-shrink: 0;
-  order: -1;
-  border-radius: 0 0 56px  56px;
+
+  padding: size(155px) size(68.71px) size(157px) size(72.08px);
+  min-width: size(749px);
+  min-height: size(765px);
+
+  border-radius: 0 0 size(56px) size(56px);
   background-color: $color-solitude;
+
   overflow: hidden;
+  order: -1;
 
   @include vp-1023 {
     padding: 71px 75.88px 274px 74px;
@@ -60,11 +62,11 @@
     top: 0;
     z-index: 1;
     width: 100%;
-    height: 242px;
+    height: size(242px);
     display: block;
 
     pointer-events: none;
-    background: linear-gradient(to bottom, $color-solitude 0%, $color-solitude calc(100% - 81px), $color-transparent 100%);
+    background: linear-gradient(to bottom, $color-solitude 0%, $color-solitude calc(100% - #{size(81px)}), $color-transparent 100%);
 
     @include vp-1023 {
       height: 143px;
@@ -78,7 +80,7 @@
   &::after {
     top: unset;
     bottom: 0;
-    height: 250px;
+    height: size(250px);
 
     transform: rotate(180deg);
 
@@ -90,7 +92,7 @@
 
 
 .directions__swiper {
-  height: 438px;
+  height: size(438px);
 
   @include vp-1023 {
     height: 440px;
@@ -123,13 +125,13 @@
 
 
 .directions__description-wrapper {
-  width: 631px;
+  width: size(631px);
   flex-shrink: 0;
   flex-grow: 1;
-  padding: 162px 0 96px 113px;
+  padding: size(162px) 0 size(96px) size(113px);
   display: flex;
   flex-direction: column;
-  row-gap: 33px;
+  row-gap: size(33px);
 
   @include vp-1023 {
     width: 100%;
@@ -144,9 +146,9 @@
   }
 
   .directions__link {
-    margin-top: 122px;
-    margin-left: 7px;
-    width: 298.75px;
+    margin-top: size(122px);
+    margin-left: size(7px);
+    width: size(298.75px);
     z-index: 2;
 
     @include vp-1023 {
@@ -179,7 +181,7 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: 75px;
+  font-size: size(75px);
   line-height: 60%;
 
   font-variant: all-small-caps;
@@ -201,9 +203,9 @@
   padding: 0;
   margin: 0;
   font-weight: 500;
-  font-size: 23px;
+  font-size: size(23px);
   line-height: 143%;
-  width: 489px;
+  width: size(489px);
 
 
   @include vp-1023 {

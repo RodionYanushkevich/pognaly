@@ -1,14 +1,14 @@
 .profile {
   position: relative;
   z-index: 16;
-  margin-top: -60px;
+  margin-top: size(-60px);
 
   .container {
-    padding: 176px 60px 66px 74px;
+    padding: size(176px) size(60px) size(66px) size(74px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 17px;
+    row-gap: size(17px);
 
     @include vp-1023 {
       padding: 96px 40px 61px;
@@ -26,7 +26,7 @@
 }
 
 .profile__title {
-  padding-right: 53px;
+  padding-right: size(53px);
 
   @include vp-1023 {
     text-align: center;
@@ -42,7 +42,7 @@
 }
 
 .profile__wrapper {
-  margin-top: 83px;
+  margin-top: size(83px);
 
   width: 100%;
   display: flex;
@@ -50,7 +50,6 @@
 
   @include vp-1023 {
     margin-top: unset;
-    // justify-content: flex-start;
   }
 
   @include vp-767 {
@@ -61,7 +60,7 @@
 
 .profile__list {
   margin: 0;
-  margin-top: 59px;
+  margin-top: size(59px);
   padding: 0;
   list-style: none;
   counter-reset: item;
@@ -87,14 +86,14 @@
     width: 100%;
     display: flex;
     align-items: center;
-    min-height: 76px;
+    min-height: size(76px);
 
     font-weight: 400;
-    font-size: 28px;
+    font-size: size(28px);
     line-height: 100%;
     color: $color-accent-main;
 
-    border-top: 1px solid $color-solitude;
+    border-top: size(1px) solid $color-solitude;
 
     @include vp-1023 {
       min-height: 68px;
@@ -114,7 +113,7 @@
   counter-increment: item;
   display: flex;
   align-items: center;
-  column-gap: 24.64px;
+  column-gap: size(24.64px);
 
   &:nth-child(3n + 1)::before {
     background-color: $color-picton-blue;
@@ -130,7 +129,7 @@
 
   &:last-child {
     .profile__list-item-description {
-      border-bottom: 1px solid $color-solitude;
+      border-bottom: size(1px) solid $color-solitude;
     }
   }
 
@@ -141,15 +140,15 @@
 
 .profile__list-item::before {
   content: counter(item);
-  width: 72.86px;
-  height: 70.81px;
+  width: size(72.86px);
+  height: size(70.81px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
 
   font-weight: 400;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 100%;
 
 
@@ -171,15 +170,15 @@
 }
 
 .profile__price-wrapper {
-  min-width: 585.38px;
-  min-height: 333px;
-  padding: 62px 49px 67px 48.65px;
+  min-width: size(585.38px);
+  min-height: size(333px);
+  padding: size(62px) size(49px) size(67px) size(48.65px);
   display: flex;
   justify-content: space-between;
   color: $color-default-white;
-  border-radius: 20px;
+  border-radius: size(20px);
 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 size(10px) rgba(0, 0, 0, 0.1);
   background-color: $color-blue-zodiac;
 
   @include vp-1023 {
@@ -203,7 +202,7 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: 41px;
+  font-size: size(41px);
   line-height: 68%;
 
   font-variant: all-small-caps;
@@ -212,7 +211,6 @@
   @include vp-1023 {
     font-size: 28px;
     line-height: 100%;
-    // text-align: right;
   }
 
   @include vp-767 {
@@ -222,11 +220,11 @@
 }
 
 .profile__price-container {
-  padding: 22px;
-  padding-left: 33px;
+  padding: size(22px);
+  padding-left: size(33px);
   display: flex;
   flex-direction: column;
-  row-gap: 24.39px;
+  row-gap: size(24.39px);
 
   @include vp-1023 {
     padding: 0;
@@ -247,7 +245,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 11.45px;
+  row-gap: size(11.45px);
 
   @include vp-767 {
     row-gap: 5px;
@@ -257,14 +255,13 @@
 
 .profile__price-item {
   font-weight: 400;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 100%;
 
   @include vp-1023 {
     font-weight: 300;
     font-size: 24px;
     line-height: 117%;
-    // text-align: right;
   }
 
   @include vp-767 {
@@ -274,10 +271,10 @@
 }
 
 .profile__button {
-  margin-top: -26px;
+  margin-top: size(-26px);
   display: flex;
   align-items: center;
-  column-gap: 20.36px;
+  column-gap: size(20.36px);
   align-self: flex-start;
 
   background-color: $color-transparent;
@@ -305,8 +302,8 @@
   }
 
   .profile__link-icon {
-    width: 72.86px;
-    height: 70.81px;
+    width: size(72.86px);
+    height: size(70.81px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,7 +325,7 @@
     margin: 0;
     padding: 0;
     font-weight: 700;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 100%;
 
     color: $color-blue-zodiac;
@@ -342,8 +339,7 @@
       margin-top: 0;
       font-weight: 700;
       font-size: 16px;
-      line-height: 16px;
-      /* or 100% */
+
       color: #272b3b;
     }
   }

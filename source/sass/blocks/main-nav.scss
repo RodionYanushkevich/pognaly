@@ -105,7 +105,7 @@
   &--is-open {
     .main-nav__button-wrapper {
       background-color: $color-default-white;
-      border-radius: 0 0 20px 20px;
+      border-radius: 0 0 size(20px) size(20px);
     }
 
     .main-nav__container {
@@ -122,12 +122,10 @@
 
   &__item {
     overflow: hidden;
-    // height: calc(100% - 20px);
 
     @include vp-1023 {
       display: flex;
       flex-direction: column;
-      // height: 30px;
     }
   }
 
@@ -183,8 +181,6 @@
       width: max-content;
 
       @include vp-1023 {
-        // bottom: 0;
-
         font-weight: 500;
         font-size: 30px;
         line-height: 143%;
@@ -201,7 +197,6 @@
       position: relative;
       align-items: center;
       justify-content: center;
-
 
       width: 25px;
       height: 25px;
@@ -273,7 +268,6 @@
   }
 
   &__contacts-link {
-
     display: flex;
     align-items: center;
     justify-content: center;

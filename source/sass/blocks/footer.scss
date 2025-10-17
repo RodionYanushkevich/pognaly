@@ -1,17 +1,17 @@
 .footer {
   position: relative;
   z-index: 21;
-  margin-top: -60px;
+  margin-top: size(-60px);
 
   .container {
-    border-radius: 56px  56px 0 0;
-    padding-top: 15px;
+    border-radius: size(56px)  size(56px) 0 0;
+    padding-top: size(15px);
     background-color: $color-default-white;
-    min-height: 152px;
+    min-height: size(152px);
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0 -5px 20px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 size(-5px) size(20px) rgba(0, 0, 0, 0.25));
 
     @include vp-1023 {
 
@@ -33,8 +33,8 @@
 
 .footer__logo.logo {
   position: absolute;
-  left: 58px;
-  top: calc(50% - 23px);
+  left: size(58px);
+  top: calc(50% - #{size(23px)});
   color: $color-midnight-express-dark;
 
   @include vp-1023 {
@@ -65,5 +65,5 @@
 }
 
 .footer__social-list {
-  max-width: 924px;
+  max-width: size(924px);
 }

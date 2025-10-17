@@ -1,18 +1,18 @@
 .btn {
   display: inline-flex;
-  padding: 0 37.97px 0 34.89px;
+  padding: 0 size(37.97px) 0 size(34.89px);
   align-items: center;
-  min-height: 80px;
-  width: 284.52px;
+  min-height: size(80px);
+  width: size(284.52px);
   justify-content: space-between;
 
   font-weight: 700;
-  font-size: 24px;
+  font-size: size(24px);
   line-height: 100%;
 
   color: $color-midnight-express-darker;
 
-  border-radius: 20px;
+  border-radius: size(20px);
   background-color: $color-pale-cornflower-blue;
   border: none;
   cursor: pointer;

@@ -1,18 +1,18 @@
 .registration {
   position: relative;
   z-index: 15;
-  margin-top: -60px;
+  margin-top: size(-60px);
 
   .container {
-    margin-top: 60px;
-    padding: 175px 0 102px;
+    margin-top: size(60px);
+    padding: size(175px) 0 size(102px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 42px;
+    row-gap: size(42px);
     color: $color-default-white;
     background-color: $color-blue-zodiac;
-    border-radius: 0 0 56px  56px;
+    border-radius: 0 0 size(56px) size(56px);
 
     @include vp-1023 {
       padding: 147px 0 60px;
@@ -32,7 +32,7 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: 95px;
+  font-size: size(95px);
   line-height: 47%;
 
   @include vp-1023 {
@@ -51,12 +51,12 @@
 
 .registration__description {
   margin: 0;
-  margin-top: 4px;
-  padding: 0 34px;
-  width: 655px;
+  margin-top: size(4px);
+  padding: 0 size(34px);
+  width: size(655px);
 
   font-weight: 300;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 111%;
 
   text-align: center;
@@ -107,20 +107,17 @@
     opacity $trans-default;
 
   @include hover-focus {
-
     color: #4d99d6;
   }
 
   &:active {
-
-
     opacity: 0.3;
   }
 }
 
 .registration__input-wrapper {
   display: flex;
-  margin-top: 5px;
+  margin-top: size(5px);
 
   @include vp-1023 {
     margin-top: 33px;
@@ -131,7 +128,6 @@
 
   @include vp-767 {
     margin-top: 14px;
-    // margin: 14px 10px 0 0;
     padding: 0 8px 0  0;
     width: 100%;
     display: flex;
@@ -139,8 +135,8 @@
 }
 
 .registration__submit-button {
-  border-radius: 0 20px 20px 0;
-  width: 330px;
+  border-radius: 0 size(20px) size(20px) 0;
+  width: size(330px);
 
   svg {
     transition: transform $trans-default;
@@ -148,7 +144,7 @@
   }
 
   &.btn {
-    padding: 0 35.97px 0 40.89px;
+    padding: 0 size(35.97px) 0 size(40.89px);
 
     @include vp-1023 {
       padding: 0 35.97px 0 33.89px;
@@ -179,9 +175,9 @@
 .registration__subdescription {
   padding: 0;
   margin: 0;
-  margin-top: 30px;
+  margin-top: size(30px);
   font-weight: 300;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 107%;
   letter-spacing: 0.01em;
 
@@ -205,8 +201,8 @@
 
 .registration__buttons-wrapper {
   display: flex;
-  column-gap: 105px;
-  margin-left: 36px;
+  column-gap: size(105px);
+  margin-left: size(36px);
 
   @include vp-1023 {
     flex-direction: column;
@@ -224,11 +220,11 @@
 .registration__link {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  column-gap: size(30px);
   color: $color-pattens-blue;
 
   font-weight: 700;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 100%;
   text-transform: uppercase;
 
@@ -283,7 +279,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
+  width: size(90px);
   aspect-ratio: 1;
   flex-shrink: 0;
   border-radius: 50%;
