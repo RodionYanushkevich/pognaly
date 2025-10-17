@@ -1,5 +1,5 @@
 import countriesData from '../../../json/countries.json';
-import {updateClone} from './country-filter-events';
+import {updateClone} from './countries-btn-events';
 
 const initSort = () => {
   const lettersContainer = document.querySelectorAll('[data-el="letters-list-item"]');
@@ -37,7 +37,7 @@ const initSort = () => {
     if (button.classList.contains('country-filter__sort-button--is-active')) {
       button.classList.remove('country-filter__sort-button--is-active');
       sortCountriesLetters(defaultCountriesState);
-      updateClone(); // Добавлено: обновляем клон после сброса
+      updateClone();
       return;
     }
 
@@ -46,12 +46,12 @@ const initSort = () => {
     });
     button.classList.add('country-filter__sort-button--is-active');
 
-    const buttonValue = button.textContent.trim();
+    const buttonValue = button.textContent;
 
     const regionCountries = filterByRegion(buttonValue);
     const filteredCountries = {};
     regionCountries.forEach((country) => {
-      const firstLetter = country.name[0].toUpperCase();
+      const firstLetter = country.name[0];
       if (!filteredCountries[firstLetter]) {
         filteredCountries[firstLetter] = [];
       }
@@ -65,7 +65,7 @@ const initSort = () => {
   const sortCountriesLetters = (countriesByLetter) => {
     lettersContainer.forEach((letterContainer) => {
       const letterElement = letterContainer.children[0];
-      const letterText = letterElement.textContent.toUpperCase();
+      const letterText = letterElement.textContent;
 
       if (letterContainer.children[0].nextElementSibling) {
         letterContainer.children[0].nextElementSibling.remove();

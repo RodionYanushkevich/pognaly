@@ -273,12 +273,16 @@
   }
 }
 
-.profile__link {
+.profile__button {
   margin-top: -26px;
   display: flex;
   align-items: center;
   column-gap: 20.36px;
   align-self: flex-start;
+
+  background-color: $color-transparent;
+  border: none;
+  cursor: pointer;
 
   transition: opacity $trans-default;
 

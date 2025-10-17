@@ -1,5 +1,5 @@
 import {gsap} from '../../vendor/gsap.min';
-import {initSort} from './country-sort';
+import {initSort} from './country-list-sort';
 
 const tabletBreakpoint = window.matchMedia('(min-width: 767px)');
 const desktopBreakpoint = window.matchMedia('(min-width: 1024px)');
@@ -19,7 +19,7 @@ const initCountryFilter = () => {
   const sortFilterList = document.querySelector('[data-el="country-filter-sort-list"]');
 
   const defaultPaddingFilter = gsap.getProperty(filterContainer, 'padding');
-  const defaultPaddingButton = gsap.getProperty(lettersListHideButton, 'padding');
+  // const defaultPaddingButton = gsap.getProperty(lettersListHideButton, 'padding');
   const container = filterContainer.parentNode;
 
   sortDescriptionButton.disabled = true;
