@@ -45,7 +45,6 @@ const initCountryFilter = () => {
       duration: 0.3,
       ease: 'power2.inOut',
     }).to(container, {
-      gap: 0,
       duration: 0.3,
       ease: 'power2.inOut',
     }, '<');
@@ -95,7 +94,6 @@ const initCountryFilter = () => {
       duration: 0.3,
       ease: 'power2.inOut',
     }, '<').to(container, {
-      gap: 20,
       duration: 0.3,
       ease: 'power2.inOut',
     }, '<');
