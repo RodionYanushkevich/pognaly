@@ -11,15 +11,11 @@ const initCountryFilter = () => {
     return;
   }
 
-  const sortDescriptionButton = document.querySelector('[data-button="filter-sort-desctiption');
-
+  const sortDescriptionButton = document.querySelector('[data-button="filter-sort-description"]');
   const sortHideButton = document.querySelector('[data-button="country-sort-hide-button"]');
-
   const filterContainer = document.querySelector('[data-el="country-filter-letters-list"]');
   const sortFilterList = document.querySelector('[data-el="country-filter-sort-list"]');
 
-  const defaultPaddingFilter = gsap.getProperty(filterContainer, 'padding');
-  // const defaultPaddingButton = gsap.getProperty(lettersListHideButton, 'padding');
   const container = filterContainer.parentNode;
 
   sortDescriptionButton.disabled = true;
@@ -28,93 +24,100 @@ const initCountryFilter = () => {
 
   const menuHideAnimation = () => {
     const tl = gsap.timeline({
+      onStart: () => {
+        sortHideButton.classList.add('country-filter__sort-hide-button--menu-is-open');
+        sortHideButton.removeEventListener('click', hideMenu);
+      },
       onComplete: () => {
-        gsap.set([filterContainer, lettersListHideButton], {padding: 0});
         gsap.set([filterContainer, lettersListHideButton], {display: 'none'});
 
         if (window.innerWidth < 768) {
           gsap.set(sortFilterList, {display: 'none'});
         }
+
+        sortHideButton.addEventListener('click', showMenu);
       },
     });
 
-
     tl.to([filterContainer, lettersListHideButton], {
       autoAlpha: 0,
+      maxHeight: 0,
       duration: 0.3,
-    }).to([filterContainer, lettersListHideButton], {
-      height: 0,
-      padding: 0,
+      ease: 'power2.inOut',
     }).to(container, {
       gap: 0,
-    });
+      duration: 0.3,
+      ease: 'power2.inOut',
+    }, '<');
 
     if (window.innerWidth < 768) {
       tl.to(sortFilterList, {
         autoAlpha: 0,
-        height: 0,
-      });
+        maxHeight: 0,
+        duration: 0.3,
+        ease: 'power2.inOut',
+      }, '<');
     }
-
 
     sortDescriptionButton.disabled = false;
   };
 
   const menuShowAnimation = () => {
-    let newGap = 20;
-
     const tl = gsap.timeline({
       onStart: () => {
         gsap.set(filterContainer, {display: 'grid'});
         gsap.set(lettersListHideButton, {display: 'flex'});
-        gsap.set([filterContainer, lettersListHideButton], {height: 0, autoAlpha: 0, padding: 0});
+        gsap.set([filterContainer, lettersListHideButton], {maxHeight: 0, autoAlpha: 0});
 
         if (window.innerWidth < 768) {
           gsap.set(sortFilterList, {display: 'flex'});
         }
+
+        filterContainer.classList.remove('country-filter__letters-list--is-hidden');
+        lettersListHideButton.classList.remove('country-filter__list-hide-button--is-hidden');
+        sortHideButton.classList.remove('country-filter__sort-hide-button--menu-is-open');
+        sortFilterList.classList.remove('country-filter__sort-list--is-hidden');
+        sortHideButton.removeEventListener('click', showMenu);
+      },
+      onComplete: () => {
+        sortHideButton.addEventListener('click', hideMenu);
       },
     });
 
-
     tl.to(filterContainer, {
-      height: 'auto',
+      maxHeight: 3000,
       autoAlpha: 1,
-      padding: defaultPaddingFilter,
       duration: 0.3,
+      ease: 'power2.inOut',
     }).to(lettersListHideButton, {
-      height: 'auto',
+      maxHeight: 3000,
       autoAlpha: 1,
       duration: 0.3,
-    }, '<') .to(container, {
-      gap: newGap,
+      ease: 'power2.inOut',
+    }, '<').to(container, {
+      gap: 20,
+      duration: 0.3,
+      ease: 'power2.inOut',
     }, '<');
 
     if (window.innerWidth < 768) {
       tl.to(sortFilterList, {
         autoAlpha: 1,
-        height: 'auto',
-      });
+        maxHeight: 3000,
+        duration: 0.3,
+        ease: 'power2.inOut',
+      }, '<');
     }
+
     sortDescriptionButton.disabled = true;
   };
 
-
   const hideMenu = () => {
     menuHideAnimation();
-    sortHideButton.classList.add('country-filter__sort-hide-button--menu-is-open');
-    sortHideButton.removeEventListener('click', hideMenu);
-    sortHideButton.addEventListener('click', showMenu);
   };
 
   const showMenu = () => {
     menuShowAnimation();
-    filterContainer.classList.remove('country-filter__letters-list--is-hidden');
-    lettersListHideButton.classList.remove('country-filter__list-hide-button--is-hidden');
-    sortHideButton.classList.remove('country-filter__sort-hide-button--menu-is-open');
-    sortFilterList.classList.remove('country-filter__sort-list--is-hidden');
-
-    sortHideButton.removeEventListener('click', showMenu);
-    sortHideButton.addEventListener('click', hideMenu);
   };
 
   const initBasedOnBreakpoint = () => {
@@ -123,8 +126,10 @@ const initCountryFilter = () => {
     lettersListHideButton.style.display = 'flex';
     sortFilterList.style.display = 'flex';
 
-    gsap.set([filterContainer, lettersListHideButton, sortFilterList], {autoAlpha: 1, height: 'auto'});
-
+    gsap.set([filterContainer, lettersListHideButton, sortFilterList], {
+      autoAlpha: 1,
+      maxHeight: 3000,
+    });
 
     filterContainer.classList.remove('country-filter__letters-list--is-hidden');
     lettersListHideButton.classList.remove('country-filter__list-hide-button--is-hidden');
@@ -137,9 +142,8 @@ const initCountryFilter = () => {
     lettersListHideButton.addEventListener('click', hideMenu);
     sortDescriptionButton.removeEventListener('click', showMenu);
     sortDescriptionButton.addEventListener('click', showMenu);
-
-
   };
+
   const handleBreakpointChange = () => {
     initBasedOnBreakpoint();
   };

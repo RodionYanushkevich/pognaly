@@ -23,7 +23,7 @@ mixin country-filter(countriesdata)
       .country-filter__list-container
         .country-filter__sort-wrapper
           +icon('icon-filter', 23, 15)
-          button.country-filter__sort-desctiption(data-button="filter-sort-desctiption") Фильтрация по странам:
+          button.country-filter__sort-desctiption(data-button="filter-sort-description") Фильтрация по странам:
           ul.country-filter__sort-list(data-el="country-filter-sort-list")
             each region in sortedRegions
               li

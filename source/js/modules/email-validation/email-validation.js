@@ -1,5 +1,8 @@
 const initValidation = () => {
   const container = document.querySelector('[data-el="registration"]');
+  if (!container) {
+    return;
+  }
   const [registrationInputWrapper, registrationBtn] = container.children;
   const registrationInput = registrationInputWrapper.children[0].children[0];
 

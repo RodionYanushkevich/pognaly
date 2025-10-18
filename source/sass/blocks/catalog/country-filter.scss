@@ -131,15 +131,17 @@
       list-style: none;
       display: flex;
       gap: 24px;
+      max-height: 3000px;
 
       @include vp-1023 {
         gap: 0;
       }
 
       @include vp-767 {
-        // overflow: hidden;
         display: flex;
         flex-direction: column;
+        min-width: 272px;
+        align-self: center;
       }
 
       &--is-hidden {
@@ -256,6 +258,7 @@
     padding: 50px 70px 39px 42px;
     // padding: 70px 70px 69px 42px;
 
+    max-height: 3000px;
     display: grid;
     grid-template-columns: repeat(5, min-content);
     grid-template-rows: 628px 474px 427px 473px;
