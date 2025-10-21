@@ -1,14 +1,13 @@
 .catalog-form {
   display: flex;
   flex-direction: column;
-  padding: 46px 34px 46px 48px;
-  row-gap: 19px;
-  width: 285px;
-  border-radius: 20px;
+  padding: size(46px) size(34px) size(46px) size(48px);
+  row-gap: size(19px);
+  width: size(285px);
+  border-radius: size(20px);
   background-color: $color-pattens-blue;
   color: $color-catalina-blue;
-  // width: min-content;
-  // min-height: 814px;
+
   @include vp-1023 {
     width: 100%;
     padding: 38px 19px 37px 34px;
@@ -25,12 +24,12 @@
     margin: 0;
     padding: 0;
     font-weight: 700;
-    font-size: 30px;
+    font-size: size(30px);
     line-height: 100%;
-    // color: $color-catalina-blue;
-    margin-bottom: 14px;
+
+    margin-bottom: size(14px);
     width: unset;
-    // min-height: 814px;
+
     @include vp-1023 {
       margin-bottom: 50px;
     }
@@ -44,13 +43,13 @@
 
   &__button {
     margin: 0;
-    padding: 0 8px 0 0;
+    padding: 0 size(8px) 0 0;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 500;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 110%;
 
     border: none;
@@ -64,8 +63,8 @@
     svg {
       transition: transform $trans-default;
       transform: rotate(0deg);
-      width: 16px;
-      height: 6px;
+      width: size(16px);
+      height: size(6px);
     }
 
     @include vp-1023 {
@@ -114,7 +113,6 @@
     }
   }
 
-
   &__fieldset {
     padding: 0;
     margin: 0;
@@ -130,7 +128,6 @@
 
     @include vp-767 {
       flex-direction: column;
-      // justify-content: space-between;
     }
 
     &--level {
@@ -144,18 +141,16 @@
         position: static;
         flex-direction: column;
         padding-right: 0;
-
-        // justify-content: space-between;
       }
     }
   }
 
   &__checkbox-wrapper {
     display: none;
-    padding: 25px 0 12px;
+    padding: size(25px) 0 size(12px);
     flex-direction: column;
-    row-gap: 16px;
-    column-gap: 2px;
+    row-gap: size(16px);
+    column-gap: size(2px);
     flex-wrap: wrap;
 
     @include vp-1023 {
@@ -176,7 +171,7 @@
 
     &--transport {
       column-gap: 0;
-      padding: 18px 0 12px;
+      padding: size(18px) 0 size(12px);
       flex-direction: row;
 
       @include vp-1023 {
@@ -205,15 +200,15 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    width: size(24px);
+    height: size(24px);
 
-    border-radius: 4px;
+    border-radius: size(4px);
     background-color: $color-default-white;
 
     svg {
-      width: 11px;
-      height: 11px;
+      width: size(11px);
+      height: size(11px);
     }
 
     @include vp-767 {
@@ -231,12 +226,12 @@
   &__custom-checkbox--transport {
 
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: size(44px);
+    height: size(44px);
 
     svg {
-      width: 30px;
-      height: 30px;
+      width: size(30px);
+      height: size(30px);
     }
 
     @include vp-767 {
@@ -254,9 +249,9 @@
   &__label {
     display: flex;
     align-items: center;
-    column-gap: 13px;
+    column-gap: size(13px);
     font-weight: 400;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 100%;
     color: $color-default-black;
 
@@ -277,17 +272,16 @@
     border: 1px solid #cbced9;
     border-right: none;
 
-    border-radius: 4px 0 0 4px;
-    // width: calc(192px/2);
+    border-radius: size(4px) 0 0 size(4px);
     width: 100%;
-    min-height: 46px;
+    min-height: size(46px);
     margin: 0;
     display: flex;
     align-items: center;
 
     text-align: center;
     font-weight: 500;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 100%;
     letter-spacing: 0.04em;
 
@@ -295,10 +289,10 @@
 
     &:last-of-type {
       border-left: none;
-      border-right: 1px solid #cbced9;
+      border-right: size(1px) solid #cbced9;
 
 
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 size(4px) size(4px) 0;
     }
 
     @include vp-1023 {
@@ -320,9 +314,9 @@
 
     &-container {
       display: none;
-      padding: 18px 12px 10px 0;
+      padding: size(18px) size(12px) size(10px) 0;
       flex-direction: column;
-      row-gap: 22px;
+      row-gap: size(22px);
 
       @include vp-1023 {
 
@@ -347,8 +341,10 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 14px;
-        height: 1px;
+
+        width: size(14px);
+        height: size(1px);
+
         background-color: #cbced9;
         pointer-events: none;
         transform: rotate(-180deg) translateX(50%);
@@ -371,7 +367,7 @@
         position: absolute;
         top: 0;
         left: 50%;
-        width: 1px;
+        width: size(1px);
         height: 100%;
         background-color: #cbced9;
         pointer-events: none;
@@ -383,8 +379,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 15px;
-        height: 14px;
+        width: size(15px);
+        height: size(14px);
         background-color: $color-default-white;
         transform: translateX(-50%) translateY(-50%);
         pointer-events: none;
@@ -393,18 +389,17 @@
   }
 
   &__submit-button {
-    // margin: 9px;
     padding: 0;
-    margin-top: 10px;
-    margin-right: 11px;
-    border-radius: 25px;
+    margin-top: size(10px);
+    margin-right: size(11px);
+    border-radius: size(25px);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 49px;
+    min-height: size(49px);
 
     font-weight: 500;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 110%;
     text-transform: uppercase;
     background-color: $color-default-white;
@@ -448,11 +443,11 @@
 
 
 .catalog-form__noui-slider-container {
-  height: 13px;
+  height: size(13px);
   display: flex;
   align-items: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: size(10px);
 
   @include vp-1023 {
     margin-top: 14px;
@@ -467,11 +462,11 @@
   }
 
   .noUi-target {
-    height: 3px;
+    height: size(3px);
     min-width: unset;
     width: 100%;
     background: $color-transparent;
-    border-radius: 4px;
+    border-radius: size(4px);
     border: none;
     box-shadow: unset;
 
@@ -485,26 +480,26 @@
   }
 
   .noUi-base {
-    height: 3px;
+    height: size(3px);
   }
 
 
   .noUi-connects {
-    height: 3px;
+    height: size(3px);
     background-color: rgb(22, 28, 53, 0.2);
   }
 
   .noUi-connect {
-    height: 3px;
+    height: size(3px);
     opacity: 1;
     background-color: $color-midnight-express-darker;
   }
 
   .noUi-handle {
     border-radius: 50%;
-    width: 14px;
-    height: 14px;
-    right: -7px;
+    width: size(14px);
+    height: size(14px);
+    right: -size(7px);
     border: none;
     box-shadow: unset;
 
@@ -521,7 +516,7 @@
     }
 
     &-lower {
-      right: -14px;
+      right: size(-14px);
     }
   }
 }

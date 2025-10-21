@@ -14,12 +14,12 @@
     justify-content: flex-start;
     align-items: flex-end;
     width: 100%;
-    gap: 10px;
-    flex-wrap: 10px;
-    min-height: 350px;
-    padding: 87px 128px;
+    gap: size(10px);
+    flex-wrap: size(10px);
+    min-height: size(350px);
+    padding: size(87px) size(128px);
     background-color: $color-midnight-express-dark;
-    border-radius: 0 0 56px 56px;
+    border-radius: 0 0 size(56px) size(56px);
 
     @include vp-1023 {
       padding: 87px 74px;
@@ -37,7 +37,7 @@
     padding: 0;
 
     font-weight: 700;
-    font-size: 60px;
+    font-size: size(60px);
     line-height: 33%;
 
     font-variant: all-small-caps;

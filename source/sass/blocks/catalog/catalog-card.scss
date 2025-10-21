@@ -1,14 +1,14 @@
 .catalog-card {
   position: relative;
-  min-width: 951px;
+  min-width: size(951px);
   display: grid;
   background-color: $color-default-white;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 size(4px) size(20px) 0 rgba(0, 0, 0, 0.25);
 
-  grid-template-columns: min-content minmax(min-content, 342px) 1fr;
-  grid-template-rows: minmax(98px, min-content) minmax(90px, min-content) min-content;
+  grid-template-columns: min-content minmax(min-content, size(342px)) 1fr;
+  grid-template-rows: minmax(size(98px), min-content) minmax(size(90px), min-content) min-content;
 
-  border-radius: 20px;
+  border-radius: size(20px);
 
   color: $color-catalina-blue;
 
@@ -83,12 +83,12 @@
   &__image-wrapper {
     grid-column: 1/2;
     grid-row: 1/-1;
-    width: 285px;
-    height: 285px;
+    width: size(285px);
+    height: size(285px);
 
     img {
-      width: 285px;
-      height: 285px;
+      width: size(285px);
+      height: size(285px);
     }
 
     @include vp-1023 {
@@ -127,9 +127,9 @@
     grid-row: 1/2;
 
     font-weight: 700;
-    font-size: 30px;
+    font-size: size(30px);
     line-height: 100%;
-    padding: 46px 20px 0 63px;
+    padding: size(46px) size(20px) 0 size(63px);
 
     @include vp-1023 {
       grid-column: 2/3;
@@ -140,8 +140,8 @@
     @include vp-767 {
       grid-column: 2/3;
       grid-row: 1/2;
-      // padding: 0 40px 0 16px;
       padding: 0 10px 0 15px;
+
       font-size: 20px;
       line-height: 100%;
     }
@@ -150,11 +150,11 @@
   &__description {
     grid-column: 2/3;
     grid-row: 2/3;
-    // max-width: 226px;
-    padding: 0 52px 20px 63px;
+
+    padding: 0 size(52px) size(20px) size(63px);
 
     font-weight: 400;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 115%;
     color: $color-default-black;
 
@@ -180,8 +180,8 @@
     grid-row: 3/4;
     display: flex;
     align-items: flex-start;
-    padding-left: 56px;
-    column-gap: 4px;
+    padding-left: size(56px);
+    column-gap: size(4px);
 
     @include vp-1023 {
       column-gap: 8px;
@@ -202,11 +202,11 @@
     grid-column: 3/4;
     grid-row: 3/4;
 
-    padding: 15px 20px 20px 47px;
+    padding: size(15px) size(20px) size(20px) size(47px);
     list-style: none;
     margin: 0;
     display: flex;
-    column-gap: 8px;
+    column-gap: size(8px);
 
     @include vp-1023 {
       flex-direction: column;
@@ -255,8 +255,8 @@
     }
 
     .catalog-card__icon {
-      width: 25px;
-      height: 25px;
+      width: size(25px);
+      height: size(25px);
       opacity: 0.4;
 
       @include vp-1023 {
@@ -276,8 +276,7 @@
   }
 
   &__call-button {
-    // padding: 0;
-    width: 149px;
+    width: size(149px);
     background-color: $color-pale-cornflower-blue;
 
     @include vp-1023 {
@@ -290,7 +289,7 @@
   }
 
   &__likes-button {
-    width: 50px;
+    width: size(50px);
     background-color: $color-lavender;
 
     &-wrapper {
@@ -298,7 +297,7 @@
       align-items: center;
 
       font-weight: 700;
-      font-size: 20px;
+      font-size: size(20px);
       line-height: 100%;
       text-transform: uppercase;
 
@@ -316,11 +315,11 @@
     grid-column: 3/4;
     grid-row: 1/3;
     margin: 0;
-    padding: 51px 10px 34px 48px;
+    padding: size(51px) size(10px) size(34px) size(48px);
 
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: size(14px);
 
 
     list-style: none;
@@ -356,11 +355,11 @@
     &-item {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: size(18px);
 
       img {
-        width: 35px;
-        height: 24px;
+        width: size(35px);
+        height: size(24px);
       }
 
       @include vp-1023 {
@@ -385,7 +384,7 @@
     margin: 0;
     padding: 0;
     font-weight: 500;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 100%;
     text-transform: uppercase;
 
@@ -399,13 +398,13 @@
 
   &__online {
     position: absolute;
-    top: 60px;
-    left: 322px;
+    top: size(60px);
+    left: size(322px);
 
     display: block;
     border-radius: 50%;
-    height: 8px;
-    width: 8px;
+    height: size(8px);
+    width: size(8px);
     background-color: $color-salmon;
 
     @include vp-1023 {
@@ -429,8 +428,8 @@
 
   &__level {
     position: absolute;
-    bottom: 40px;
-    right: 43px;
+    bottom: size(40px);
+    right: size(43px);
 
     @include vp-1023 {
       bottom: 103px;
@@ -451,15 +450,15 @@
 .catalog-card__likes-button,
 .catalog-card__call-button {
   display: flex;
-  min-height: 50px;
+  min-height: size(50px);
 
   align-items: center;
   justify-content: center;
 
-  border-radius: 25px;
+  border-radius: size(25px);
 
   font-weight: 700;
-  font-size: 20px;
+  font-size: size(20px);
   line-height: 100%;
   text-transform: uppercase;
 

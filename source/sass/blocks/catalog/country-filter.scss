@@ -3,7 +3,7 @@
   z-index: 19;
 
   .container {
-    margin-top: -60px;
+    margin-top: size(-60px);
 
     display: flex;
     flex-direction: column;
@@ -19,10 +19,10 @@
   }
 
   &__list-container {
-    padding: 118px 61px 10px 53px;
+    padding: size(118px) size(61px) size(10px) size(53px);
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: size(20px);
 
     @include vp-1023 {
       padding: 108px 41px 78px 53px;
@@ -41,20 +41,20 @@
 
   &__sort {
     &-wrapper {
-      padding: 4px 27px;
+      padding: size(4px) size(27px);
       display: flex;
 
       font-weight: 700;
-      font-size: 20px;
+      font-size: size(20px);
       line-height: 100%;
       text-transform: uppercase;
 
       color: $color-midnight-express-dark;
-      column-gap: 5px;
+      column-gap: size(5px);
 
       svg {
-        width: 23px;
-        height: 15px;
+        width: size(23px);
+        height: size(15px);
       }
 
       @include vp-1023 {
@@ -89,13 +89,16 @@
     }
 
     &-desctiption {
-      margin-left: 17px;
+      margin-left: size(17px);
       font-weight: 700;
-      font-size: 20px;
+      font-size: size(20px);
       line-height: 100%;
+
       text-transform: uppercase;
       border: none;
+
       cursor: pointer;
+
       pointer-events: all;
 
       background-color: $color-transparent;
@@ -134,8 +137,8 @@
     &-list {
       list-style: none;
       display: flex;
-      gap: 24px;
-      max-height: 3000px;
+      gap: size(24px);
+      max-height: size(3000px);
 
       @include vp-1023 {
         gap: 0;
@@ -198,13 +201,13 @@
       background-color: $color-transparent;
 
       font-weight: 700;
-      font-size: 20px;
+      font-size: size(20px);
       line-height: 100%;
       text-transform: uppercase;
 
       color: $color-midnight-express-dark;
 
-      column-gap: 48px;
+      column-gap: size(48px);
 
       cursor: pointer;
 
@@ -274,16 +277,15 @@
     overflow: hidden;
     list-style: none;
     margin: 0;
-    padding: 50px 70px 39px 42px;
-    // padding: 70px 70px 69px 42px;
+    padding: size(50px) size(70px) size(39px) size(42px);
 
-    max-height: 3000px;
+    max-height: size(3000px);
     display: grid;
     grid-template-columns: repeat(5, min-content);
-    grid-template-rows: 628px 474px 427px 473px;
+    grid-template-rows: size(628px) size(474px) size(427px) size(473px);
     width: 100%;
     justify-content: space-between;
-    row-gap: 23px;
+    row-gap: size(23px);
 
     &--is-hidden {
       display: none;
@@ -309,7 +311,7 @@
 
     @include vp-767 {
       position: relative;
-      padding: 0 26px 4px;
+      padding: 0 size(26px) size(4px);
       justify-content: center;
       row-gap: 0;
       column-gap: 0;
@@ -320,7 +322,7 @@
         content: "";
         display: block;
         width: 100%;
-        height: 264px;
+        height: size(264px);
         grid-row: 6/7;
         grid-column: 1/-1;
       }
@@ -330,8 +332,8 @@
     &-item {
       display: flex;
       flex-direction: column;
-      row-gap: 30px;
-      min-width: 209px;
+      row-gap: size(30px);
+      min-width: size(209px);
 
       @include vp-1023 {
         row-gap: 3px;
@@ -345,11 +347,11 @@
 
       display: flex;
       align-items: center;
-      border: 1px solid $color-transparent;
+      border: size(1px) solid $color-transparent;
       background-color: $color-transparent;
 
       font-weight: 700;
-      font-size: 60px;
+      font-size: size(60px);
       line-height: 100%;
       text-transform: uppercase;
       color: $color-midnight-express-dark;
@@ -379,7 +381,7 @@
 
       @include vp-767 {
         margin: 0;
-        outline: 1px solid #cbced9;
+        outline: size(1px) solid #cbced9;
         width: 43.5px;
         height: 40.7px;
         opacity: 1;
@@ -400,18 +402,14 @@
           color: $color-default-white;
           background-color: $color-catalina-blue;
         }
-
-        // + .country-filter__countries-list {
-        //   display: block;
-        // }
       }
 
       @include hover-focus {
-        border: 1px solid #959bb2;
+        border: size(1px) solid #959bb2;
       }
 
       &:active {
-        border: 1px solid $color-catalina-blue;
+        border: size(1px) solid $color-catalina-blue;
       }
     }
   }
@@ -448,42 +446,49 @@
       text-transform: none;
 
       font-weight: 400;
-      font-size: 20px;
+      font-size: size(20px);
       line-height: 150%;
       text-align: left;
       letter-spacing: 0.01rem;
 
       color: $color-accent-main;
 
+      cursor: pointer;
 
       @include vp-767 {
         font-weight: 400;
         font-size: 16px;
         line-height: 138%;
       }
-      // min-width: 200px;
-      // }
+
+      @include hover-focus {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0;
+      }
     }
   }
 
   &__list-hide-button {
     overflow: hidden;
     display: flex;
-    padding: 20px 0;
+    padding: size(20px) 0;
     width: 100%;
-    height: 100px;
+    height: size(100px);
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: size(10px);
 
-    column-gap: 23px;
+    column-gap: size(23px);
 
     font-weight: 700;
-    font-size: 20px;
+    font-size: size(20px);
     line-height: 100%;
     text-transform: uppercase;
 
-    border-radius: 20px;
+    border-radius: size(20px);
     border: none;
 
     color: $color-midnight-express-dark;
@@ -590,7 +595,7 @@
   & ul {
     position: static;
     display: block;
-    padding: 6px 10px 10px 87px;
+    padding: size(6px) size(10px) size(10px) size(87px);
 
     @include vp-1023 {
       padding: 6px 30px 10px 87px;
