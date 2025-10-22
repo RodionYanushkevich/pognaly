@@ -30,7 +30,7 @@ mixin profile()
             alt:""
             })
 
-      a(href="#").profile__link
+      button(type="button", data-open-modal="profile").profile__button
         span.profile__link-icon
           +icon("businessman", 28, 28)
-        p.profile__link-description Показать тарифы для бизнеса
+        span.profile__link-description Показать тарифы для бизнеса

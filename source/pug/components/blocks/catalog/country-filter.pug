@@ -1,0 +1,52 @@
+mixin country-filter(countriesdata)
+  -
+    const groups = {};
+    countriesdata.forEach(country => {
+      const firstLetter = country.name[0];
+      if (!groups[firstLetter]) groups[firstLetter] = [];
+      groups[firstLetter].push(country);
+    });
+    const sortedLetters = Object.keys(groups).sort();
+
+    const regions = {};
+    countriesdata.forEach(country => {
+      const region = country.region;
+      if (!regions[region]) regions[region] = [];
+      regions[region].push(country);
+    });
+    const sortedRegions = Object.keys(regions).sort();
+
+  section.country-filter
+    .container
+      h2.visually-hidden Фильтр стран
+
+      .country-filter__list-container
+        .country-filter__sort-wrapper
+          +icon('icon-filter', 23, 15)
+          button.country-filter__sort-desctiption(data-button="filter-sort-description") Фильтрация по странам:
+          ul.country-filter__sort-list(data-el="country-filter-sort-list")
+            each region in sortedRegions
+              li
+                button.country-filter__sort-button(type="button" , aria-pressed="false", data-button="filter-sort-button")!= region
+          button.country-filter__sort-hide-button(type="button", data-button="country-sort-hide-button")
+            span Свернуть
+            span показать все
+            +icon('icon-close', 25, 25)
+            +icon('icon-points', 18, 18)
+
+        ul.country-filter__letters-list(data-el="country-filter-letters-list")
+          each letter, i in sortedLetters
+            li.country-filter__letters-list-item(data-el="letters-list-item")
+              if i === 0
+                button.country-filter__letters-list-button.country-filter__letters-list-button--is-active(type="button", data-button="filter-letter-button", aria-pressed="true")!=letter
+              else
+                button.country-filter__letters-list-button(type="button", data-button="filter-letter-button", aria-pressed="false")!=letter
+
+              ul.country-filter__countries-list
+                each country in groups[letter]
+                  li
+                    button.country-filter__countries-list-button(type="button", data-button="filter-countries-button")!=country.name
+        button.country-filter__list-hide-button(type="button", aria-pressed="false", data-button="country-filter-button")
+          span Свернуть
+          +icon('icon-close', 24, 24)
+

@@ -1,0 +1,24 @@
+mixin modal-profile()
+  .modal-profile.modal(data-modal="profile")
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content
+        h2.modal__title бизнес
+          span -
+          | тарифы
+        ul.modal__list
+          li.modal__list-item
+            span Реклама у&nbsp;блоггера
+            span 300&nbsp;000 руб./пост
+          li.modal__list-item
+            span Накрутка подписчиков
+            span от&nbsp;1&nbsp;руб./шт.
+          li.modal__list-item
+            span Лайки от&nbsp;ботов
+            span от&nbsp;20&nbsp;коп./лайк
+          li.modal__list-item
+            span Ваш продакт-плейсмент
+            span Индивидуально
+        button.modal__close-btn(type="button", data-close-modal)
+          span Закрыть окно
+

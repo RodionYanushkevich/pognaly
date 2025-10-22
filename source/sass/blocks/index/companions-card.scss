@@ -1,17 +1,18 @@
 .companions-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 285px;
-  min-height: 479px;
-  border-radius: 22px;
+  width: size(285px);
+  min-height: size(479px);
+  border-radius: size(22px);
   background-color: $color-default-white;
   align-items: center;
-  row-gap: 13px;
-  padding-bottom: 23px;
+  row-gap: size(13px);
+  padding-bottom: size(23px);
 
   img {
-    width: 285px;
-    height: 285px;
+    width: size(285px);
+    height: size(285px);
   }
 
   @include vp-767 {
@@ -28,31 +29,31 @@
 }
 
 .companions-card__flags-container {
-  margin-top: -25px;
+  margin-top: size(-25px);
   width: 100%;
 
   display: flex;
-  padding: 0 20px;
+  padding: 0 size(20px);
   flex-wrap: wrap;
 
   justify-content: center;
-  gap: 20px;
+  gap: size(20px);
 
   img {
-    width: 35px;
-    height: 24px;
+    width: size(35px);
+    height: size(24px);
   }
 }
 
 .companions-card__title-wrapper {
-  margin-top: 6px;
-  margin-bottom: 9px;
-  padding-right: 8px;
+  margin-top: size(6px);
+  margin-bottom: size(9px);
+  padding-right: size(8px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 14px;
+  column-gap: size(14px);
   width: 100%;
 
   .companions-card__title {
@@ -60,7 +61,7 @@
     padding: 0;
 
     font-weight: 700;
-    font-size: 24px;
+    font-size: size(24px);
     line-height: 92%;
 
     text-align: center;
@@ -75,7 +76,7 @@
 
   .companions-card__online {
     display: block;
-    width: 8px;
+    width: size(8px);
     aspect-ratio: 1;
     border-radius: 50%;
     flex-shrink: 0;
@@ -91,9 +92,9 @@
 .companions-card__description {
   margin: 0;
   padding: 0;
-  padding-left: 14px;
+  padding-left: size(14px);
   font-weight: 400;
-  font-size: 20px;
+  font-size: size(20px);
   line-height: 115%;
 
   text-align: center;
@@ -108,8 +109,8 @@
 
 .companions-card__icons-wrapper {
   display: flex;
-  gap: 10px;
-  padding-left: 17px;
+  gap: size(10px);
+  padding-left: size(17px);
   margin-top: auto;
 }
 
@@ -120,4 +121,10 @@
     opacity: 1;
     color: $color-midnight-ocean;
   }
+}
+
+.companions-card__level {
+  position: absolute;
+  top: size(17px);
+  left: size(22px);
 }

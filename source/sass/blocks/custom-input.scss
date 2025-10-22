@@ -4,18 +4,18 @@
   display: flex;
 
   @media screen and (max-width: 767px) {
-    padding: 4px 0 48px 0;
+    padding: size(4px) 0 size(48px) 0;
     width: 100%;
     flex-grow: 1;
   }
 
   @include vp-1023 {
     flex-grow: 1;
-    margin-right: -10px;
   }
 
 
   @include vp-767 {
+    margin-right: -10px;
     padding: 0;
   }
 
@@ -32,24 +32,28 @@
     input,
     textarea {
       flex-grow: 1;
-      width: 844px;
-      padding-left: 36px;
-      min-height: 81px;
-      // padding: 10px;
+      width: size(844px);
+      padding-left: size(36px);
+      min-height: size(81px);
 
       font-weight: 700;
-      font-size: 24px;
+      font-size: size(24px);
       line-height: 100%;
 
       border: none;
-      border-radius: 20px 0 0 20px;
+      border-radius: size(20px) 0 0 size(20px);
       outline: none;
+
+      transition: color $trans-default;
 
       @include vp-1023 {
         max-width: unset;
         width: 100%;
         padding-left: 36px;
         min-height: 80px;
+
+        font-size: 18px;
+        line-height: 100%;
       }
 
       @include vp-767 {
@@ -58,9 +62,17 @@
         border-radius: 10px 0 0 10px;
       }
 
+      &.error {
+        color: #dc3545;
+      }
+
+      &.valid {
+        color: #28a745;
+      }
+
       &::placeholder {
         font-weight: 700;
-        font-size: 24px;
+        font-size: size(24px);
         line-height: 100%;
         color: $color-accent-main;
         opacity: 0.3;
@@ -82,14 +94,14 @@
 
   &__label {
     @media screen and (max-width: 767px) {
-      margin: 0 0 18px 0;
+      margin: 0 0 size(18px) 0;
     }
   }
 
   &__error {
     position: absolute;
     right: 0;
-    bottom: 35px;
+    bottom: size(35px);
 
     color: #ff1553;
 
@@ -98,29 +110,29 @@
     transition: opacity 0.3s ease;
 
     @media screen and (max-width: 767px) {
-      bottom: 20px;
+      bottom: size(20px);
     }
   }
 
   &.is-invalid {
     input,
     textarea {
-      border: 2px solid #ff1553;
+      border: size(2px) solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: size(2px) solid rgba(#ff1553, 0.5);
       }
     }
   }
 
   &.is-valid {
     input {
-      border: 2px solid #22b259;
+      border: size(2px) solid #22b259;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#22b259, 0.5);
+        border: size(2px) solid rgba(#22b259, 0.5);
       }
     }
   }
@@ -128,7 +140,7 @@
   .input-message {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: size(-5px);
 
 
     &.is-invalid {

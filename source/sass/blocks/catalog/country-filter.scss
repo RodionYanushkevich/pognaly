@@ -1,0 +1,654 @@
+.country-filter {
+  position: relative;
+  z-index: 19;
+
+  .container {
+    margin-top: size(-60px);
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @include vp-1023 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-lavender;
+      border-radius: 0 0 55px 55px;
+    }
+
+    @include vp-767 {
+      border-radius: 0 0 30px 30px;
+    }
+  }
+
+  &__list-container {
+    padding: size(118px) size(61px) size(10px) size(53px);
+    display: flex;
+    flex-direction: column;
+    row-gap: size(20px);
+
+    @include vp-1023 {
+      padding: 108px 41px 41px 53px;
+      min-height: 199px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include vp-767 {
+      gap: 0;
+      padding: 62px 23px 1px 25px;
+      min-height: unset;
+      border-radius: 0 0 20px 20px;
+    }
+  }
+
+  &__sort {
+    &-wrapper {
+      padding: size(4px) size(27px);
+      display: flex;
+
+      font-weight: 700;
+      font-size: size(20px);
+      line-height: 100%;
+      text-transform: uppercase;
+
+      color: $color-midnight-express-dark;
+      column-gap: size(5px);
+
+      svg {
+        width: size(23px);
+        height: size(15px);
+      }
+
+      @include vp-1023 {
+        padding: 5px 10px;
+        justify-content: space-between;
+
+        svg {
+          display: none;
+        }
+      }
+
+      @include vp-767 {
+        position: relative;
+        flex-direction: column;
+        padding: 20px 28px 15px 15px;
+        row-gap: 28px;
+
+        svg {
+          position: absolute;
+          left: 0;
+          display: block;
+          width: 16px;
+          height: 12px;
+        }
+      }
+    }
+
+    &-list,
+    &-desctiption {
+      margin: 0;
+      padding: 0;
+    }
+
+    &-desctiption {
+      margin-left: size(17px);
+      font-weight: 700;
+      font-size: size(20px);
+      line-height: 100%;
+
+      text-transform: uppercase;
+      border: none;
+
+      cursor: pointer;
+
+      pointer-events: all;
+
+      background-color: $color-transparent;
+      transition: opacity $trans-default;
+
+      &:disabled {
+        opacity: 0.9;
+        color: inherit;
+        pointer-events: none;
+      }
+
+      @include hover-focus {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+
+      @include vp-1023 {
+        pointer-events: none;
+        display: none;
+      }
+
+      @include vp-767 {
+        white-space: nowrap;
+
+        font-size: 16px;
+        line-height: 112%;
+
+        margin-left: 11px;
+        display: flex;
+      }
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      gap: size(24px);
+      max-height: size(3000px);
+
+      @include vp-1023 {
+        gap: 0;
+      }
+
+      @include vp-767 {
+        display: flex;
+        flex-direction: column;
+        min-width: 229px;
+        align-self: center;
+      }
+
+      &--is-hidden {
+        display: none;
+      }
+    }
+
+    &-button {
+      padding: 0;
+      background-color: $color-transparent;
+
+      display: flex;
+      align-items: center;
+      border: none;
+      text-transform: uppercase;
+
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+
+      color: $color-midnight-express-dark;
+
+      opacity: 0.3;
+
+      cursor: pointer;
+
+      &--is-active {
+        opacity: 1;
+      }
+
+      @include vp-1023 {
+        padding: 10px 10px;
+      }
+
+      @include vp-767 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 112%;
+        text-transform: uppercase;
+        padding: 5px 10px;
+      }
+    }
+
+    &-hide-button {
+      padding: 0;
+
+      display: none;
+      align-items: center;
+      border: none;
+      background-color: $color-transparent;
+
+      font-weight: 700;
+      font-size: size(20px);
+      line-height: 100%;
+      text-transform: uppercase;
+
+      color: $color-midnight-express-dark;
+
+      column-gap: size(48px);
+
+      cursor: pointer;
+      transition: opacity $trans-default;
+
+      @include vp-1023 {
+        column-gap: 43px;
+        display: flex;
+        min-height: 22px;
+
+        padding-right: 11px;
+      }
+
+      @include vp-767 {
+        position: absolute;
+        right: 2px;
+        top: 17px;
+        padding-right: unset;
+      }
+
+      span {
+        &:first-of-type {
+          display: block;
+        }
+
+        &:last-of-type {
+          display: none;
+        }
+
+        @include vp-767 {
+          &:first-of-type,
+          &:last-of-type {
+
+            display: none;
+          }
+        }
+      }
+
+      svg {
+        &:first-of-type {
+          display: block;
+        }
+
+        &:last-of-type {
+          display: none;
+        }
+
+        @include vp-1023 {
+          &:first-of-type {
+            width: 40px;
+            height: 23px;
+          }
+        }
+
+        @include vp-767 {
+          &:first-of-type,
+          &:last-of-type {
+            position: static;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      @include hover-focus {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+
+  &__letters-list {
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: size(50px) size(70px) size(39px) size(42px);
+
+    max-height: size(3000px);
+    display: grid;
+    grid-template-columns: repeat(5, min-content);
+    grid-template-rows: size(628px) size(474px) size(427px) size(473px);
+    width: 100%;
+    justify-content: space-between;
+    row-gap: size(23px);
+
+    &--is-hidden {
+      display: none;
+    }
+
+    @include vp-1023 {
+      position: relative;
+      padding: 18px 3px 20px;
+      row-gap: 4px;
+      grid-template-columns: repeat(5, min-content) 1fr;
+      grid-template-rows: repeat(5, min-content);
+
+      &::after {
+        content: "";
+        pointer-events: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        grid-column: 6/7;
+        grid-row: 1/-1;
+      }
+    }
+
+    @include vp-767 {
+      position: relative;
+      padding: 0 size(26px) size(4px);
+      justify-content: center;
+      row-gap: 0;
+      column-gap: 0;
+      grid-template-columns: repeat(5, min-content);
+      grid-template-rows: repeat(5, min-content) 1fr;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: size(264px);
+        grid-row: 6/7;
+        grid-column: 1/-1;
+      }
+    }
+
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      row-gap: size(30px);
+      min-width: size(209px);
+
+      @include vp-1023 {
+        row-gap: 3px;
+        min-width: unset;
+      }
+    }
+
+    &-button {
+      padding: 0;
+      pointer-events: none;
+
+      display: flex;
+      align-items: center;
+      border: size(1px) solid $color-transparent;
+      background-color: $color-transparent;
+
+      font-weight: 700;
+      font-size: size(60px);
+      line-height: 100%;
+      text-transform: uppercase;
+      color: $color-midnight-express-dark;
+
+      transition: border $trans-default,
+        opacity $trans-default;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      @include vp-1023 {
+        pointer-events: all;
+        transition: opacity $trans-default;
+        width: 75px;
+        height: 80px;
+        justify-content: center;
+        opacity: 0.3;
+
+        &:disabled {
+          opacity: 0.1;
+          pointer-events: none;
+        }
+      }
+
+      @include vp-767 {
+        margin: 0;
+        outline: size(1px) solid #cbced9;
+        width: 43.5px;
+        height: 40.7px;
+        opacity: 1;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        color: $color-catalina-blue;
+        background-color: $color-default-white;
+      }
+
+      &--is-active {
+        opacity: 1;
+
+        @include vp-767 {
+          outline: 1px solid  $color-catalina-blue;
+
+          color: $color-default-white;
+          background-color: $color-catalina-blue;
+        }
+      }
+
+      @include hover-focus {
+        border: size(1px) solid #959bb2;
+      }
+
+      &:active {
+        border: size(1px) solid $color-catalina-blue;
+      }
+    }
+  }
+
+  &__countries-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+    @include vp-1023 {
+      display: none;
+      position: absolute;
+      top: 49px;
+      right: 0;
+      min-width: 200px;
+    }
+
+    @include vp-767 {
+      display: none;
+      position: absolute;
+      top: unset;
+      bottom: 91px;
+      right: unset;
+      left: 25px;
+    }
+
+    &-button {
+      padding: 0;
+
+      display: flex;
+      border: none;
+      background-color: $color-transparent;
+      text-transform: none;
+
+      font-weight: 400;
+      font-size: size(20px);
+      line-height: 150%;
+      text-align: left;
+      letter-spacing: 0.01rem;
+
+      color: $color-accent-main;
+
+      cursor: pointer;
+
+      @include vp-767 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 138%;
+      }
+
+      @include hover-focus {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__list-hide-button {
+    overflow: hidden;
+    display: flex;
+    padding: size(20px) 0;
+    width: 100%;
+    height: size(100px);
+    align-items: center;
+    justify-content: center;
+    margin-top: size(10px);
+    max-height: 3000px;
+    column-gap: size(23px);
+
+    font-weight: 700;
+    font-size: size(20px);
+    line-height: 100%;
+    text-transform: uppercase;
+
+    border-radius: size(20px);
+    border: none;
+
+    color: $color-midnight-express-dark;
+    background-color: #d6daed;
+
+    transition: background-color $trans-default;
+    cursor: pointer;
+
+    &--is-hidden {
+      display: none;
+    }
+
+    svg {
+      opacity: 1;
+      transition: opacity $trans-default;
+
+      width: size(24px);
+      height: size(24px);
+      order: -1;
+    }
+
+    span {
+      opacity: 1;
+      transition: opacity $trans-default;
+    }
+
+    @include vp-1023 {
+      margin-left: 23px;
+      margin-bottom: 38px;
+      width: calc(100% - 38px);
+    }
+
+    @include vp-767 {
+      margin: 0;
+      margin-bottom: 27px;
+      padding-left: 14px;
+      width: 100%;
+      height: 39px;
+      font-size: 16px;
+      line-height: 125%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      column-gap: 11px;
+      border-radius: 20px;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      span {
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    @include hover-focus {
+      background-color: #c8cee8;
+    }
+
+    &:active {
+      svg {
+        opacity: 0.3;
+      }
+
+      span {
+
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.country-filter__sort-hide-button--menu-is-open {
+  @include vp-1023 {
+    column-gap: 26px;
+    display: flex;
+    min-height: 22px;
+
+    padding-right: 0;
+  }
+
+  span {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:last-of-type {
+      display: block;
+    }
+
+    @include vp-767 {
+      &:first-of-type,
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  svg {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:last-of-type {
+      display: block;
+    }
+
+    @include vp-1023 {
+      &:last-of-type {
+        width: 35px;
+        height: 20px;
+      }
+    }
+
+    @include vp-767 {
+      &:last-of-type {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+
+.country-filter__letters-list-item--is-visible {
+  grid-column: 6 / 7;
+  grid-row: 1 / -1;
+  display: block;
+
+  & ul {
+    position: static;
+    display: block;
+    padding: size(6px) size(10px) size(10px) size(87px);
+
+    @include vp-1023 {
+      padding: 6px 30px 10px 87px;
+    }
+  }
+
+  @include vp-767 {
+    grid-row: 6 / 7;
+    grid-column: 1 / -1;
+
+    & ul {
+      padding: 14px 75px 0 0;
+    }
+  }
+}
+

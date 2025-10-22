@@ -6,11 +6,11 @@ mixin header(headerMods, currentUrl)
         text: "о сервисе"
       },
       {
-        href: "directions.html",
+        href: "#",
         text: "направления"
       },
       {
-        href: "companions.html",
+        href: "catalog.html",
         text: "попутчики"
       },
     ]
@@ -42,7 +42,7 @@ mixin header(headerMods, currentUrl)
                 if(activeState)
                   span.main-nav__link.is-active= link.text
                 else
-                  a.main-nav__link(href=link.href)= link.text
+                  a.main-nav__link(href=link.href, data-link=link.text)= link.text
           ul.main-nav__contacts-list
             li.main-nav__contacts-list-item
               a.main-nav__contacts-link(

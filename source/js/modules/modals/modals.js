@@ -76,7 +76,6 @@ export class Modals {
 
   _documentClickHandler(evt) {
     const target = evt.target;
-
     if (!target.closest('[data-open-modal]')) {
       return;
     }

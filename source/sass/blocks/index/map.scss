@@ -1,7 +1,7 @@
 .map {
   position: relative;
   z-index: 14;
-  margin-top: -60px;
+  margin-top: size(-60px);
 
   .container {
     padding: 0;
@@ -11,15 +11,16 @@
 .map__description-container {
   position: relative;
   z-index: 13;
-  padding: 114px 0 56px 277px;
+  padding: size(114px) 0 size(56px) size(277px);
   display: flex;
   align-items: center;
-  // justify-content: center;
+  min-height: size(262px);
+  column-gap: size(103px);
+
   color: $color-solitude;
   background-color: $color-jordy-blue;
-  border-radius: 0 0 56px  56px;
-  min-height: 262px;
-  column-gap: 103px;
+
+  border-radius: 0 0 size(56px) size(56px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
@@ -41,11 +42,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
+  width: size(90px);
   aspect-ratio: 1;
   flex-shrink: 0;
   border-radius: 50%;
   background-color: $color-midnight-express-darkerer;
+
+  transition: color $trans-default;
+  color: $color-pattens-blue;
 
   @include vp-1023 {
     width: 68px;
@@ -69,11 +73,26 @@
 .map__address-button {
   display: flex;
   align-items: center;
-  column-gap: 31px;
+  column-gap: size(31px);
   background-color: $color-transparent;
   border: none;
-  border-radius: 20px;
+  border-radius: size(20px);
   cursor: pointer;
+
+  transition: color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+    .map__address-icon-container {
+      color: inherit;
+    }
+
+    color: #4d99d6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @include vp-1023 {
     padding: 0;
@@ -89,7 +108,7 @@
 
 .map__address {
   font-weight: 700;
-  font-size: 28px;
+  font-size: size(28px);
   line-height: 100%;
   text-transform: uppercase;
 
@@ -107,10 +126,28 @@
 }
 
 .map__button {
-  border: 3px solid $color-midnight-express-dark;
-  width: 324px;
-  padding: 0 16px 0 34px;
+  border: size(3px) solid $color-midnight-express-dark;
+  width: size(324px);
+  padding: 0 size(16px) 0 size(34px);
   background-color: $color-transparent;
+
+  transition: color $trans-default,
+    background-color $trans-default,
+    opacity $trans-default;
+
+  @include hover-focus {
+    color: $color-default-white;
+    background-color: $color-midnight-express-dark;
+  }
+
+  @include active {
+    color: rgb(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    color: rgb(255, 255, 255, 0.1);
+  }
+
 
   @include vp-1023 {
     width: 100%;
@@ -132,13 +169,13 @@
 
 .map-wrapper {
   position: relative;
-  height: 515px;
-  // background-color: $color-accent-main;
-  margin-top: -60px;
-  min-width: 1440px;
+  height: size(515px);
+
+  margin-top: size(-60px);
+  max-width: size(1440px);
 
   @include vp-1023 {
-    min-width: unset;
+    max-width: unset;
     height: 584px;
   }
 
@@ -150,8 +187,8 @@
 .map__marker {
   position: relative;
   display: block;
-  width: 54px;
-  height: 54px;
+  width: size(54px);
+  height: size(54px);
   background-color: $color-default-white;
   border-radius: 50%;
 
@@ -161,8 +198,8 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 24px;
-    height: 24px;
+    width: size(24px);
+    height: size(24px);
     border-radius: 50%;
 
     background-color: $color-midnight-deep;

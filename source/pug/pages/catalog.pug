@@ -1,0 +1,22 @@
+extends ../components/base/layout
+
+block variables
+  - const title = " О нас — Погнали" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--catalog"
+  - const hasHeader = true
+  - const headerMods = "header--catalog"
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = false
+
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +catalog-hero()
+    +country-filter(countries)
+    +catalog-cards(catalog)
+
+block modals

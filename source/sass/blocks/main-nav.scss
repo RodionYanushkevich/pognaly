@@ -5,10 +5,10 @@
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 18px;
+    gap: size(18px);
     list-style: none;
     flex-wrap: wrap;
-    max-width: 705px;
+    max-width: size(705px);
     align-items: center;
     color: $color-default-white;
 
@@ -105,7 +105,7 @@
   &--is-open {
     .main-nav__button-wrapper {
       background-color: $color-default-white;
-      border-radius: 0 0 20px 20px;
+      border-radius: 0 0 size(20px) size(20px);
     }
 
     .main-nav__container {
@@ -120,22 +120,71 @@
     }
   }
 
-  &__link {
-    color: inherit;
-
-    font-size: 20px;
-    line-height: 20px;
-    text-transform: uppercase;
+  &__item {
+    overflow: hidden;
 
     @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
+  &__link {
+    position: relative;
+    color: inherit;
+
+    font-size: size(20px);
+    line-height: size(20px);
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    transition: transform $trans-default,
+      color  $trans-default;
+
+    @include hover-focus {
+      transform: translateY(-100%);
+      color: $color-jordy-blue;
+    }
+
+    &:active {
+      opacity: 0.7;
+      color: $color-jordy-blue;
+    }
+
+
+    @include vp-1023 {
       font-weight: 500;
       font-size: 30px;
       line-height: 143%;
+
+      @include hover-focus {
+        // transform: translateY(calc(-50% - 10px));
+        color: $color-jordy-blue;
+      }
     }
 
     &.is-active {
       opacity: 0.6;
+    }
+
+    &::after {
+      content: attr(data-link);
+      position: absolute;
+      top: 100%;
+      font-weight: 700;
+      font-size: size(20px);
+      line-height: size(20px);
+      text-transform: uppercase;
+      width: max-content;
+
+      @include vp-1023 {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 143%;
+      }
     }
   }
 
@@ -148,7 +197,6 @@
       position: relative;
       align-items: center;
       justify-content: center;
-
 
       width: 25px;
       height: 25px;
@@ -207,7 +255,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
-    gap: 7px;
+    gap: size(7px);
     order: 1;
 
 
@@ -220,18 +268,32 @@
   }
 
   &__contacts-link {
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-weight: 700;
-    font-size: 28px;
+    font-size: size(28px);
     line-height: 100%;
     text-transform: uppercase;
 
+
     span:last-child {
       display: none;
+    }
+
+    @include hover-focus {
+      .main-nav__link-icon-container {
+        background-color: #468ac1;
+      }
+    }
+
+    &:active {
+      .main-nav__link-icon-container {
+        svg {
+          opacity: 0.3;
+        }
+      }
     }
 
     @include vp-1023 {
@@ -274,18 +336,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: size(50px);
     aspect-ratio: 1;
     flex-shrink: 0;
     border-radius: 50%;
     background-color: $color-jordy-blue;
     color: $color-midnight-express-darker;
 
+    transition: background-color $trans-default;
+
     svg {
       display: block;
-      width: 17px;
-      height: 17px;
-
+      width: size(17px);
+      height: size(17px);
+      transition: opacity $trans-default;
 
       &:not(:first-child) {
         display: none;

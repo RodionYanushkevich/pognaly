@@ -1,5 +1,3 @@
-// import Swiper, {Navigation} from 'swiper';
-
 
 const breakpoint = window.matchMedia('(min-width: 767px)');
 const SWIPER_DELAY_AUTOPLAY = 3000;
@@ -7,6 +5,10 @@ const VISIBLE_SLIDES = 3;
 
 const initDirectionSwiper = () => {
   const container = document.querySelector('[data-swiper="directions"]');
+  if (!container) {
+    return;
+  }
+
 
   const containerWrapper = container.children[0];
   const slides = Array.from(containerWrapper.children);
@@ -51,7 +53,6 @@ const initDirectionSwiper = () => {
       swiper.slides[clampedIndex].classList.add('swiper-slide--isCentred');
     }
   };
-
 
   const initSwiper = () => {
     directionSwiper = new window.Swiper(container, {

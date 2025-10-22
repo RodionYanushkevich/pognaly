@@ -9,7 +9,6 @@ const initMenuToggle = () => {
 
   let isOpen = false;
   const openNavigationMenu = () => {
-
     navigationButton.classList.remove('main-nav__toggle--is-closed');
     navigation.classList.add('main-nav--is-open');
     headerLogo.classList.add('logo--menu-is-open');
@@ -43,8 +42,7 @@ const initMenuToggle = () => {
     }
   };
 
-  const breakpointChecker = (e) => {
-
+  const breakpointChecker = () => {
     let resizeTimer;
     navigation.children[1].classList.add('no-transition');
 
@@ -54,8 +52,6 @@ const initMenuToggle = () => {
     resizeTimer = setTimeout(() => {
       navigation.children[1].classList.remove('no-transition');
     }, 100);
-
-
   };
 
 

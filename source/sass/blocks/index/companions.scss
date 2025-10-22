@@ -1,7 +1,7 @@
 .companions {
   position: relative;
   z-index: 17;
-  margin-top: -63px;
+  margin-top: size(-63px);
 
   .container {
     padding: 0;
@@ -24,14 +24,14 @@
 }
 
 .companions__description-wrapper {
-  padding: 153px 0 159px 72px;
+  padding: size(153px) 0 size(159px) size(72px);
 
-  width: 632px;
+  width: size(632px);
   flex-shrink: 0;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: size(40px);
 
   color: $color-midnight-express-dark;
 
@@ -50,7 +50,7 @@
   }
 
   .companions__title {
-    line-height: 55px;
+    line-height: size(55px);
 
     @include vp-1023 {
       color: $color-default-white;
@@ -67,10 +67,10 @@
     padding: 0;
 
     font-weight: 500;
-    font-size: 24px;
+    font-size: size(24px);
     line-height: 138%;
 
-    width: 516px;
+    width: size(516px);
 
     @include vp-1023 {
       width: 618px;
@@ -94,11 +94,11 @@
 
 
   .companions__sub-description {
-    margin: 12px 0 0;
+    margin: size(12px) 0 0;
 
     font-family: $ff-second;
     font-weight: 300;
-    font-size: 22px;
+    font-size: size(22px);
     line-height: 109%;
 
     @include vp-1023 {
@@ -108,22 +108,22 @@
     @include vp-767 {
       font-size: 14px;
       line-height: 157%;
-      margin: 11px 0 0  -2px;
+      margin: 11px 0 0 -2px;
     }
   }
 
   .companions__link {
-    margin-top: 69px;
-    margin-left: 2px;
-    width: 293.45px;
+    margin-top: size(69px);
+    margin-left: size(2px);
+    width: size(293.45px);
 
     @include vp-1023 {
       position: absolute;
-      margin: 0;
       left: calc(50% - 310px);
       bottom: 69px;
+
+      margin: 0;
       width: 616px;
-      // min-height: 82px;
       padding: 0 20px 0 33px;
     }
 
@@ -144,16 +144,16 @@
 
 .companions__list {
   margin: 0;
-  padding: 133px 74px 123px 76px;
+  padding: size(133px) size(74px) size(123px) size(76px);
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 20px;
+  row-gap: size(20px);
   justify-content: space-between;
-  min-width: 750px;
-  min-height: 793px;
+  min-width: size(750px);
+  min-height: size(793px);
 
-  border-radius: 0 0 56px  56px;
+  border-radius: 0 0 size(56px)  size(56px);
   background-color: $color-blue-zodiac;
 
   @include vp-1023 {
@@ -163,7 +163,9 @@
   }
 
   @include vp-767 {
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 0;
     row-gap: 44px;
   }
@@ -171,4 +173,8 @@
 
 .companions__cards-item:nth-child(even) {
   align-self: end;
+
+  @include vp-767 {
+    align-self: unset;
+  }
 }

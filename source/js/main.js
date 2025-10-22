@@ -6,6 +6,12 @@ import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initDirectionSwiper} from './modules/swiper/direction-swiper';
 import {initMenuToggle} from './modules/menu-toggle/menu-toggle';
 import {initMap} from './modules/map/yandex-map';
+import {initNOUISlider} from './modules/noui-slider/noui-slider';
+
+import {initCountryFilter} from './modules/filter/country-filter-sort';
+import {initCountryFilterEvents} from './modules/filter/countries-btn-events';
+import {initValidation} from './modules/email-validation/email-validation';
+import {initCatalogCardEvents} from './modules/catalog-card/catalog-card-events';
 
 // ---------------------------------
 
@@ -15,13 +21,17 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   mobileVhFix();
-
+  initNOUISlider()
+  initCountryFilter()
+  initCountryFilterEvents()
+  initValidation()
+  initCatalogCardEvents()
   // Modules
   // ---------------------------------
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', async () => {
+  window.addEventListener('load', () => {
 
     initModals();
     uploadFile();
@@ -34,8 +44,14 @@ window.addEventListener('DOMContentLoaded', () => {
     initMenuToggle()
     initDirectionSwiper();
 
-    await initMap();
+
   });
+
+  window.addEventListener('load', async () => {
+      await initMap();
+
+  });
+
 });
 
 // ---------------------------------

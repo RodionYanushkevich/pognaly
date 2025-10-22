@@ -2,13 +2,13 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 608.37px;
-  min-height: 140px;
+  width: size(608.37px);
+  min-height: size(140px);
 
   background-color: $color-default-white;
-  border-radius: 20px;
+  border-radius: size(20px);
 
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 4px size(10px) rgba(0, 0, 0, 0.3));
 
   @include vp-1023 {
     width: 100%;
@@ -26,9 +26,9 @@
 .directions-card__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 24px 31.5px 0 31.5px;
-  min-height: 89px;
-  row-gap: 3px;
+  padding: size(24px) size(31.5px) 0 size(31.5px);
+  min-height: size(89px);
+  row-gap: size(3px);
   justify-content: start;
 
   @include vp-1023 {
@@ -52,7 +52,7 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: size(24px);
   line-height: 100%;
 
   color: $color-default-black;
@@ -68,7 +68,7 @@
   padding: 0;
 
   font-weight: 500;
-  font-size: 20px;
+  font-size: size(20px);
   line-height: 100%;
 
   color: $color-accent-main;
@@ -84,9 +84,9 @@
 .directions-card__icon-wrapper {
   display: flex;
   align-items: center;
-  column-gap: 12.24px;
+  column-gap: size(12.24px);
   height: min-content;
-  margin-top: 24px;
+  margin-top: size(24px);
 
   @include vp-1023 {
     margin-top: 15px;
@@ -109,7 +109,7 @@
   margin: 0;
 
   font-weight: 500;
-  font-size: 20px;
+  font-size: size(20px);
   line-height: 100%;
   color: $color-midnight-express-darker;
 
@@ -124,13 +124,12 @@
 
 .directions-card__flag-wrapper {
   position: absolute;
-  top: 23px;
-  right: 165px;
+  top: size(23px);
+  right: size(165px);
 
   img {
-
-    width: 70px;
-    height: 47px;
+    width: size(70px);
+    height: size(47px);
   }
 
   @include vp-1023 {
@@ -157,11 +156,22 @@
 }
 
 .directions-card__image-wrapper {
+  img {
+    width: size(186px);
+    height: size(140px);
+  }
+
+  // @include vp-1023 {
+  //   img {
+  //     width: 270px;
+  //     height: 110px;
+  //   }
+  // }
+
   @include vp-767 {
     position: absolute;
     top: 0;
     left: 0;
-
 
     img {
       width: 270px;

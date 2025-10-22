@@ -2,6 +2,7 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/nouislider.min";
 // Swiper 8.4.7
 // @import "vendor/swiper";
 
@@ -28,6 +29,8 @@
 @import "blocks/logo";
 @import "blocks/modal";
 @import "blocks/btn";
+@import "blocks/level";
+@import "blocks/tooltip";
 @import "blocks/custom-input";
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
@@ -44,6 +47,13 @@
 @import "blocks/index/registration";
 @import "blocks/index/map";
 
+
+// Catalog
+@import "blocks/catalog/catalog-hero";
+@import "blocks/catalog/country-filter";
+@import "blocks/catalog/catalog-cards";
+@import "blocks/catalog/catalog-card";
+@import "blocks/catalog/catalog-form";
 
 // ---------------------------------
 

@@ -1,7 +1,7 @@
 .wrapper {
 
   width: 100%;
-  // scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 
   &::after {
     content: "";
@@ -30,6 +30,10 @@
   @include vp-767 {
 
     min-width: 320px;
+  }
+
+  &--catalog {
+    background-color: $color-solitude;
   }
 }
 

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Таня Фирсова",
+    "hashTags": "#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи",
+    "countriesFlags": [
+      {
+        "icon": "sri-lanka",
+        "description": "Шри-Ланка"
+      },
+      {
+        "icon": "thai",
+        "description": "Тайланд"
+      },
+      {
+        "icon": "seychelles",
+        "description": "Cейшелы"
+      }
+    ],
+    "travelIconCheck": [
+      "plane"
+    ],
+    "online": false,
+    "level": "99",
+    "photo": "firsova"
+  },
+  {
+    "name": "Петя Демин",
+    "hashTags": "#бургер #бар #футбол #концерт #крафт",
+    "countriesFlags": [
+      {
+        "icon": "belgium",
+        "description": "Бельгия"
+      },
+      {
+        "icon": "czech",
+        "description": "Чехия"
+      }
+    ],
+    "travelIconCheck": [
+      "plane",
+      "car",
+      "walk"
+    ],
+    "online": false,
+    "level": "80",
+    "photo": "demin",
+    "likes": "1500"
+  },
+  {
+    "name": "Марк Смолов",
+    "hashTags": "#рэп #тату #хайпбист #кроссовки #суприм",
+    "countriesFlags": [
+      {
+        "icon": "usa",
+        "description": "США"
+      },
+      {
+        "icon": "australia",
+        "description": "Австралия"
+      },
+      {
+        "icon": "dominikana",
+        "description": "Доминика"
+      }
+    ],
+    "travelIconCheck": [
+      "plane",
+      "bike"
+    ],
+    "online": false,
+    "level": "25",
+    "photo": "smolov",
+    "likes": "170"
+  },
+  {
+    "name": "Лариса Роговая",
+    "hashTags": "#образование #карьера   #учеба #линкедин",
+    "countriesFlags": [
+      {
+        "icon": "uk",
+        "description": "Великобритания"
+      },
+      {
+        "icon": "germ",
+        "description": "Германия"
+      }
+    ],
+    "travelIconCheck": [
+      "plane",
+      "bike"
+    ],
+    "online": true,
+    "level": "50",
+    "photo": "rogovaya",
+    "likes": "23"
+  }
+]

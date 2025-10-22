@@ -1,18 +1,27 @@
 .about {
   position: relative;
   z-index: 19;
-  margin-top: -60px;
+  margin-top: size(-60px);
+
 
   .container {
-    padding: 140px 72px 0 72px;
+    padding: 0;
+  }
+
+  .about__container {
+    padding: size(140px) size(72px) 0 size(72px);
+    min-width: size(1320px);
+
     display: flex;
     justify-content: space-between;
     color: $color-default-white;
     background-color: $color-midnight-express;
-    min-height: 818px;
-    border-radius: 0 0 56px  56px;
+    min-height: size(818px);
+    border-radius: 0 0 size(56px)  size(56px);
 
     @include vp-1023 {
+      min-width: unset;
+
       padding: 165px 40px  88px;
     }
 
@@ -25,13 +34,12 @@
 }
 
 .about__title-container {
-  width: 643px;
+  width: size(643px);
   display: flex;
   flex-direction: column;
-  row-gap: 19px;
-  // min-height: 515px;
-  @include vp-1023 {
+  row-gap: size(19px);
 
+  @include vp-1023 {
     row-gap: 29px;
   }
 
@@ -46,10 +54,10 @@
 .about__title {
   margin: 0;
   padding: 0;
-  font-weight: 700;
-  font-size: 95px;
-  line-height: 71px;
 
+  font-weight: 700;
+  font-size: size(95px);
+  line-height: size(71px);
   font-variant: all-small-caps;
 
   color: inherit;
@@ -66,7 +74,7 @@
   padding: 0;
   margin: 0;
 
-  font-size: 24px;
+  font-size: size(24px);
   line-height: 142%;
 
   color: inherit;
@@ -87,10 +95,11 @@
 }
 
 .about__note {
-  margin: 40px 0 0;
-  width: 503px;
+  margin: size(40px) 0 0;
+  width: size(503px);
+
   font-weight: 200;
-  font-size: 22px;
+  font-size: size(22px);
   line-height: 109%;
 
   color: inherit;
@@ -98,6 +107,7 @@
   @include vp-1023 {
     margin: 75px 0 0 6px;
     width: 365px;
+
     font-family: $ff-second;
     font-weight: 300;
     font-size: 21px;
@@ -113,12 +123,12 @@
 }
 
 .about__image-container {
-  height: 665px;
+  height: size(665px);
   align-self: flex-end;
 
   img {
-    width: 654.19px;
-    height: 665px;
+    width: size(654.19px);
+    height: size(665px);
   }
 
   @include vp-1023 {
@@ -147,7 +157,7 @@
 }
 
 .about__link {
-  margin-top: 117px;
+  margin-top: size(117px);
 
   @include vp-1023 {
     margin-left: 7px;
