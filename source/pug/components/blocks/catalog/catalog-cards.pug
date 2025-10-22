@@ -1,5 +1,5 @@
 mixin catalog-cards(catalogData)
-  - const icons = ["plane","car","bike","walk"]
+  - const icons = [{name: "plane", tooltip: "Самолет"}, {name: "car", tooltip: "Автомобиль"}, {name: "bike", tooltip: "Велосипед"}, {name: "walk", tooltip: "Пешком"}]
 
   section.catalog-cards
     .container
@@ -10,7 +10,7 @@ mixin catalog-cards(catalogData)
         ul.catalog-cards__list
           each card in catalogData
             li.catalog-cards__list-item
-              .catalog-cards__cards.catalog-card
+              .catalog-cards__cards.catalog-card(data-el="catalog-card")
                 .catalog-card__image-wrapper
                   +adaptivePicture({
                     path:"content/catalog/cards",
@@ -18,8 +18,8 @@ mixin catalog-cards(catalogData)
                     width: 285,
                     height: 285,
                     hasTablet:true,
-                    mobileWidth: 190,
-                    mobileHeight: 190,
+                    TabletWidth: 190,
+                    TabletHeight: 190,
                     hasMobile:true,
                     mobileWidth: 70,
                     mobileHeight: 70,
@@ -32,30 +32,33 @@ mixin catalog-cards(catalogData)
                   each flag in card.countriesFlags
                     li.catalog-card__flags-list-item
                       +img("content/flags", `${flag.icon}-flag`, "webp", 35, 24, "")
-                      p.catalog-card__flags-description!=flag.description
+                      p.catalog-card__flags-description=flag.description
                 if typeof card.likes !== 'undefined'
                   .catalog-card__buttons-container
-                    button.catalog-card__call-button(type="button") позвать
+                    a.catalog-card__call-button.btn(type="button", href="#")
+                      span позвать
                     .catalog-card__likes-button-wrapper
-                      button.catalog-card__likes-button(type="button")
+                      button.catalog-card__likes-button(type="button", data-button="catalog-card-like")
                         +icon("heart", 20, 19)
+                        +icon("heart-fill", 20, 19)
                       span.catalog-card__likes-count= card.likes
                 ul.catalog-card__transport-list
                   each icon in icons
-                    - const isChecked = card.travelIconCheck.includes(icon)
+                    - const isChecked = card.travelIconCheck.includes(icon.name)
                     li
                       if isChecked
-                        +icon(`${icon}-icon`, 25, 25).catalog-card__icon.catalog-card__icon--checked
+                        +icon(`${icon.name}-icon`, 25, 25).catalog-card__icon.catalog-card__icon--checked
                       else
-                        +icon(`${icon}-icon`, 25, 25).catalog-card__icon
-                div.catalog-card__level.level(style=`--level: ${card.level}`)
+                        +icon(`${icon.name}-icon`, 25, 25).catalog-card__icon
+                      +tooltip(icon.tooltip)
+                div.catalog-card__level.level(style=`--level: ${card.level}` data-level=card.level)
 
                   span.level__dote.level__dote--min
                   span.level__wrapper
                   .level__description-container
                     span.level__count!=card.level
                     span.level__description level
-          button.catalog-cards__more-button(type="button" data-test)
+          button.catalog-cards__more-button(type="button")
             +icon("plus-icon", 26, 26)
             span показать еще
           .catalog-cards__padination-wrapper

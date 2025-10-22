@@ -1,3 +1,5 @@
+import {getMailRegEx} from '../form-validate/regular-expression';
+
 const initValidation = () => {
   const container = document.querySelector('[data-el="registration"]');
   if (!container) {
@@ -6,17 +8,12 @@ const initValidation = () => {
   const [registrationInputWrapper, registrationBtn] = container.children;
   const registrationInput = registrationInputWrapper.children[0].children[0];
 
-  const validateEmail = (email) => {
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    return emailRegex.test(email);
-  };
-
   const inputValidation = () => {
     const emailValue = registrationInput.value;
     registrationInput.classList.remove('valid', 'error');
 
 
-    if (!registrationInput.checkValidity() || !validateEmail(emailValue)) {
+    if (!registrationInput.checkValidity() || !getMailRegEx().test(emailValue)) {
       registrationInput.reportValidity();
       registrationInput.classList.add('error');
       return;

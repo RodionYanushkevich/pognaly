@@ -14,6 +14,10 @@
       top: 0;
       left: 0;
       background-color: $color-lavender;
+      border-radius: 0 0 55px 55px;
+    }
+
+    @include vp-767 {
       border-radius: 0 0 30px 30px;
     }
   }
@@ -25,7 +29,7 @@
     row-gap: size(20px);
 
     @include vp-1023 {
-      padding: 108px 41px 78px 53px;
+      padding: 108px 41px 41px 53px;
       min-height: 199px;
       display: flex;
       flex-direction: column;
@@ -210,6 +214,7 @@
       column-gap: size(48px);
 
       cursor: pointer;
+      transition: opacity $trans-default;
 
       @include vp-1023 {
         column-gap: 43px;
@@ -268,6 +273,14 @@
             height: 20px;
           }
         }
+      }
+
+      @include hover-focus {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
       }
     }
   }
@@ -480,7 +493,7 @@
     align-items: center;
     justify-content: center;
     margin-top: size(10px);
-
+    max-height: 3000px;
     column-gap: size(23px);
 
     font-weight: 700;
@@ -494,6 +507,7 @@
     color: $color-midnight-express-dark;
     background-color: #d6daed;
 
+    transition: background-color $trans-default;
     cursor: pointer;
 
     &--is-hidden {
@@ -501,11 +515,22 @@
     }
 
     svg {
+      opacity: 1;
+      transition: opacity $trans-default;
+
+      width: size(24px);
+      height: size(24px);
       order: -1;
+    }
+
+    span {
+      opacity: 1;
+      transition: opacity $trans-default;
     }
 
     @include vp-1023 {
       margin-left: 23px;
+      margin-bottom: 38px;
       width: calc(100% - 38px);
     }
 
@@ -530,6 +555,21 @@
       span {
         position: relative;
         top: 3px;
+      }
+    }
+
+    @include hover-focus {
+      background-color: #c8cee8;
+    }
+
+    &:active {
+      svg {
+        opacity: 0.3;
+      }
+
+      span {
+
+        opacity: 0.3;
       }
     }
   }

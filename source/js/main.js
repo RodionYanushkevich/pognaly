@@ -11,7 +11,7 @@ import {initNOUISlider} from './modules/noui-slider/noui-slider';
 import {initCountryFilter} from './modules/filter/country-filter-sort';
 import {initCountryFilterEvents} from './modules/filter/countries-btn-events';
 import {initValidation} from './modules/email-validation/email-validation';
-import {test} from './modules/test';
+import {initCatalogCardEvents} from './modules/catalog-card/catalog-card-events';
 
 // ---------------------------------
 
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initCountryFilter()
   initCountryFilterEvents()
   initValidation()
-  test()
+  initCatalogCardEvents()
   // Modules
   // ---------------------------------
 

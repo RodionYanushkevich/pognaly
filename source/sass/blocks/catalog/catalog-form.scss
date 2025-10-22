@@ -58,6 +58,7 @@
 
     background-color: $color-transparent;
 
+    transition: opacity $trans-default;
     cursor: pointer;
 
     svg {
@@ -100,6 +101,7 @@
       }
     }
 
+
     &--is-active {
       svg {
         transform: rotate(180deg);
@@ -110,6 +112,14 @@
       + .catalog-form__input-container {
         display: flex;
       }
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
     }
   }
 
@@ -170,6 +180,8 @@
     }
 
     &--transport {
+      position: relative;
+
       column-gap: 0;
       padding: size(18px) 0 size(12px);
       flex-direction: row;
@@ -224,10 +236,20 @@
 
 
   &__custom-checkbox--transport {
-
     border-radius: 50%;
     width: size(44px);
     height: size(44px);
+
+    transition: opacity $trans-default;
+
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    cursor: pointer;
+
+
+    &:active {
+      opacity: 0.3;
+    }
 
     svg {
       width: size(30px);
@@ -243,10 +265,26 @@
         height: 20px;
       }
     }
+
+
+    @include hover-focus {
+      opacity: 0.6;
+
+      &:active {
+        opacity: 0.3;
+      }
+
+      & + .tooltip {
+        opacity: 1;
+        z-index: 99;
+      }
+    }
   }
 
 
   &__label {
+    position: relative;
+
     display: flex;
     align-items: center;
     column-gap: size(13px);
@@ -254,6 +292,24 @@
     font-size: size(20px);
     line-height: 100%;
     color: $color-default-black;
+
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    cursor: pointer;
+
+    span {
+      transition: opacity $trans-default;
+    }
+
+    @include hover-focus {
+      span:not(.tooltip) {
+        opacity: 0.6;
+
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
 
     @include vp-1023 {
       min-width: 168px;
@@ -404,6 +460,11 @@
     text-transform: uppercase;
     background-color: $color-default-white;
     border: none;
+    filter: drop-shadow(0 size(3px) size(6px) rgba(0, 0, 0, 0));
+
+    transition: filter $trans-default,
+      opacity $trans-default,
+      background-color $trans-default;
     color: inherit;
     cursor: pointer;
 
@@ -421,8 +482,18 @@
       font-size: 17px;
       line-height: 100%;
     }
+
+    @include hover-focus {
+      filter: drop-shadow(0 size(3px) size(6px) rgba(0, 0, 0, 0.14));
+    }
+
+    &:active {
+      opacity: 0.3;
+      background-color: $color-picton-blue;
+    }
   }
 }
+
 
 .catalog-form__checkbox {
   &:not(:checked) {
@@ -446,18 +517,17 @@
   height: size(13px);
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100% - #{size(14px)});
   margin-top: size(10px);
+  align-self: center;
 
   @include vp-1023 {
     margin-top: 14px;
-    width: 100%;
     order: -1;
   }
 
   @include vp-767 {
     margin-top: 14px;
-    width: 100%;
     order: 1;
   }
 
@@ -496,12 +566,17 @@
   }
 
   .noUi-handle {
+    --handle-width: 14px;
+    top: calc(-1 * (#{size(var(--handle-width))} - #{size(2px)}) / 2);
+    right: calc(-1 * #{size(var(--handle-width))} / 2);
+
     border-radius: 50%;
-    width: size(14px);
-    height: size(14px);
-    right: -size(7px);
+    width: size(var(--handle-width));
+    height: size(var(--handle-width));
     border: none;
-    box-shadow: unset;
+    box-shadow: 0 size(3px) size(7px) rgba(0, 0, 0, 0);
+
+    transition: transform $trans-default, box-shadow $trans-default;
 
     background-color: $color-midnight-express-darker;
     cursor: pointer;
@@ -511,13 +586,22 @@
       display: none;
     }
 
-    &-upper {
-      right: 0;
+    @include hover-focus {
+      transform: scale(1.35);
     }
 
-    &-lower {
-      right: size(-14px);
+    &:active {
+
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.24);
     }
+
+    // &-upper {
+    //   right: 0;
+    // }
+
+    // &-lower {
+    //   right: size(-14px);
+    // }
   }
 }
 

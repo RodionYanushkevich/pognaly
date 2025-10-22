@@ -17,8 +17,8 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
         { id: "food-vegan", name: "food", value: "vegan", text: "Веган-сыроед" }
       ],
       transport: [
-        { id: "transport-public", name: "transport", value: "plane", text: "Cамолет" },
-        { id: "transport-car", name: "transport", value: "car", text: "Машина" },
+        { id: "transport-public", name: "transport", value: "plane", text: "Авиаперелет" },
+        { id: "transport-car", name: "transport", value: "car", text: "Автотранспорт" },
         { id: "transport-bike", name: "transport", value: "bike", text: "Велосипед" },
         { id: "transport-walk", name: "transport", value: "walk", text: "Пешком" }
       ]
@@ -44,6 +44,7 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
               if categoryName ===  "transport"
                 span.catalog-form__custom-checkbox.catalog-form__custom-checkbox--transport
                   +icon(`${item.value}-icon`, 20, 20)
+                +tooltip(item.text)
               else
                 span.catalog-form__custom-checkbox
                   +icon("check-icon", 11, 11)

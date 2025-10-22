@@ -139,7 +139,7 @@
   width: size(330px);
 
   svg {
-    transition: transform $trans-default;
+    transition: transform $trans-default, opacity $trans-default;
     transform: scale(1);
   }
 
@@ -165,10 +165,6 @@
 
   @include hover-focus {
     opacity: 1;
-
-    svg {
-      transform: scale(1.2);
-    }
   }
 }
 

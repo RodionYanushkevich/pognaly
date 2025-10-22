@@ -4,7 +4,8 @@
     flex-direction: row;
     min-height: size(1000px);
     padding: size(141px) size(60px) size(139px) size(59px);
-    column-gap: size(85px);
+
+    justify-content: space-between;
     row-gap: size(50px);
     flex-wrap: wrap;
 

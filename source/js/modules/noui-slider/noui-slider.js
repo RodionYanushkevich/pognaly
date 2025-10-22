@@ -8,7 +8,6 @@ const initNOUISlider = () => {
   }
 
   const catalogButtons = document.querySelectorAll('[data-button="catalog-form-button"]');
-  const form = document.querySelector('[data-form]');
   const minInput = document.getElementById('min-level');
   const maxInput = document.getElementById('max-level');
 
@@ -38,9 +37,6 @@ const initNOUISlider = () => {
     slider.noUiSlider.set([null, maxInput.value]);
   });
 
-  form.addEventListener('submit', (event)=> {
-    event.preventDefault();
-  });
 };
 
 export {initNOUISlider};
