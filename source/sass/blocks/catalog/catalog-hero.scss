@@ -33,6 +33,7 @@
   }
 
   &__title {
+    position: relative;
     margin: 0;
     padding: 0;
 
@@ -55,6 +56,27 @@
     @include vp-767 {
       font-size: 36px;
       line-height: 36px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: size(-90px);
+      display: block;
+      width: 100%;
+      height: size(8px);
+      background-color: $color-picton-blue;
+      border-radius: size(4px);
+
+      @include vp-1023 {
+        background-color: #335d8d;
+      }
+
+      @include vp-767 {
+        height: 5px;
+        bottom: -14px;
+        background-color: $color-default-white;
+      }
     }
   }
 }
