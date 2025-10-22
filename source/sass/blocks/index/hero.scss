@@ -158,7 +158,7 @@
 .hero__list {
   position: absolute;
   top: size(520px);
-  left: size(60px);
+  left: size(90px);
   min-height: size(107px);
   height: min-content;
   padding: 0;
@@ -173,12 +173,14 @@
   @include vp-1023 {
     position: static;
     width: 100%;
-    margin-top: -79px;
-    align-self: end;
+    // margin-top: -79px;
+    // align-self: end;
+    // align-items: center;
     top: unset;
-    min-height: unset;
     padding: 0 40px;
-    background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
+    background-color: $color-midnight-express;
+    // background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
+    min-height: 202px;
   }
 
   @include vp-767 {
@@ -189,7 +191,8 @@
 }
 
 .hero__list-item {
-  position: relative;
+  opacity: 0;
+  position: absolute;
   overflow: visible;
   counter-increment: item;
   padding: size(29.5px);
@@ -273,6 +276,7 @@
     filter: none;
     min-height: 140px;
     padding-bottom: 40px;
+    width: calc(50% - 40px);
 
     &:nth-child(odd) {
       min-width: calc(50% + 43px);
@@ -281,7 +285,8 @@
     &:nth-child(even) {
       margin-top: -20px;
       margin-left: -43px;
-      width: 50%;
+      width: calc(50% - 40px);
+      // flex-grow: 1;
     }
 
     &:nth-child(n+3):nth-last-child(n+3) {
