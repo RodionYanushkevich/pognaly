@@ -4,6 +4,7 @@
   padding-top: 50px;
 }
 
+
 .sitemap .container {
   display: flex;
   flex-direction: column;
@@ -11,8 +12,8 @@
   align-items: center;
 }
 
-.sitemap .container .logo {
-  color: #192144;
+.sitemap .container .logo-description {
+  color: #212121;
 }
 
 .sitemap h1 {
