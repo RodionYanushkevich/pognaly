@@ -57,6 +57,7 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
       .catalog-form__input-container
         .catalog-form__input-wrapper
           label.catalog-form__label(for="min-level")
+            span.visually-hidden!= минимальный уровень
           input.catalog-form__input(
             type="number"
             id="min-level"
@@ -65,6 +66,7 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
               )
           span.catalog-form__input-wrapper-stick
           label.catalog-form__label(for="max-level")
+            span.visually-hidden!= максимальный уровень
           input.catalog-form__input(
             type="number"
             id="max-level"
@@ -73,4 +75,4 @@ mixin catalog-form(action="https://echo.htmlacademy.ru/courses", method="POST")
               )
         .catalog-form__noui-slider-container
           .catalog-form__noui-slider.slider(data-slider="noui-slider")
-    button.catalog-form__submit-button(type="submit", data-button="catalog-submint-button") показать
+    button.catalog-form__submit-button(type="submit", aria-label="Показать результаты", data-button="catalog-submint-button") показать

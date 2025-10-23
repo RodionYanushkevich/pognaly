@@ -28,7 +28,7 @@ mixin country-filter(countriesdata)
             each region in sortedRegions
               li
                 button.country-filter__sort-button(type="button" , aria-pressed="false", data-button="filter-sort-button")!= region
-          button.country-filter__sort-hide-button(type="button", data-button="country-sort-hide-button")
+          button.country-filter__sort-hide-button(type="button", aria-label="Скрыть фильтр стран", data-button="country-sort-hide-button")
             span Свернуть
             span показать все
             +icon('icon-close', 25, 25)

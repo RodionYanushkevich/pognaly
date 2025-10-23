@@ -35,10 +35,10 @@ mixin catalog-cards(catalogData)
                       p.catalog-card__flags-description=flag.description
                 if typeof card.likes !== 'undefined'
                   .catalog-card__buttons-container
-                    a.catalog-card__call-button.btn( href="#")
+                    a.catalog-card__call-button.btn(href="#")
                       span позвать
                     .catalog-card__likes-button-wrapper
-                      button.catalog-card__likes-button(type="button", data-button="catalog-card-like")
+                      button.catalog-card__likes-button(type="button", aria-label="поставить лайк", data-button="catalog-card-like")
                         +icon("heart", 20, 19)
                         +icon("heart-fill", 20, 19)
                       span.catalog-card__likes-count= card.likes
@@ -74,9 +74,9 @@ mixin catalog-cards(catalogData)
 
           ul.catalog-cards__padination-list
             li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button.catalog-cards__padination-button--arrow(type="button", data-button="pagination-arrow")
+              button.catalog-cards__padination-button.catalog-cards__padination-button--arrow(type="button", aria-label="Предыдущая страница", data-button="pagination-arrow")
                 +icon("arrow-icon", 20, 13)
             li.catalog-cards__padination-list-item
-              button.catalog-cards__padination-button.catalog-cards__padination-button--arrow.catalog-cards__padination-button--next(type="button", data-button="pagination-arrow")
+              button.catalog-cards__padination-button.catalog-cards__padination-button--arrow.catalog-cards__padination-button--next(type="button", aria-label="Следующая страница", data-button="pagination-arrow")
                 +icon("arrow-icon", 20, 13)
 
