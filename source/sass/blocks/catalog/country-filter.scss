@@ -172,6 +172,7 @@
       font-weight: inherit;
       font-size: inherit;
       line-height: inherit;
+      transition: opacity $trans-default, transform $trans-default;
 
       color: $color-midnight-express-dark;
 
@@ -179,20 +180,32 @@
 
       cursor: pointer;
 
-      &--is-active {
-        opacity: 1;
-      }
 
       @include vp-1023 {
         padding: 10px 10px;
       }
 
       @include vp-767 {
+        padding: 5px 10px;
+
         font-weight: 700;
         font-size: 16px;
         line-height: 112%;
+
         text-transform: uppercase;
-        padding: 5px 10px;
+      }
+
+      @include hover-focus {
+        opacity: 0.6;
+      }
+
+      &--is-active {
+        opacity: 1;
+
+        @include hover-focus {
+          opacity: 1;
+          transform: scale(1.05);
+        }
       }
     }
 

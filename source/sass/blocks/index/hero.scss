@@ -173,13 +173,13 @@
   @include vp-1023 {
     position: static;
     width: 100%;
-    // margin-top: -79px;
+    margin-top: -78px;
     // align-self: end;
     // align-items: center;
     top: unset;
     padding: 0 40px;
-    background-color: $color-midnight-express;
-    // background: linear-gradient(to bottom, $color-transparent 79px, $color-midnight-express 79px);
+    // background-color: $color-midnight-express;
+    background: linear-gradient(to bottom, $color-transparent 78px, $color-midnight-express 78px);
     min-height: 202px;
   }
 
@@ -192,7 +192,7 @@
 
 .hero__list-item {
   opacity: 0;
-  position: absolute;
+  // position: absolute;
   overflow: visible;
   counter-increment: item;
   padding: size(29.5px);
@@ -207,6 +207,8 @@
   filter: drop-shadow(size(-4px) 0 size(10px) rgba(0, 0, 0, 0.25));
 
   @include vp-1023 {
+    position: static;
+
     padding: 10px 33px 61px;
     min-width: 344px;
   }

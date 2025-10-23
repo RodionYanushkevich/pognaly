@@ -4,26 +4,31 @@ mixin companions()
       {
         name: "Таня Фирсова",
         hashTags: "#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи",
-        countriesFlagCheck:["sri-lanka","thai","seychelles"],
+        countriesFlagCheck: [
+          {icon: "sri-lanka", name: "Шри-Ланка"},
+          {icon: "thai", name: "Тайланд"},
+          {icon: "seychelles", name: "Сейшелы"}
+        ],
         travelIconCheck: ["plane"],
         online: false,
-        level:"99",
+        level: "99",
         photo: "firsova-photo",
       },
       {
         name: "Петя Демин",
         hashTags: "#бургер #бар #футбол #концерт #крафт",
-        countriesFlagCheck:["belgium" ,"czech"],
-        travelIconCheck: ["plane","car","walk"],
+        countriesFlagCheck: [
+          {icon: "belgium", name: "Бельгия"},
+          {icon: "czech", name: "Чехия"}
+        ],
+        travelIconCheck: ["plane", "car", "walk"],
         online: true,
-        level:"80",
+        level: "80",
         photo: "demin-photo",
-      },
+      }
     ]
 
-    const icons = [
-      "plane","car","bike","walk"
-    ]
+    const icons = [{name: "plane", tooltip: "Самолет"}, {name: "car", tooltip: "Автомобиль"}, {name: "bike", tooltip: "Велосипед"}, {name: "walk", tooltip: "Пешком"}]
 
   section.companions
     .container
@@ -41,21 +46,24 @@ mixin companions()
       ul.companions__list
         each companion in companionsCards
           li.companions__cards-item
-            a(href="#").companions-card
-              +adaptivePicture({
-                path:"content/companions",
-                imageBaseName: companion.photo,
-                width: 285,
-                height: 285,
-                hasTablet:false,
-                hasMobile:true,
-                mobileWidth: 270,
-                mobileHeight: 270,
-                alt:`${companion.name} - фотография`
-                })
+            .companions-card
+              .companions-card__image-container
+                +adaptivePicture({
+                  path:"content/companions",
+                  imageBaseName: companion.photo,
+                  width: 285,
+                  height: 285,
+                  hasTablet:false,
+                  hasMobile:true,
+                  mobileWidth: 270,
+                  mobileHeight: 270,
+                  alt:`${companion.name} - фотография`
+                  })
               .companions-card__flags-container
                 each flag in companion.countriesFlagCheck
-                  +img("content/flags", `${flag}-flag`, "webp", 35, 24, "")
+                  .companions-card__flag
+                    +img("content/flags", `${flag.icon}-flag`, "webp", 35, 24, "")
+                    +tooltip(flag.name)
               .companions-card__title-wrapper
                 if (companion.online === true)
                   span.companions-card__online.companions-card__online--true
@@ -63,17 +71,21 @@ mixin companions()
                   span.companions-card__online
                 h3.companions-card__title!=companion.name
               p.companions-card__description!=companion.hashTags
-              .companions-card__level.level(style=`--level: ${companion.level}`)
-                span.level__dote.level__dote--min
-                span.level__wrapper
-                .level__description-container
-                  span.level__count!=companion.level
-                  span.level__description level
+              .companions-card__level
+                span.companions-card__level-wrapper
+                  +icon(`elipse${companion.level}`,56, 56)
+                .companions-card__level-description-container
+                  span.companions-card__level-count!=companion.level
+                  span.companions-card__level-description level
 
               .companions-card__icons-wrapper
                 each icon in icons
-                  - const isChecked = companion.travelIconCheck.includes(icon)
+                  - const isChecked = companion.travelIconCheck.includes(icon.name)
                   if isChecked
-                    +icon(`${icon}-icon`, 25, 25).companions-card__icon.companions-card__icon--checked
+                    .companions-card__icon-container
+                      +icon(`${icon.name}-icon`, 25, 25).companions-card__icon.companions-card__icon--checked
+                      +tooltip(icon.tooltip)
                   else
-                    +icon(`${icon}-icon`, 25, 25).companions-card__icon
+                    .companions-card__icon-container
+                      +icon(`${icon.name}-icon`, 25, 25).companions-card__icon
+                      +tooltip(icon.tooltip)

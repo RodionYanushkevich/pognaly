@@ -15,7 +15,7 @@ mixin about()
             href: "#",
             text:"Подробнее"}).about__link
 
-        .about__image-container
+        .about__image-container(data-el="parallax-container")
           +adaptivePicture({
             path:"content/about",
             imageBaseName:"about-image",

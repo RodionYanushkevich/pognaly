@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import {initParallax} from './modules/index-animation/about-parallax.js';
 import {initHeroAnimaton} from './modules/index-animation//hero-animation';
 import {initDirectionSwiper} from './modules/swiper/direction-swiper';
 import {initMenuToggle} from './modules/menu-toggle/menu-toggle';
@@ -23,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   mobileVhFix();
   initHeroAnimaton();
+  initParallax()
   initNOUISlider()
   initCountryFilter()
   initCountryFilterEvents()

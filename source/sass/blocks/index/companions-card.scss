@@ -4,15 +4,17 @@
   flex-direction: column;
   width: size(285px);
   min-height: size(479px);
-  border-radius: size(22px);
-  background-color: $color-default-white;
   align-items: center;
   row-gap: size(13px);
   padding-bottom: size(23px);
 
-  img {
-    width: size(285px);
-    height: size(285px);
+  border-radius: size(22px);
+  background-color: $color-default-white;
+
+  transition: box-shadow $trans-default;
+
+  @include vp-1023 {
+    box-shadow: 0 0 10px 0 $color-default-white;
   }
 
   @include vp-767 {
@@ -21,10 +23,34 @@
     border-radius: 10px;
     width: 270px;
 
+
     img {
       width: 270px;
       height: 270px;
     }
+  }
+
+  &:hover {
+    box-shadow: 0 4px 20px 0 rgba(255, 254, 254, 0.5);
+
+    .companions-card__image-container img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.companions-card__image-container {
+  overflow: hidden;
+  border-radius: size(22px) size(22px) 0 0;
+
+  img {
+    transition: transform $trans-default;
+    width: size(285px);
+    height: size(285px);
+  }
+
+  @include vp-767 {
+    border-radius: 10px 10px 0 0;
   }
 }
 
@@ -42,6 +68,17 @@
   img {
     width: size(35px);
     height: size(24px);
+  }
+}
+
+.companions-card__flag {
+  position: relative;
+
+  @include hover-focus {
+    span {
+      opacity: 1;
+      z-index: 99;
+    }
   }
 }
 
@@ -121,10 +158,87 @@
     opacity: 1;
     color: $color-midnight-ocean;
   }
+
+  &-container {
+    position: relative;
+
+    &:hover {
+      span {
+        opacity: 1;
+        z-index: 99;
+      }
+    }
+  }
 }
 
 .companions-card__level {
   position: absolute;
-  top: size(17px);
+  top: size(20px);
   left: size(22px);
+  width: size(56px);
+  height: size(56px);
+  border-radius: 50%;
+
+  &-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: size(60px);
+    height: size(60px);
+
+    svg {
+      width: size(60px);
+      height: size(60px);
+    }
+  }
+
+  &-description-container {
+    display: flex;
+    flex-direction: column;
+    width: size(60px);
+    height: size(60px);
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    color: $color-default-white;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: size(36px);
+      left: calc(50% + #{size(2px)});
+      display: block;
+      height: size(1px);
+      width: size(30px);
+      opacity: 0.3;
+      background-color: $color-default-white;
+      transform: translateX(-50%);
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+  }
+
+  &-count {
+
+    position: relative;
+    top: 2px;
+
+    font-weight: 700;
+    font-size: size(24px);
+    line-height: 100%;
+  }
+
+  &-description {
+    position: relative;
+    bottom: -3px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    height: min-content;
+  }
 }
