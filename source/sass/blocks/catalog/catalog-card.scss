@@ -512,9 +512,9 @@
 
     @include vp-1023 {
       bottom: unset;
-      left: unset;
+      left: 490px;
       top: 44px;
-      right: 202px;
+      right: unset;
     }
 
     @include vp-767 {
