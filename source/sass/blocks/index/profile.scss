@@ -4,14 +4,14 @@
   margin-top: size(-60px);
 
   .container {
-    padding: size(176px) size(60px) size(66px) size(74px);
+    padding: size(176px) size(60px) size(64px) size(74px);
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: size(17px);
 
     @include vp-1023 {
-      padding: 96px 40px 61px;
+      padding: 96px 40px 58px;
       border-radius: 0 0 56px 56px;
       background-color: $color-solitude;
       row-gap: 28px;
@@ -75,7 +75,7 @@
 
   @include vp-767 {
     padding: 0 10px 0 4px;
-
+    align-items: center;
     margin-top: 4px;
   }
 

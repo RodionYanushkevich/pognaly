@@ -21,6 +21,7 @@
 
   &--modal-is-open {
     &::after {
+      cursor: pointer;
       opacity: 0.4;
       z-index: 20;
       pointer-events: auto;

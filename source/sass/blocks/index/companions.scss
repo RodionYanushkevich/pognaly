@@ -160,6 +160,8 @@
     padding: 0 42px 0 40px;
     min-width: unset;
     min-height: unset;
+    justify-content: center;
+    column-gap: 116px;
   }
 
   @include vp-767 {
