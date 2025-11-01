@@ -84,10 +84,12 @@
 
   @include hover-focus {
     .map__address-icon-container {
-      color: inherit;
+      color: $color-picton-blue;
     }
 
-    color: #4d99d6;
+    .map__address {
+      opacity: 0.7;
+    }
   }
 
   &:active {
@@ -107,11 +109,12 @@
 }
 
 .map__address {
+  transition: opacity $trans-default;
   font-weight: 700;
   font-size: size(28px);
   line-height: 100%;
   text-transform: uppercase;
-
+  color: $color-catalina-blue;
 
   @include vp-1023 {
     position: relative;
@@ -191,6 +194,10 @@
   height: size(54px);
   background-color: $color-default-white;
   border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  transition: background-color $trans-default;
+  transition-delay: 0.6s;
 
   &::after {
     content: "";
@@ -202,6 +209,22 @@
     height: size(24px);
     border-radius: 50%;
 
+    transition: background-color $trans-default, width $trans-default, height $trans-default;
+
     background-color: $color-midnight-deep;
+  }
+
+  @include hover-focus {
+    background-color: $color-transparent;
+
+    span {
+      opacity: 1;
+      z-index: 99;
+    }
+
+    &::after {
+      width: size(15px);
+      height: size(15px);
+    }
   }
 }

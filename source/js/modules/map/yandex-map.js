@@ -1,6 +1,7 @@
 const mapContainer = document.querySelector('[data-map]')
 const centerButton = document.querySelector('[data-button="map-center-button"]');
 const routeButton = document.querySelector('[data-button="map-route-button"]');
+const markerElement = document.querySelector('[data-el="map-marker"]');
 const location = [30.323037, 59.938631];
 
 const  openYandexMapsRoute = (location) => {
@@ -20,7 +21,6 @@ if (!mapContainer) {
 
     const map = new YMap(
         mapContainer,
-
         {
             location: {
                 center: [30.325 , 59.938031],
@@ -31,10 +31,6 @@ if (!mapContainer) {
 
     map.addChild(new YMapDefaultSchemeLayer());
     map.addChild(new YMapDefaultFeaturesLayer())
-
-    const markerElement = document.createElement('div');
-    markerElement.className = 'map__marker';
-
 
     const marker = new YMapMarker({
             coordinates: location,

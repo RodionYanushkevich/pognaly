@@ -5,7 +5,7 @@
   list-style: none;
   flex-wrap: wrap;
   row-gap: size(20px);
-
+  max-width: size(372px);
 
   &__link {
     display: flex;

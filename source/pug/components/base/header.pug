@@ -20,12 +20,12 @@ mixin header(headerMods, currentUrl)
 
       if(currentUrl === "index.html")
         span.header__logo.logo( data-logo="header-logo")
-          img(src="../../../img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали", )
+          img(src="img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали", )
           span.logo-description
             +icon("logo-text", 133, 25 )
       else
         a.header__logo.logo(href="index.html", aria-label="Переход на главную", data-logo="header-logo")
-          img(src="../../../img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали")
+          img(src="img/svg/logo.svg", width="200", height="50", alt="Логотип Погнали")
           span.logo-description
             +icon("logo-text", 133, 25 )
 
