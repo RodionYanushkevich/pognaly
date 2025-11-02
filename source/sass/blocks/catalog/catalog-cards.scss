@@ -131,7 +131,7 @@
   &__padination-wrapper {
     margin-top: size(6px);
     padding: size(10px) size(30px);
-
+    padding-top: size(12px);
     flex-grow: 1;
     min-height: size(100px);
     display: flex;
@@ -190,12 +190,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     width: size(50px);
     height: size(50px);
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+
     border: none;
+    border-radius: 50%;
     background-color: $color-transparent;
-    transition: opacity $trans-default;
+    transition: opacity $trans-default, background-color $trans-default;
+
     cursor: pointer;
 
     @include hover-focus {
@@ -219,14 +225,19 @@
       }
 
       svg {
+        position: relative;
+        top: size(-1px);
+        right: size(2px);
         transform: rotate(90deg);
-        width: size(20px);
+        width: size(21px);
         height: size(13px);
       }
     }
 
     &--next {
       svg {
+        right: size(-2px);
+
         transform: rotate(-90deg);
       }
     }

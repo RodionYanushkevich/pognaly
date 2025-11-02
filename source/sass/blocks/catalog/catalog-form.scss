@@ -1,7 +1,7 @@
 .catalog-form {
   display: flex;
   flex-direction: column;
-  padding: size(46px) size(34px) size(46px) size(48px);
+  padding: size(46px) size(34px) size(49px) size(48px);
   row-gap: size(19px);
   width: size(285px);
   border-radius: size(20px);
@@ -157,7 +157,7 @@
 
   &__checkbox-wrapper {
     display: none;
-    padding: size(25px) 0 size(12px);
+    padding: size(22px) 0 size(15px);
     flex-direction: column;
     row-gap: size(16px);
     column-gap: size(2px);
@@ -514,11 +514,14 @@
 
 
 .catalog-form__noui-slider-container {
-  height: size(13px);
+  padding: 0 size(6px) 0 0;
+  height: size(9px);
   display: flex;
   align-items: center;
-  width: calc(100% - #{size(14px)});
+  // width: calc(100% - #{size(14px)});
+  width: calc(100%);
   margin-top: size(10px);
+  // margin-right: 10px;
   align-self: center;
 
   @include vp-1023 {
