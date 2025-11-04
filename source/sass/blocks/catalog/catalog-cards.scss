@@ -72,34 +72,18 @@
     border: none;
     background-color: $color-transparent;
 
+    transition: opacity $trans-default;
     cursor: pointer;
 
     svg {
+      transition: opacity $trans-default;
       width: size(26px);
       height: size(26px);
-      transition: opacity $trans-default;
-    }
-
-    @include hover-focus {
-      svg {
-        opacity: 0.6;
-      }
-
-      &:active {
-        svg {
-          opacity: 0.3;
-        }
-      }
-    }
-
-    &:active {
-      svg {
-        opacity: 0.3;
-      }
     }
 
     @include vp-1023 {
-      right: 0;
+      column-gap: 24px;
+      right: -5px;
       padding: 17px;
       margin: 29px auto 34px;
     }
@@ -124,6 +108,22 @@
       @include vp-767 {
         font-size: 17px;
         line-height: 176%;
+      }
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+
+      &:active {
+        svg {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &:active {
+      svg {
+        opacity: 0.3;
       }
     }
   }
@@ -239,6 +239,10 @@
         right: size(-2px);
 
         transform: rotate(-90deg);
+
+        @include vp-1023 {
+          right: 0;
+        }
       }
     }
   }

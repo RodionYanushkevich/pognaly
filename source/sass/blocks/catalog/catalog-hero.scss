@@ -69,6 +69,7 @@
       border-radius: size(4px);
 
       @include vp-1023 {
+        width: 94%;
         background-color: #335d8d;
       }
 

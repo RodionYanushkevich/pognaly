@@ -200,8 +200,8 @@
   flex-wrap: wrap;
   row-gap: size(10px);
   margin-left: 34px;
-  min-width: 900px;
-  max-width: 950px;
+  min-width: size(900px);
+  max-width: size(950px);
   justify-content: space-between;
 
   @include vp-1023 {
