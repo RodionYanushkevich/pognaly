@@ -161,7 +161,6 @@
       line-height: 143%;
 
       @include hover-focus {
-        // transform: translateY(calc(-50% - 10px));
         color: $color-jordy-blue;
       }
     }
@@ -216,8 +215,8 @@
         top: 16px;
         width: 25px;
         height: 17px;
-        opacity: 0;
         transform: rotate(0) scale(0);
+        opacity: 0;
 
         &:last-child {
           width: 30px;
@@ -236,7 +235,6 @@
       svg {
         &:first-child {
           transform: rotate(360deg) scale(1);
-
           opacity: 1;
         }
 

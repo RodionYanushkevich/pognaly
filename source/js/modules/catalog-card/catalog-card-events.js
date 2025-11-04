@@ -1,5 +1,6 @@
 import {gsap} from '../../vendor/gsap.min';
 import {ScrollTrigger} from '../../vendor/ScrollTrigger.min.js';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ANIMATION_START = 'top 80%';
