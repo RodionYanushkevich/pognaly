@@ -35,11 +35,13 @@
 .about__title-container {
   width: size(643px);
   display: flex;
+  padding-bottom: size(115px);
   flex-direction: column;
   row-gap: size(19px);
 
   @include vp-1023 {
     row-gap: 29px;
+    padding-bottom: unset;
   }
 
   @include vp-767 {

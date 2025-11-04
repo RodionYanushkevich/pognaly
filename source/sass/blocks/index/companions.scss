@@ -14,11 +14,13 @@
       min-height: 1240px;
       justify-content: flex-start;
       border-radius: 0 0 56px 56px;
+      padding-bottom: 200px;
     }
 
     @include vp-767 {
       min-height: 1382px;
       border-radius: 0 0 30px 30px;
+      padding-bottom: 120px;
     }
   }
 }

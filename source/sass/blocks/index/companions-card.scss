@@ -22,12 +22,7 @@
     row-gap: 7px;
     border-radius: 10px;
     width: 270px;
-
-
-    img {
-      width: 270px;
-      height: 270px;
-    }
+    padding: 0 0 10px 0;
   }
 
   &:hover {
@@ -50,7 +45,13 @@
   }
 
   @include vp-767 {
+
     border-radius: 10px 10px 0 0;
+
+    img {
+      width: 270px;
+      height: 270px;
+    }
   }
 }
 
@@ -68,6 +69,10 @@
   img {
     width: size(35px);
     height: size(24px);
+  }
+
+  @include vp-767 {
+    margin-top: -17px;
   }
 }
 
@@ -92,6 +97,14 @@
   align-items: center;
   column-gap: size(14px);
   width: 100%;
+
+
+  @include vp-767 {
+    margin-top: 6px;
+    margin-bottom: 9px;
+    padding-right: 17px;
+    column-gap: 8px;
+  }
 
   .companions-card__title {
     margin: 0;
@@ -119,6 +132,10 @@
     flex-shrink: 0;
     background-color: $color-salmon;
 
+    @include vp-767 {
+      width: 6px;
+    }
+
     &--true {
       background-color: $color-lawn-green;
     }
@@ -141,6 +158,8 @@
   @include vp-767 {
     font-size: 16px;
     line-height: 112%;
+    padding: 0;
+    max-width: 212px;
   }
 }
 
@@ -149,6 +168,11 @@
   gap: size(10px);
   padding-left: size(17px);
   margin-top: auto;
+
+  @include vp-767 {
+    gap: 9px;
+    margin-right: 14px;
+  }
 }
 
 .companions-card__icon {

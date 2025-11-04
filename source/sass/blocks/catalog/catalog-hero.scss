@@ -63,12 +63,13 @@
       position: absolute;
       bottom: size(-90px);
       display: block;
-      width: 100%;
+      width: 91%;
       height: size(8px);
       background-color: $color-picton-blue;
       border-radius: size(4px);
 
       @include vp-1023 {
+        width: 94%;
         background-color: #335d8d;
       }
 

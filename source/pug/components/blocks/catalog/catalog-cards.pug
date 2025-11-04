@@ -36,7 +36,7 @@ mixin catalog-cards(catalogData)
                 if typeof card.likes !== 'undefined'
                   .catalog-card__buttons-container
                     a.catalog-card__call-button.btn(href="#")
-                      span позвать
+                      span позвать!
                     .catalog-card__likes-button-wrapper
                       button.catalog-card__likes-button(type="button", aria-label="поставить лайк", data-button="catalog-card-like")
                         +icon("heart", 20, 19)

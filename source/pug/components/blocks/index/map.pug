@@ -11,4 +11,6 @@ mixin map()
         +btn({
           tag:"button",
           text:"Проложить маршрут"})( data-button="map-route-button").map__button
+      .map__marker(data-el="map-marker")
+        +tooltip('ул. Большая Конюшенная, 19/8')
       .map-wrapper(data-map id="map")

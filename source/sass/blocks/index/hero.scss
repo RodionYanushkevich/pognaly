@@ -192,12 +192,10 @@
 
 .hero__list-item {
   opacity: 0;
-  // position: absolute;
   overflow: visible;
   counter-increment: item;
   padding: size(29.5px);
   padding-left: size(34px);
-  min-width: size(352.4px);
 
   display: flex;
   align-items: center;
@@ -248,22 +246,43 @@
   }
 
   &:nth-child(4n + 1) {
+    width: size(345px);
     background-color: $color-picton-blue;
+
+    @include vp-767 {
+      width: 100%;
+    }
   }
 
   &:nth-child(4n + 2) {
-    padding-left: size(22px);
+    width: size(375px);
+
+    padding-left: size(30px);
     background-color: $color-jordy-blue;
   }
 
   &:nth-child(4n + 3) {
-    padding-left: size(46px);
+    width: size(375px);
+    padding-left: size(30px);
     background-color: $color-pale-cornflower-blue;
+
+    @include vp-767 {
+      width: 100%;
+    }
   }
 
   &:nth-child(4n + 4) {
-    padding-left: size(68px);
+    width: size(315px);
+    padding-left: size(30px);
     background-color: $color-pattens-blue;
+
+    &::before {
+      right: size(32px);
+    }
+
+    @include vp-1023 {
+      width: unset;
+    }
   }
 
   @include vp-1023 {
@@ -288,7 +307,6 @@
       margin-top: -20px;
       margin-left: -43px;
       width: calc(50% - 40px);
-      // flex-grow: 1;
     }
 
     &:nth-child(n+3):nth-last-child(n+3) {
@@ -352,7 +370,7 @@
 .hero__list-item::before {
   position: absolute;
   top: size(25px);
-  right: size(71px);
+  right: size(62px);
   content: counter(item);
   font-weight: 700;
   color: $color-default-white;

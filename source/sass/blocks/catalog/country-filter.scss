@@ -97,7 +97,6 @@
       font-weight: 700;
       font-size: size(20px);
       line-height: 100%;
-
       text-transform: uppercase;
       border: none;
 
@@ -105,12 +104,15 @@
 
       pointer-events: all;
 
+
       background-color: $color-transparent;
-      transition: opacity $trans-default;
+      color: $color-midnight-express-dark;
+      transition: opacity $trans-default,
+        color $trans-default;
 
       &:disabled {
         opacity: 0.9;
-        color: inherit;
+        color: $color-default-black;
         pointer-events: none;
       }
 

@@ -38,10 +38,9 @@
     }
 
     & svg {
-
       width: size(133px);
       height: size(25px);
-
+      filter: drop-shadow(0 size(1px) size(2px) rgba(0, 0, 0, 0.3));
 
       @include vp-1023 {
         width: 111px;
