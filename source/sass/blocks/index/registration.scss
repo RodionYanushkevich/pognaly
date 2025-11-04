@@ -76,24 +76,19 @@
   }
 
   br {
-    &:last-of-type {
+    &:not(:last-of-type):not(:first-of-type) {
       display: none;
     }
 
-
     @include vp-1023 {
-      &:first-of-type {
+      &:last-of-type {
         display: none;
       }
     }
 
     @include vp-767 {
-      &:first-of-type {
+      &:not(:last-of-type):not(:first-of-type) {
         display: block;
-      }
-
-      &:last-of-type {
-        display: none;
       }
     }
   }
@@ -206,6 +201,8 @@
 
   @include vp-1023 {
     min-width: unset;
+    row-gap: 0;
+
     flex-direction: column;
     margin-left: 75px;
     margin-top: -15px;

@@ -257,13 +257,13 @@
   &:nth-child(4n + 2) {
     width: size(375px);
 
-    padding-left: size(22px);
+    padding-left: size(30px);
     background-color: $color-jordy-blue;
   }
 
   &:nth-child(4n + 3) {
     width: size(375px);
-    padding-left: size(46px);
+    padding-left: size(30px);
     background-color: $color-pale-cornflower-blue;
 
     @include vp-767 {
@@ -273,8 +273,12 @@
 
   &:nth-child(4n + 4) {
     width: size(315px);
-    padding-left: size(68px);
+    padding-left: size(30px);
     background-color: $color-pattens-blue;
+
+    &::before {
+      right: size(32px);
+    }
 
     @include vp-1023 {
       width: unset;

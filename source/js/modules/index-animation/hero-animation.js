@@ -40,7 +40,6 @@ const initHeroAnimaton = () => {
           x: 0,
           y: 0,
           autoAlpha: 1,
-          // marginLeft: '',
         });
       });
       desktopTl.kill();
